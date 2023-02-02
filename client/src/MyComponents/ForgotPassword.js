@@ -55,7 +55,7 @@ export default function ForgotPassword() {
     {
       if(phoneNumber !=="" && validator.isMobilePhone(phoneNumber))
       {
-        Axios.post("http://localhost:3010/users/forgotCredentials", 
+        Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/forgotCredentials", 
         {phone_number:phoneNumber}).then(
         (res)=>{
           console.log(res.data);
@@ -87,7 +87,7 @@ export default function ForgotPassword() {
     {
       if(phoneNumber !=="" && validator.isMobilePhone(phoneNumber))
       {
-        Axios.post("http://localhost:3010/users/forgotCredentials", 
+        Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/forgotCredentials", 
         {phone_number:phoneNumber}).then(
         (res)=>{
           console.log(res.data);
@@ -119,7 +119,7 @@ export default function ForgotPassword() {
     {
       if(email !=="" && validator.isEmail(email))
       {console.log("Email.."+email);
-        Axios.post("http://localhost:3010/users/forgotCredentials", 
+        Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/forgotCredentials", 
         {email:email}).then(
         (res)=>{
           if(res.data)
@@ -288,7 +288,7 @@ export default function ForgotPassword() {
           OTP12 += digits[X];
       }
 
-     Axios.post("http://localhost:3010/users/otpEmail",{email:email,otp:OTP12,fullName:fullName}).then((res)=>{
+     Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/otpEmail",{email:email,otp:OTP12,fullName:fullName}).then((res)=>{
         console.log(res.data);
         
       });
@@ -306,7 +306,7 @@ console.log("OTP....."+otp);
 function updatePassword()
 {if(re_password === password)
   {
-    Axios.post("http://localhost:3010/users/updatePassword",{userId:userId,user_pass:re_password}).then((res)=>{
+    Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/updatePassword",{userId:userId,user_pass:re_password}).then((res)=>{
       console.log(res.data);
       
     });

@@ -84,14 +84,14 @@ export default function ShowDealer() {
         keywordLocation = JSON.parse(localStorage.getItem('User_Choice_Location'));
         if(state.showDeal)
         {
-          Axios.post("http://localhost:3010/users/search_bar",{keyword:state.showDeal,location:keywordLocation["SearchBarLocation"]}).then((res)=>{
+          Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/search_bar",{keyword:state.showDeal,location:keywordLocation["SearchBarLocation"]}).then((res)=>{
             console.log(res.data);
             setshowDealerList(res.data);
             });
         }
         if(state.dealer_alphabet)
         {
-          Axios.post("http://localhost:3010/users/getDealerByAlphabet",{alphabet:state.dealer_alphabet}).then((res)=>{
+          Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/getDealerByAlphabet",{alphabet:state.dealer_alphabet}).then((res)=>{
             console.log(res.data);
             setshowDealerList(res.data);
             });
@@ -108,7 +108,7 @@ export default function ShowDealer() {
       else if(!state)
       {
         
-        Axios.get("http://localhost:3010/users/allUsers").then((res)=>{
+        Axios.get("https://carpages-canada-mongofrnt.onrender.com/users/allUsers").then((res)=>{
             console.log(res.data);
             setshowDealerList(res.data);
             });
@@ -121,7 +121,7 @@ export default function ShowDealer() {
       }
       if(type)
       {
-        Axios.post("http://localhost:3010/users/getDealerByType",{userType:type}).then((res)=>{
+        Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/getDealerByType",{userType:type}).then((res)=>{
             console.log(res.data);
             setshowDealerList(res.data);
             });
@@ -154,7 +154,7 @@ export default function ShowDealer() {
      
      if(status==="unblock")
      {
-       Axios.post("http://localhost:3010/users/updatetUserStatus",{UserId:ID,status:"block"}).then ((response1) =>{
+       Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/updatetUserStatus",{UserId:ID,status:"block"}).then ((response1) =>{
          console.log(response1.data);
         
       });
@@ -162,7 +162,7 @@ export default function ShowDealer() {
      }
      else if(status==="block")
      {
-       Axios.post("http://localhost:3010/users/updatetUserStatus",{UserId:ID,status:"unblock"}).then ((response1) =>{
+       Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/updatetUserStatus",{UserId:ID,status:"unblock"}).then ((response1) =>{
          console.log(response1.data);
         
       });
@@ -205,7 +205,7 @@ export default function ShowDealer() {
         console.log(a+'....'+b+"..."+c+"..."+d+"..."+f+"....");
             if(LocName ==="")
             {
-                Axios.post("http://localhost:3010/users/allDealers",{dealer:"dealer"}).then((res1)=>{
+                Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/allDealers",{dealer:"dealer"}).then((res1)=>{
                     console.log(res1.data);
                     setshowDealerList(res1.data);
                    
@@ -215,7 +215,7 @@ export default function ShowDealer() {
             {
                 if(a>0)
                 {
-                    Axios.post("http://localhost:3010/users/dealerbycity",{city_name:LocName}).then((res1)=>{
+                    Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/dealerbycity",{city_name:LocName}).then((res1)=>{
                     console.log(res1.data);
                     setshowDealerList(res1.data);
                     });
@@ -226,7 +226,7 @@ export default function ShowDealer() {
                     else if(LocName==="New Brunswick"){provinceAbrivation="NB";}else if(LocName==="Northwest Territories"){provinceAbrivation="NT";}else if(LocName==="Nova Scotia"){provinceAbrivation="NS";}else if(LocName==="Nunavut"){provinceAbrivation="NU";}
                     else if(LocName==="Prince Edward Island"){provinceAbrivation="PE";}else if(LocName==="Quebec"){provinceAbrivation="QC";}else if(LocName==="Saskatchewan"){provinceAbrivation="SK";}
                     else if(LocName==="Yukon"){provinceAbrivation="YT";}
-                    Axios.post("http://localhost:3010/users/dealerbyprovince",{province:LocName}).then((res1)=>{
+                    Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/dealerbyprovince",{province:LocName}).then((res1)=>{
                     console.log(res1.data);
                     setshowDealerList(res1.data);
                     });
@@ -242,7 +242,7 @@ export default function ShowDealer() {
      }
      let brokers=[];
      useEffect(()=>{
-       Axios.get("http://localhost:3010/categories/onlycities").then((res1)=>{
+       Axios.get("https://carpages-canada-mongofrnt.onrender.com/categories/onlycities").then((res1)=>{
          console.log(res1.data);
         setLocationname(res1.data);
        });
@@ -352,7 +352,7 @@ export default function ShowDealer() {
     
    if(a>0)
    {
-    Axios.post("http://localhost:3010/users/dealerbycity",{cityname:e}).then((res1)=>{
+    Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/dealerbycity",{cityname:e}).then((res1)=>{
       console.log(res1.data);
       setshowDealerList(res1.data);
     });
@@ -363,7 +363,7 @@ export default function ShowDealer() {
     else if(e==="New Brunswick"){provinceAbrivation="NB";}else if(e==="Northwest Territories"){provinceAbrivation="NT";}else if(e==="Nova Scotia"){provinceAbrivation="NS";}else if(e==="Nunavut"){provinceAbrivation="NU";}
     else if(e==="Prince Edward Island"){provinceAbrivation="PE";}else if(e==="Quebec"){provinceAbrivation="QC";}else if(e==="Saskatchewan"){provinceAbrivation="SK";}
     else if(e==="Yukon"){provinceAbrivation="YT";}
-    Axios.post("http://localhost:3010/users/dealerbyprovince",{province:e}).then((res1)=>{
+    Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/dealerbyprovince",{province:e}).then((res1)=>{
       console.log(res1.data);
       setshowDealerList(res1.data);
     });
@@ -422,7 +422,7 @@ export default function ShowDealer() {
       if(a>0 )
       {
         //alert("if 1"+query1);
-       Axios.post("http://localhost:3010/users/getDealerByCity",{city_name:query1,dealer_name:query2}).then((res1)=>{
+       Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/getDealerByCity",{city_name:query1,dealer_name:query2}).then((res1)=>{
          console.log(res1.data);
          setshowDealerList(res1.data);
        });
@@ -430,7 +430,7 @@ export default function ShowDealer() {
       else if(a<0  && query2.length>0)
       {
         //alert("else if 2"+query1);
-       Axios.post("http://localhost:3010/users/getDealerByProvince",{province:query1,dealer_name:query2}).then((res1)=>{
+       Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/getDealerByProvince",{province:query1,dealer_name:query2}).then((res1)=>{
          console.log(res1.data);
          setshowDealerList(res1.data);
        });
@@ -438,7 +438,7 @@ export default function ShowDealer() {
        if(query1==="" && query2.length>0)
       {
         //alert("else if 2"+query1);
-        Axios.post("http://localhost:3010/users/getDealerByOnlyName",{dealer_name:query2}).then((res1)=>{
+        Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/getDealerByOnlyName",{dealer_name:query2}).then((res1)=>{
           console.log(res1.data);
           setshowDealerList(res1.data);
         });

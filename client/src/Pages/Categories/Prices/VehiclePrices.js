@@ -14,7 +14,7 @@ export default function VehiclePrices() {
   const dollar="$";
   const onChoosePrices = (e) =>
   {
-    Axios.get("http://localhost:3010/categories/getprices").then((response)=>{
+    Axios.get("https://carpages-canada-mongofrnt.onrender.com/categories/getprices").then((response)=>{
       console.log(response.data);
       setGetPrices(response.data);
     });
@@ -63,21 +63,21 @@ export default function VehiclePrices() {
   const submitPrices =()=>
   {
           priceToping();
-        Axios.post("http://localhost:3010/categories/create-prices",{pricesadd:dollar+prices}).then((response)=>{
+        Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/create-prices",{pricesadd:dollar+prices}).then((response)=>{
            console.log(response.data);
          })
   }
   const UpdatePrices =()=>
   {
         //  priceToping();
-        Axios.post("http://localhost:3010/categories/updateprices",{priceId:selectedprices,updateprice:dollar+prices}).then((response)=>{
+        Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/updateprices",{priceId:selectedprices,updateprice:dollar+prices}).then((response)=>{
            console.log(response.data);
          })
   }
   const deletePrices =()=>
   {
         //  priceToping();
-          Axios.post("http://localhost:3010/categories/deleteprices",{priceId:selectedprices}).then((response)=>{
+          Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/deleteprices",{priceId:selectedprices}).then((response)=>{
            console.log(response.data);
          })
   }

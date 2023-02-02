@@ -16,7 +16,7 @@ export default function VehicleModels() {
     
 
     useEffect(()=>{
-        Axios.get("http://localhost:3010/categories/makes").then((res) =>{
+        Axios.get("https://carpages-canada-mongofrnt.onrender.com/categories/makes").then((res) =>{
             console.log(res.data );
             setMakeName(res.data);
         });
@@ -24,7 +24,7 @@ export default function VehicleModels() {
   
    const FetchMakes=()=>
    {
-    Axios.get("http://localhost:3010/categories/makes").then((res) =>{
+    Axios.get("https://carpages-canada-mongofrnt.onrender.com/categories/makes").then((res) =>{
             console.log(res.data );
             setMakeName(res.data);
         });
@@ -63,7 +63,7 @@ export default function VehicleModels() {
   const onMakeselected = (e) =>
   {  
     setupdatemakeName(e);
-    Axios.post("http://localhost:3010/categories/models",{makename:e}).then((res) =>{
+    Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/models",{makename:e}).then((res) =>{
       console.log(res.data );
       setgetmodelName(res.data);
     });
@@ -78,7 +78,7 @@ export default function VehicleModels() {
   }
   const submitModel = () =>{
     console.log("working" +updatemakeName);
-    Axios.post("http://localhost:3010/categories/insertmodel",{
+    Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/insertmodel",{
     model:modelName,makename:updatemakeName
     }).then((response)=>{
     console.log(response.data);
@@ -87,7 +87,7 @@ export default function VehicleModels() {
 
    const updateModelname = () =>{
     console.log(modelName+"working"+updatemakeName+"123"+updatemodelName);
-    Axios.post("http://localhost:3010/categories/updateModel",{
+    Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/updateModel",{
    modelId:updatemodelName,newmodel:modelName
     }).then((response)=>{
 
@@ -96,7 +96,7 @@ export default function VehicleModels() {
    };
    const deleteModelName = () =>{
     console.log("working");
-    Axios.post("http://localhost:3010/categories/deletemodelname",{
+    Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/deletemodelname",{
       model:modelName,makename:updatemakeName,modelId:updatemodelName
     }).then((response)=>{
 

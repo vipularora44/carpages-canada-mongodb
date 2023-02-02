@@ -34,7 +34,7 @@ export default function Locations() {
   const submitLocations = () =>
   {
     splitProvince();
-    Axios.post("http://localhost:3010/categories/create-cities",{
+    Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/create-cities",{
       cityname:locations+many,provinceName:pany,location_type:location_type
     }).then((response)=>{
 
@@ -48,7 +48,7 @@ export default function Locations() {
   {
     splitProvince();
     console.log("vipul arora"+ many+"///"+pany+"**"+updatedLocations+"---"+locations );
-    Axios.post("http://localhost:3010/categories/updatelocation",{
+    Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/updatelocation",{
       newcityname:locations+many,cityId:updatedLocations,provinceName:pany
     }).then((response)=>{
 
@@ -59,7 +59,7 @@ export default function Locations() {
   {
     splitProvince();
     console.log(updatedLocations+"++++"+pany);
-    Axios.post("http://localhost:3010/categories/deletelocation",{
+    Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/deletelocation",{
       cityId:updatedLocations,provinceName:pany
     }).then((response)=>{
 
@@ -113,7 +113,7 @@ export default function Locations() {
     console.log(pany+" arora"+dany);
     //console.log(provinces+"--");
    
-    Axios.post("http://localhost:3010/categories/getlocations",{province:pany}).then((res)=>{
+    Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/getlocations",{province:pany}).then((res)=>{
     console.log(res);
    setGetLocations(res.data);
 });

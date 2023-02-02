@@ -28,11 +28,11 @@ export default function SearchBarResults() {
       if(MyState.keyWord !=="")
     {  
         keywordLocation = JSON.parse(localStorage.getItem('User_Choice_Location'));
-            Axios.post("http://localhost:3010/listings/search_bar",{keyword:MyState.keyWord,location:keywordLocation["SearchBarLocation"]}).then((res)=>{
+            Axios.post("https://carpages-canada-mongofrnt.onrender.com/listings/search_bar",{keyword:MyState.keyWord,location:keywordLocation["SearchBarLocation"]}).then((res)=>{
             console.log(res.data);
             setlistingsResults(res.data);
             });
-             Axios.post("http://localhost:3010/users/search_bar",{keyword:MyState.keyWord,location:keywordLocation["SearchBarLocation"]}).then((res)=>{
+             Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/search_bar",{keyword:MyState.keyWord,location:keywordLocation["SearchBarLocation"]}).then((res)=>{
              console.log(res.data);
              setDealerResults(res.data);
              });

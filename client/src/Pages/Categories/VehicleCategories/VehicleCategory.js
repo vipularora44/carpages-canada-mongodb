@@ -14,7 +14,7 @@ export default function VehicleCategory() {
   
   const onAddVehicleCategory = (e) =>
   {
-    Axios.get("http://localhost:3010/categories/viewcategory").then((response) =>{
+    Axios.get("https://carpages-canada-mongofrnt.onrender.com/categories/viewcategory").then((response) =>{
       console.log(response.data);
      setVehCategories(response.data); 
   });
@@ -48,7 +48,7 @@ export default function VehicleCategory() {
     }
     const updateCategory = () =>{
         console.log("working");
-        Axios.post("http://localhost:3010/categories/updatevehcategory",{
+        Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/updatevehcategory",{
         category:category,previouscategory:updatecat
         }).then((response)=>{
 
@@ -57,7 +57,7 @@ export default function VehicleCategory() {
        };
        const deleteCategory = () =>{
         console.log("working");
-        Axios.post("http://localhost:3010/categories/deletevehcategory",{
+        Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/deletevehcategory",{
         category:updatecat
         }).then((response)=>{
 
@@ -68,7 +68,7 @@ export default function VehicleCategory() {
 
         const submitCategory = () =>{
             console.log("working");
-            Axios.post("http://localhost:3010/categories/create-category",{
+            Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/create-category",{
             category:category
             }).then((response)=>{
 

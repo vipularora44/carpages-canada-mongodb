@@ -17,7 +17,7 @@ export default function VehicleMakes() {
      const submitMake = () =>{
 
     console.log("working");
-       Axios.post("http://localhost:3010/categories/insertmake",{
+       Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/insertmake",{
          makename:makeName
        }).then((response)=>{
    
@@ -28,7 +28,7 @@ export default function VehicleMakes() {
      const updateMake = () =>{
 
       console.log("working");
-         Axios.post("http://localhost:3010/categories/updatetmake",{
+         Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/updatetmake",{
            newmakename:makeName,makeId:updateMakes
          }).then((response)=>{
      
@@ -40,7 +40,7 @@ export default function VehicleMakes() {
      const deleteMake = () =>{
 
       console.log("working");
-         Axios.post("http://localhost:3010/categories/deletemake",{
+         Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/deletemake",{
           makeId:updateMakes
          }).then((response)=>{
      
@@ -50,7 +50,7 @@ export default function VehicleMakes() {
      };
      const onVehicleMakes = (e) =>
      {
-      Axios.get("http://localhost:3010/categories/makes").then((res)=>{
+      Axios.get("https://carpages-canada-mongofrnt.onrender.com/categories/makes").then((res)=>{
         console.log(res);
         setfetchMakes(res.data);
       });
