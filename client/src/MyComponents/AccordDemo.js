@@ -1,6 +1,6 @@
 import * as React from "react";
 import MAccordion from "@mui/material/Accordion";
-import { withStyles } from "@material-ui/core/styles";
+
 import AccordionSummary from "@mui/material/AccordionSummary";
 import MAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
