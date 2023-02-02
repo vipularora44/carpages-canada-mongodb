@@ -35,7 +35,7 @@ export default function DealerInventory() {
     console.log("Seller_ID:::"+Seller_ID);
     useEffect(()=>{
  
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/getDealerDetails",{userId:Seller_ID}).then((res3)=>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/users/getDealerDetails",{userId:Seller_ID}).then((res3)=>{
         console.log(res3.data);
        setselleredata(res3.data);
         setBFM(res3.data[0].buy_from_home);
@@ -48,21 +48,21 @@ export default function DealerInventory() {
 
    const getDealerListings=()=>
    {
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/listings/getDealerListings",{userId:Seller_ID}).then((res3)=>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getDealerListings",{userId:Seller_ID}).then((res3)=>{
       console.log(res3.data);
       setfetchListings(res3.data);
     });
    }
    const GetYears=()=>
    {
-    Axios.get("https://carpages-canada-mongofrnt.onrender.com/categories/years").then((res3)=>{
+    Axios.get("https://carpages-canada-mongodb.onrender.com/categories/years").then((res3)=>{
       console.log(res3.data);
       setyears(res3.data);
     });
    }
    const GetAllMakes=()=>
    {
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/listings/getDealervehicleCount",{userId:Seller_ID}).then((res3)=>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getDealervehicleCount",{userId:Seller_ID}).then((res3)=>{
       console.log(res3.data);
       setfetch_Makes_total(res3.data);
     });
@@ -94,14 +94,14 @@ export default function DealerInventory() {
     }
     if(bodyStyle)
     {
-      Axios.post("https://carpages-canada-mongofrnt.onrender.com/listings/getDealervehicleModelCount",{userId:Seller_ID,bodyStyle:bodyStyle,make_name:e}).then((res3)=>{
+      Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getDealervehicleModelCount",{userId:Seller_ID,bodyStyle:bodyStyle,make_name:e}).then((res3)=>{
         console.log(res3.data);
         setfetch_Models_total(res3.data);
       });
     }
     else if(!bodyStyle)
     {
-      Axios.post("https://carpages-canada-mongofrnt.onrender.com/listings/getDealervehicleModelCount",{userId:Seller_ID,make_name:e}).then((res3)=>{
+      Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getDealervehicleModelCount",{userId:Seller_ID,make_name:e}).then((res3)=>{
         console.log(res3.data);
         setfetch_Models_total(res3.data);
       });
@@ -119,7 +119,7 @@ export default function DealerInventory() {
     {
       setbodyStyle(e);
     }
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/listings/getDealervehicleCount",{userId:Seller_ID,body_style:e}).then((res3)=>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getDealervehicleCount",{userId:Seller_ID,body_style:e}).then((res3)=>{
         console.log(res3.data);
         setfetch_Makes_total(res3.data);
       });
@@ -167,7 +167,7 @@ export default function DealerInventory() {
    {
     if(bodyStyle || selectedMake || selectedModel ||selectedMinyear || selectedMaxyear)
     {
-      Axios.post("https://carpages-canada-mongofrnt.onrender.com/listings/getDealerRefineInventory",{Seller_ID:Seller_ID,bodyStyle:bodyStyle,selectedMake:selectedMake,selectedModel:selectedModel,selectedMinyear:selectedMinyear,selectedMaxyear:selectedMaxyear}).then((res3)=>{
+      Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getDealerRefineInventory",{Seller_ID:Seller_ID,bodyStyle:bodyStyle,selectedMake:selectedMake,selectedModel:selectedModel,selectedMinyear:selectedMinyear,selectedMaxyear:selectedMaxyear}).then((res3)=>{
         console.log(res3.data);
         setfetchListings(res3.data);
       });

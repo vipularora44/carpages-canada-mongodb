@@ -69,7 +69,7 @@ export default function FindDealer() {
 //  let enteredcityname,enteredprovince="";
   let brokers=[];
   useEffect(()=>{
-    Axios.get("https://carpages-canada-mongofrnt.onrender.com/categories/onlycities").then((res1)=>{
+    Axios.get("https://carpages-canada-mongodb.onrender.com/categories/onlycities").then((res1)=>{
       console.log(res1.data);
      setLocationname(res1.data);
     });
@@ -156,7 +156,7 @@ console.log("city name"+e);
     
    if(a>0)
    {
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/dealerbycity",{cityname:e}).then((res1)=>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/users/dealerbycity",{cityname:e}).then((res1)=>{
       console.log(res1.data);
       setdealerslist(res1.data);
     });
@@ -167,7 +167,7 @@ console.log("city name"+e);
     else if(e==="New Brunswick"){provinceAbrivation="NB";}else if(e==="Northwest Territories"){provinceAbrivation="NT";}else if(e==="Nova Scotia"){provinceAbrivation="NS";}else if(e==="Nunavut"){provinceAbrivation="NU";}
     else if(e==="Prince Edward Island"){provinceAbrivation="PE";}else if(e==="Quebec"){provinceAbrivation="QC";}else if(e==="Saskatchewan"){provinceAbrivation="SK";}
     else if(e==="Yukon"){provinceAbrivation="YT";}
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/dealerbyprovince",{province:e}).then((res1)=>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/users/dealerbyprovince",{province:e}).then((res1)=>{
       console.log(res1.data);
       setdealerslist(res1.data);
     });

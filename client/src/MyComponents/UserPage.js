@@ -84,7 +84,7 @@ export default function UserPage() {
  
   Item = JSON.parse(localStorage.getItem('dataItems'));
   
-  Axios.get("https://carpages-canada-mongofrnt.onrender.com/users/isUserAuthenticated",{headers:{"x-access-token":Item["token"]},}).then((res)=>{
+  Axios.get("https://carpages-canada-mongodb.onrender.com/users/isUserAuthenticated",{headers:{"x-access-token":Item["token"]},}).then((res)=>{
     
      console.log(res.data.auth);
       if(!res.data.auth)
@@ -100,19 +100,19 @@ export default function UserPage() {
         setuserType(Item["usertype"]);
       }
      });
-     Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/getDealerDetails",{userId:Item["userId"]}).then((res)=>{
+     Axios.post("https://carpages-canada-mongodb.onrender.com/users/getDealerDetails",{userId:Item["userId"]}).then((res)=>{
       console.log(res.data);
       setuserData(res.data);
      });
 
-  Axios.get("https://carpages-canada-mongofrnt.onrender.com/users/userDeviceInfo").then((res)=>{
+  Axios.get("https://carpages-canada-mongodb.onrender.com/users/userDeviceInfo").then((res)=>{
     console.log(res.data);
     setbrowser_info(res.data[0].browser);
     setbrowser_version(res.data[0].version);
     setoperating_system(res.data[0].os);
     setplatform_info(res.data[0].platform);
   });
-  Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/InsertuserDeviceInfo",{userId:Item["userId"]}).then((res)=>{
+  Axios.post("https://carpages-canada-mongodb.onrender.com/users/InsertuserDeviceInfo",{userId:Item["userId"]}).then((res)=>{
     console.log(res.data);
   });
   GetuserDeviceInfo();
@@ -165,14 +165,14 @@ useEffect(()=>
 
 const getMyListings=()=>
 {
-  Axios.post("https://carpages-canada-mongofrnt.onrender.com/listings/getUserListings",{userId:userId}).then((res)=>{
+  Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getUserListings",{userId:userId}).then((res)=>{
     console.log(res.data);
     setmyListings(res.data);
 });
 }
 const getUserIwatchListID=()=>
 {
-  Axios.post("https://carpages-canada-mongofrnt.onrender.com/watchlist/getUserWatchList",{userId:userId}).then((res1)=>{
+  Axios.post("https://carpages-canada-mongodb.onrender.com/watchlist/getUserWatchList",{userId:userId}).then((res1)=>{
     console.log(res1.data);
     setwatchList(res1.data);
 });
@@ -200,7 +200,7 @@ const RollID=()=>
   })
   if(IDs.length>0)
   {
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/watchlist/getUserWatchList1",{listings:IDs}).then((res1)=>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/watchlist/getUserWatchList1",{listings:IDs}).then((res1)=>{
       console.log(res1.data);
       setgetListings(res1.data);
 });
@@ -276,7 +276,7 @@ const RollData=()=>
  }
  const changePass=()=>
  {
-  Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/updatePassword",{userId:userOBJID,user_pass:newpassword}).then((res)=>{
+  Axios.post("https://carpages-canada-mongodb.onrender.com/users/updatePassword",{userId:userOBJID,user_pass:newpassword}).then((res)=>{
       console.log(res.data);
       
     });
@@ -303,7 +303,7 @@ const RollData=()=>
      formData.append('image', image);
      formData.append('usertype',userType);
      formData.append('imageChanged',"Yes");
-      Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/updatetuser", formData ).then ((response1) =>{
+      Axios.post("https://carpages-canada-mongodb.onrender.com/users/updatetuser", formData ).then ((response1) =>{
          console.log(response1);
       });
   }
@@ -324,7 +324,7 @@ const RollData=()=>
      // formData.append('image', oldimage);
       formData.append('usertype',userType);
       formData.append('imageChanged',"No");
-       Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/updatetuser", formData ).then ((response1) =>{
+       Axios.post("https://carpages-canada-mongodb.onrender.com/users/updatetuser", formData ).then ((response1) =>{
           console.log(response1.data.affectedRows);
          
        });
@@ -333,7 +333,7 @@ const RollData=()=>
  const DeleteWatchlist=(e)=>
  {
   alert("DeleteWatchlist works"+e);
-  Axios.post("https://carpages-canada-mongofrnt.onrender.com/watchlist/deleteWatchList",{userId:userId,listing_id:e}).then ((response1) =>{
+  Axios.post("https://carpages-canada-mongodb.onrender.com/watchlist/deleteWatchList",{userId:userId,listing_id:e}).then ((response1) =>{
          console.log(response1.data);
          if(response1.data[0].message === "Watchlist Deleted")
          {
@@ -364,14 +364,14 @@ const RollData=()=>
   alert(e)
   if(e===true)
   {
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/updatetBuyFromHome",{userId:userOBJID,B_f_M:"yes"}).then ((response1) =>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/users/updatetBuyFromHome",{userId:userOBJID,B_f_M:"yes"}).then ((response1) =>{
       console.log(response1.data);
      
    });
   }
   else if(e===false)
   {
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/updatetBuyFromHome",{userId:userOBJID,B_f_M:"no"}).then ((response1) =>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/users/updatetBuyFromHome",{userId:userOBJID,B_f_M:"no"}).then ((response1) =>{
       console.log(response1.data);
      
    });
@@ -385,14 +385,14 @@ const RollData=()=>
   console.log("ID..."+ID+"status.."+status);
   if(status==="unsold")
   {
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/listings/updatetSaleStatus",{ListingId:ID,status:"sold"}).then ((response1) =>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/listings/updatetSaleStatus",{ListingId:ID,status:"sold"}).then ((response1) =>{
       console.log(response1.data);
      
    });
   }
   else if(status==="sold")
   {
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/listings/updatetSaleStatus",{ListingId:ID,status:"unsold"}).then ((response1) =>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/listings/updatetSaleStatus",{ListingId:ID,status:"unsold"}).then ((response1) =>{
       console.log(response1.data);
      
    });
@@ -403,14 +403,14 @@ const RollData=()=>
 const GetuserDeviceInfo=()=>
 {
   Item = JSON.parse(localStorage.getItem('dataItems'));
-  Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/GetuserDeviceInfo",{userId:Item["userId"]}).then((res)=>{
+  Axios.post("https://carpages-canada-mongodb.onrender.com/users/GetuserDeviceInfo",{userId:Item["userId"]}).then((res)=>{
     console.log(res.data);
     setdeviceList(res.data);
   });
 }
 const DeleteDevices_Browser=(e)=>
 {
-  Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/DeleteuserDeviceInfo",{Id:e}).then((res)=>{
+  Axios.post("https://carpages-canada-mongodb.onrender.com/users/DeleteuserDeviceInfo",{Id:e}).then((res)=>{
     console.log(res.data);
     GetuserDeviceInfo();
   });

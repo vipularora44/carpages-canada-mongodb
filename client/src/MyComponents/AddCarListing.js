@@ -44,14 +44,14 @@ export default function AddCarListing() {
     console.log("item:"+Item);
     setUserId(Item["userId"]);
     
-      Axios.get("https://carpages-canada-mongofrnt.onrender.com/users/isUserAuthenticated",{headers:{"x-access-token":Item["token"]},}).then((res)=>{
+      Axios.get("https://carpages-canada-mongodb.onrender.com/users/isUserAuthenticated",{headers:{"x-access-token":Item["token"]},}).then((res)=>{
         console.log(res);
         if(!res.data.auth)
         {
            navigate("/");
         }
        });
-       Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/getDealerDetails",{userId:Item["userId"]}).then((res)=>{
+       Axios.post("https://carpages-canada-mongodb.onrender.com/users/getDealerDetails",{userId:Item["userId"]}).then((res)=>{
         console.log(res.data);
         setuserData(res.data);
        });
@@ -81,16 +81,16 @@ console.log("STATE SAFETY"+myState.safety);
 let safety,assistance,lighting,infotainment,connectivity,comfort,convenience,exterior,security="";
 
  useEffect(()=>{
-  Axios.get("https://carpages-canada-mongofrnt.onrender.com/categories/makes").then((res)=>{
+  Axios.get("https://carpages-canada-mongodb.onrender.com/categories/makes").then((res)=>{
     console.log(res);
     setmakesList(res.data);
   });
 
-  Axios.get("https://carpages-canada-mongofrnt.onrender.com/categories/years").then((res1)=>{
+  Axios.get("https://carpages-canada-mongodb.onrender.com/categories/years").then((res1)=>{
     console.log(res1);
     setyearList(res1.data);
   });
-  /*Axios.get("https://carpages-canada-mongofrnt.onrender.com/listings/getListingId").then((res3)=>{
+  /*Axios.get("https://carpages-canada-mongodb.onrender.com/listings/getListingId").then((res3)=>{
     console.log("id Number"+JSON.stringify(res3.data[0]["MaximumValue"]));
     setgetlistingId(JSON.stringify(res3.data[0]["MaximumValue"]));
   });*/
@@ -319,7 +319,7 @@ const [vehexterior,setvehexterior] = useState([]);
  } 
  const GetModels=(e)=>
  {
-  Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/models",{makename:e}).then((res) =>{
+  Axios.post("https://carpages-canada-mongodb.onrender.com/categories/models",{makename:e}).then((res) =>{
     console.log(res.data );
     setmodelList(res.data);
   });
@@ -502,7 +502,7 @@ console.log("Engine"+myState.engine_type+"....Engine_size"+myState.engine_size);
     fd.append('vehicle_top_features',myState.vehicle_top_features);
     fd.append('sale_status',"unsold");
     
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/listings/insert_listing", fd ).then((res) =>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/listings/insert_listing", fd ).then((res) =>{
         console.log(res.data );
     
     });
@@ -547,7 +547,7 @@ console.log("Engine"+myState.engine_type+"....Engine_size"+myState.engine_size);
       
       
     }
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/listings/insert_listing", fd ).then((res) =>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/listings/insert_listing", fd ).then((res) =>{
         console.log(res.data );
     
     });

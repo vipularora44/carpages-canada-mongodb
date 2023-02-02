@@ -49,7 +49,7 @@ export default function SignUp (props)  {
      };
 
   useEffect(()=>{
-    Axios.get("https://carpages-canada-mongofrnt.onrender.com/users/getUsers").then((response) =>{
+    Axios.get("https://carpages-canada-mongodb.onrender.com/users/getUsers").then((response) =>{
       console.log(response.data);
     // setsignUp_Data(response.data); 
   });
@@ -106,7 +106,7 @@ export default function SignUp (props)  {
     formData.append('isVerified',"false");
     formData.append('user_status',"unblock");
   
-     Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/insertuser",formData).then ((response1) =>{
+     Axios.post("https://carpages-canada-mongodb.onrender.com/users/insertuser",formData).then ((response1) =>{
         console.log(response1);
         if(response1.data.insertId)
         {
@@ -132,7 +132,7 @@ export default function SignUp (props)  {
     formData.append('isVerified',"false");
     formData.append('user_status',"unblock");
     console.log("FORM DATA"+formData);
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/insertuser", formData).then ((response1) =>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/users/insertuser", formData).then ((response1) =>{
           console.log(response1);
          if(response1.data.insertId)
           {

@@ -36,7 +36,7 @@ export default function SignIn() {
   useEffect(()=>{
     Item = JSON.parse(localStorage.getItem('dataItems'));
     console.log("kidan");
-    Axios.get("https://carpages-canada-mongofrnt.onrender.com/users/signIn").then((res)=>{
+    Axios.get("https://carpages-canada-mongodb.onrender.com/users/signIn").then((res)=>{
       console.log(res);
 
       if(res.data.LoggedIn == true)
@@ -68,7 +68,7 @@ console.log("loginStatus..."+loginStatus);
  
   const login =()=>{
    // console.log("working"+email+password);
-     Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/signIn",{Email:email,passWord:password}).then(
+     Axios.post("https://carpages-canada-mongodb.onrender.com/users/signIn",{Email:email,passWord:password}).then(
        (res)=>{
         console.log(res.data);
      //   console.log(res.data.message+"***"+JSON.stringify(res.data.result[0].is_verified));

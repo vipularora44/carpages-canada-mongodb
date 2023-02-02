@@ -14,7 +14,7 @@ export default function VehicleYears() {
  
   const onChooseYears= (e)=>
   {
-    Axios.get("https://carpages-canada-mongofrnt.onrender.com/categories/years").then((response)=>{
+    Axios.get("https://carpages-canada-mongodb.onrender.com/categories/years").then((response)=>{
      console.log(response.data);
      setGetYears(response.data);
     })
@@ -52,19 +52,19 @@ export default function VehicleYears() {
   }
   const addYears =() => 
   {
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/create-years",{years_1:years}).then((response)=>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/categories/create-years",{years_1:years}).then((response)=>{
      console.log(response.data);
     })
   }
   const updateYears =() => 
   {
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/updateyears",{newyears:years,yearsId:selectedYears}).then((response)=>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/categories/updateyears",{newyears:years,yearsId:selectedYears}).then((response)=>{
      console.log(response.data);
     })
   }
   const deleteYears =() => 
   {
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/deleteyears",{yearsId:selectedYears}).then((response)=>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/categories/deleteyears",{yearsId:selectedYears}).then((response)=>{
       console.log(response.data);
      })
   }

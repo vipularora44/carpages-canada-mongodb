@@ -56,15 +56,15 @@ export default function MainVehicleSearch() {
     const SearchBarLocation={SearchBarLocation:query};
     localStorage.setItem("User_Choice_Location",JSON.stringify(SearchBarLocation));
     
-    Axios.get("https://carpages-canada-mongofrnt.onrender.com/categories/getprices").then((res)=>{
+    Axios.get("https://carpages-canada-mongodb.onrender.com/categories/getprices").then((res)=>{
       setprice(res.data);
       console.log(res.data);
       })
-      Axios.get("https://carpages-canada-mongofrnt.onrender.com/categories/makes").then((res1)=>{
+      Axios.get("https://carpages-canada-mongodb.onrender.com/categories/makes").then((res1)=>{
         setmakes(res1.data);
         console.log(res1.data);
       })
-        Axios.get("https://carpages-canada-mongofrnt.onrender.com/categories/popularcities").then((res2)=>{
+        Axios.get("https://carpages-canada-mongodb.onrender.com/categories/popularcities").then((res2)=>{
           setshowedCities(res2.data);
           console.log(res2.data);
      })
@@ -104,14 +104,14 @@ export default function MainVehicleSearch() {
                 }
 
   const showcities=()=>{
-    Axios.get("https://carpages-canada-mongofrnt.onrender.com/categories/onlycities").then((res2)=>{
+    Axios.get("https://carpages-canada-mongodb.onrender.com/categories/onlycities").then((res2)=>{
       setCities(res2.data);
       console.log(res2.data);
   })
   };
 
   const showmodels=(e)=>{
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/categories/models",{makename:e}).then((res)=>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/categories/models",{makename:e}).then((res)=>{
       setmodels(res.data);
 
   })

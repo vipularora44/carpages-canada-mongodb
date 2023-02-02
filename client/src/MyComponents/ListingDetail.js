@@ -56,22 +56,22 @@ export default function ListingDetail() {
     
      useEffect(()=>{
  
-            Axios.post("https://carpages-canada-mongofrnt.onrender.com/listings/getListingDetail",{ListingId:Listing_ID}).then((res)=>{
+            Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getListingDetail",{ListingId:Listing_ID}).then((res)=>{
               console.log(res.data);
               setMyvehiclePrice(res.data[0].price);
               setvehicledata(res.data);
             });
-            Axios.post("https://carpages-canada-mongofrnt.onrender.com/listings/getListingImages",{ListingId:Listing_ID}).then((res1)=>{
+            Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getListingImages",{ListingId:Listing_ID}).then((res1)=>{
               console.log(res1.data);
              setvehicleImages(res1.data);
              
             });
-            Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/getDealerDetails",{userId:Seller_ID}).then((res3)=>{
+            Axios.post("https://carpages-canada-mongodb.onrender.com/users/getDealerDetails",{userId:Seller_ID}).then((res3)=>{
               console.log(res3.data);
               setselleredata(res3.data);
               setBFM(res3.data[0].buy_from_home);
             });
-           Axios.post("https://carpages-canada-mongofrnt.onrender.com/listings/getmoreListings",{userId:Seller_ID,ListingId:Listing_ID}).then((res2)=>{
+           Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getmoreListings",{userId:Seller_ID,ListingId:Listing_ID}).then((res2)=>{
               console.log(res2.data);
               setmoreListings(res2.data);
             });
@@ -254,13 +254,13 @@ console.log("currentPos..."+currentPos);
    {
    const Item = JSON.parse(localStorage.getItem('dataItems'));
   
-    Axios.get("https://carpages-canada-mongofrnt.onrender.com/users/isUserAuthenticated",{headers:{"x-access-token":Item["token"]},}).then((res)=>{
+    Axios.get("https://carpages-canada-mongodb.onrender.com/users/isUserAuthenticated",{headers:{"x-access-token":Item["token"]},}).then((res)=>{
       
        console.log(res.data.auth);
         if(res.data.auth)
         {
           
-          Axios.post("https://carpages-canada-mongofrnt.onrender.com/watchlist/insertWatchList",{userId:Item["userId"],listing_id:Listing_ID}).then((res)=>{
+          Axios.post("https://carpages-canada-mongodb.onrender.com/watchlist/insertWatchList",{userId:Item["userId"],listing_id:Listing_ID}).then((res)=>{
             console.log(res.data);
 
            });
@@ -310,7 +310,7 @@ console.log("currentPos..."+currentPos);
       queryMake=val.make_name;
       queryModel=val.model_name;
     });
-    Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/sendQueryMessagePhone",{queryName:queryName,queryPhone_No:queryPhone_No,queryEmail:queryEmail,queryYear:queryYear,queryMake:queryMake,queryModel:queryModel}).then((res)=>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/users/sendQueryMessagePhone",{queryName:queryName,queryPhone_No:queryPhone_No,queryEmail:queryEmail,queryYear:queryYear,queryMake:queryMake,queryModel:queryModel}).then((res)=>{
       console.log(res.data);
      });
    }

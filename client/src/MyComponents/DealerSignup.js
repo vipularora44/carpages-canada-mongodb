@@ -81,7 +81,7 @@ export default function DealerSignup() {
            formData.append('buyFromHome',"no");
            formData.append('isVerified',"false");
            formData.append('user_status',"unblock");
-            Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/insertuser", formData ).then ((response1) =>{
+            Axios.post("https://carpages-canada-mongodb.onrender.com/users/insertuser", formData ).then ((response1) =>{
                console.log(response1);
             });
         }
@@ -102,7 +102,7 @@ export default function DealerSignup() {
             formData.append('buyFromHome',"no");
             formData.append('isVerified',"false");
             formData.append('user_status',"unblock");
-             Axios.post("https://carpages-canada-mongofrnt.onrender.com/users/insertuser", formData ).then ((response1) =>{
+             Axios.post("https://carpages-canada-mongodb.onrender.com/users/insertuser", formData ).then ((response1) =>{
                 console.log(response1);
              });
           }
