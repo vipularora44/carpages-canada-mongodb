@@ -1,0 +1,71 @@
+.buyFromHome-mainContainer
+{
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  
+}
+.buyFromHome1
+{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    padding: 15px;
+}
+.homeIconSection
+{
+ height: 51px;
+ width: 51px;
+ margin-right: 16px;
+ padding: 10px;
+ background-color: green;
+ border-radius: 7px;
+ justify-content: center;
+ 
+}
+.homeIconSection-img
+{
+    color: #f2f2f2;
+    height: 2rem;
+    width: 2rem;
+}
+.buyFromHome-heading
+{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.buyFromHome-heading-text
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 250;
+    margin: 4px 0px;
+    line-height: 95%;
+    word-spacing:-2px;
+}
+.buyFromHome-a
+{
+  margin-left: 25px;
+  margin-top: 5px;
+}
+.buyFromHome-findout
+{
+  border: 1px solid green;
+  font-size: 13px;
+  padding: 10px 45px;
+  border-radius: 5px;
+  color: green;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.buyFromHome-findout:hover
+{
+    transition-delay: 0.2s;
+    background-color: green;
+    color: white;
+
+}

@@ -1,0 +1,618 @@
+.main-container-sub
+{
+    width: 100%;
+    margin: 0 auto;
+    flex: 1 1 auto;
+    max-width: 1380px;
+    min-height: 69vh;
+    display: flex;
+    flex-wrap: wrap;
+    transition-property: all;
+    transition-duration: 10s;
+    transition: all 10s;
+}
+.veh-details-main-container
+{
+    padding: 0 16px;
+    flex: 0 0 auto;
+    width: 66.6666666667%;
+    margin-bottom: 0;
+    margin-top: 16px;
+}
+.veh-details-sub-container
+{
+    
+    box-shadow: 0 2px 12px -2px rgb(0 0 0 / 15%);
+    margin-bottom: 16px;
+    color: #333;
+    text-shadow: none;
+    border-radius: 4px!important;
+    background: white;
+}
+.dealer-details-container
+{
+    padding: 0 16px;
+    flex: 0 0 auto;
+    margin-top: 16px;
+    width: 33.3333333333%;
+    margin-bottom: 0;
+   
+}
+.dealer-details-sub-container
+{
+    
+    box-shadow: 0 2px 12px -2px rgb(0 0 0 / 15%);
+    margin-bottom: 16px;
+    color: #333;
+    text-shadow: none;
+    border-radius: 4px!important;
+    background: white;
+}
+.veh-title-container
+{
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    align-items: center;
+    padding: 16px 32px;
+}
+.sr-pad1632
+{
+    padding: 16px 32px;
+}
+.veh-title-sect
+{
+    display: flex;
+    flex:0 0 auto;
+    width:auto;
+    flex-direction: column;
+    
+}
+.bt-brd
+{
+    border-bottom: 1px solid  lightgray;
+}
+.veh-title-heading1
+{
+  color:rgb(104, 101, 101);
+  font-weight: 700;
+  width: 100%;
+}
+.veh-title-heading2
+{
+    color:gray;
+    font-size: 20px;
+    font-weight: 400;
+    width: 100%;
+}
+.watch-veh
+{
+    margin-left: auto;
+}
+.watch-veh:hover
+{
+    background-color: lightgray;
+}
+.watch-veh-lnk
+{
+ text-decoration: none;
+ color:rgb(218, 212, 212);
+}
+.watch-veh-lb
+{
+    border-radius:4px;
+    font-size: 13px;
+    border:1px solid lightgray;
+    padding: 5px 10px;
+    background: rgb(244, 242, 242);
+    font-weight: 600;
+}
+.watch-veh-lb-2
+{
+    border-radius:8px;
+    font-size: 13px;
+    border:1px solid lightgray;
+    padding: 5px 20px;
+    background: rgb(198, 196, 196);
+    font-weight: 600;
+}
+
+.social-ic
+{
+    list-style: none;
+    
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+     margin-top: 8px;
+    padding: 0;
+    align-self: flex-end;
+}
+.social-ic-it
+{
+    margin-left: 16px;
+}
+.jc-spbt
+{
+justify-content: space-between;
+}
+.back-rs
+{
+    text-decoration: none;
+    font-size: 15px;
+    border:1px solid transparent;
+    padding: 5px 10px;
+    color: inherit;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.back-rs:hover
+{   font-size: 15px;
+    box-shadow: 0 2px 12px -2px rgb(0 0 0 / 15%);
+    border:1px solid transparent;
+    color: inherit;
+    font-weight: 600;
+    background-color:rgb(236, 233, 233) ;
+    border-radius: 5px;
+}
+.img-slide-main
+{
+    margin-bottom: 16px;
+    position: relative;
+}
+.img-slide-sub-main
+{
+    width:80%;
+    position: relative;
+    margin:0 auto;
+    padding: 32px 0;
+   
+}
+.slider-img-src
+{
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    overflow:hidden;
+    object-fit:contain;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 5px;
+}
+.slider-bt-ic
+{    position: absolute;
+     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.slider-bt-ic-left
+{
+    font-size: 35px;
+    margin-left:20px ;
+}.slider-bt-ic-right
+{
+    font-size: 35px;
+    margin-right:20px ;
+}
+
+.img-veh-list-main
+{
+    background: rgb(246, 245, 245);
+    width: 92%;
+    margin: 0 auto;
+    padding:8px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+.img-veh-list
+{
+    display:flex;
+    flex:0 0 auto;
+   
+    flex-direction:row;
+    overflow:hidden;
+    overflow-x:scroll;
+    background: white;
+}
+.images-veh-list
+{
+    padding:4px 4px;
+    width:150px;
+    height:120px;
+    object-fit:contain;
+    border-radius: 10px;
+}
+.img-veh-list::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track 
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }*/
+   
+  /* Handle */
+  .img-veh-list::-webkit-scrollbar-thumb {
+    background: lightgray; 
+    border-radius: 10px;
+  }
+  .veh-details-km-price-head
+  {
+    display: flex;
+    justify-content: space-between;
+    background-color:rgb(236, 229, 229);
+    padding: 32px;
+  }
+  .veh-detail-quotes
+  {
+    padding: 16px;
+    background: white;
+    border-radius: 4px;
+  }
+  .veh-detail-quotes-payment
+  {
+    color: #4a90e2;
+    text-decoration:none;
+    
+  }
+
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: lightgray;;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: red;;
+  }
+  .veh-detail-quotes-insurance
+  {
+    padding: 8px 16px;
+    text-align: center;
+    color: white;
+    
+    border-radius: 4px;
+    background-color:rgb(18, 112, 179) ;
+    text-decoration:none;
+  }
+  .veh-detail-quotes-payment:hover
+  {
+    text-decoration:none;
+    color: #4a90e2;
+  }
+   .veh-detail-quotes-insurance:hover
+  {
+    text-decoration:none;
+    color: white;
+  }
+  .veh-detail-vin
+  {
+    display: flex;
+    list-style: none;
+    margin-bottom: 16px;
+    padding: 0;
+  }
+  .veh-primary-feature
+  {
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-wrap:wrap;
+  }
+  .veh-primary-feature-item
+  {
+    display: flex;
+    justify-content: space-between;
+    padding:16px;
+    border-radius: 5px;
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color:rgb(236, 229, 229);
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: calc((100% - 20px) / 2);
+    max-width: calc(( 100% - 20px ) / 2 );
+  }
+  .features_input
+  {
+    display: none;
+  }
+.veh-feature-list
+{
+    display: block;
+    
+    padding:"8px 0";
+    
+}
+  .features_label
+  { 
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 16px;
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+.features_label:hover
+{
+    background:rgb(236, 229, 229) ;
+}
+  .features_label::after
+  {
+    width: 20px;
+    height: 20px;
+    right: 20px;
+    background-image: url('../images/chevron-down-outline.svg');
+    content:"";
+    transition: transform .2s ease-in-out;
+  }
+  .features_input:checked ~ .features_label::after
+{
+    transform: rotate(-90deg);
+}
+.features_input:checked ~ .veh-feature-list
+{
+    display: none;
+   
+}
+.veh-feature-ico
+{
+    font-size: 30px;
+    color:#4a90e2 ;
+    padding-bottom: 3px;
+    margin-right: 8px;
+}
+#navbar {
+  background-color:rgb(79, 160, 79);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  z-index: 1;
+  display: block;
+  transition: top 0.3s;
+}
+
+
+
+
+.nav-bt
+{
+  display: flex;
+  border:none;
+  color:white;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 600;
+  height: 100%;
+  padding-top: 16px;
+  margin-right: 20px;
+  border-bottom: 5px solid green;
+}
+
+.nav-bt:hover
+{
+  color:inherit;
+}
+.social-ic-nav
+{
+  width: 22px;
+  height: 22px;
+  color: white;
+  margin-right: 20px;
+}
+.social-ic-nav1
+{
+  width: 22px;
+  height: 22px;
+  color: white;
+}
+.make-yours
+{
+  border-radius:4px;
+  padding:8px 24px;
+  background:green;
+  color:white;
+  font-weight: 700;
+  border:none;
+  font-size:18px;
+}
+.make-yours:hover
+{
+  background:white; 
+  color:green;
+}
+.veh-detail-lnk
+{
+  text-decoration: none;
+  color: #4a90e2;
+}
+.veh-detail-lnk:hover
+{
+  text-decoration:underline;
+  color: #4a90e2;
+}
+.topBar-lnk
+{
+  z-index: 2;
+  color:white;
+  text-decoration:none;
+}
+.topBar-lnk:hover
+{
+  background-color:transparent ;
+  
+}
+.lst-dealer-cont-inp
+{
+  outline: none;
+  border:1px solid transparent ;
+  width: 100%;
+  padding: 5px 16px;
+  font-size: 14px;
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.lst-dealer-cont-inp:focus
+{
+  border:1px solid green ;
+}
+.lst-dealer-cont-txtar
+{
+  outline: none;
+  border:1px solid transparent ;
+  width: 100%;
+  padding: 5px 16px;
+  font-size: 14px;
+  min-height: 100px;
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.lst-dealer-cont-txtar:focus
+{
+  border:1px solid green ;
+}
+.lst-dealer-cont-inp::placeholder .lst-dealer-cont-txtar::placeholder
+{
+  color:#333
+}
+.seller-quick-Links
+{
+  text-decoration: none;
+  width: 33.333333%;
+  font-size: 14px;
+  color: #233ab8;
+  border: 1px solid transparent;
+  padding: 5px 10px;
+  font-weight: 600;
+}
+.seller-quick-Links:hover
+{
+  background-color: #c8d6e7;
+}
+.bd-rad
+{
+  border-radius: 8px;
+  border: 1px solid #5cb35d;display: flex;flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  height:170px
+}
+.bd-rad1
+{
+  border-radius: 8px;
+  border: 1px solid #5cb35d;display: flex;flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+.bfm-sect
+{
+  padding:16px;
+  display:flex;
+  flex-flow:row;
+  
+}
+.buy-frm-hm-see-details
+{
+  padding:4px 16px;
+  color:rgb(23, 179, 23);
+  border: 1px solid transparent;
+  font-size: 13px;
+  margin-left: auto;
+  display: flex;
+  flex: 0 0 auto;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.buy-frm-hm-see-details:hover
+{
+  padding:4px 16px;
+ 
+  color:rgb(16, 116, 16);
+  border: 1px solid transparent;
+  font-size: 13px;
+  margin-left: auto;
+}
+.blur-sect
+{
+ 
+    height: 51px;
+    width: 100%;
+    margin-top: -51px;
+    opacity: 1;
+    position: relative;
+    background: linear-gradient(180deg,rgba(251,251,251,0) 0,#fff 70%);
+   
+}
+.buy-frm-hm-hide-details
+{
+  padding:4px 16px;
+  color:gray;
+  border: 1px solid transparent;
+  font-size: 13px;
+  margin-left: auto;
+  display: flex;
+  flex: 0 0 auto;
+  border-radius: 4px;
+  font-weight: 600;
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+}
+.buy-frm-hm-hide-details:hover
+{
+  padding:4px 16px;
+  color:rgb(233, 74, 74);
+  border: 1px solid transparent;
+  font-size: 13px;
+}
+.paymnet-inp
+{
+  background-color: white;
+}
+.paymnet-inp:focus
+{
+  background-color: #d5d5d8;
+}
+
+.paymnet-inp2
+{
+  background-color: rgb(241, 238, 238);
+}
+.paymnet-inp2:focus
+{
+  background-color: lightgray;
+}
+.paymnet-inp2:hover
+{
+  box-shadow: 0 2px 12px -2px rgb(0 0 0 / 1);
+}
+.payment-structure-main
+{
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  opacity: 1;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(22px);
+}

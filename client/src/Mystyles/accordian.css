@@ -1,0 +1,31 @@
+.acc-main
+{
+    border: none;
+}
+.acc-bt
+{  
+    display: flex;
+    flex: 1 1 auto;
+    box-shadow: none;
+    background-color: black;
+}
+.acc-bt::after
+{
+    width:25px;
+    height:25px;
+   
+    content: "";
+    margin-left: auto;
+    background-image: url('../images/keyboard_arrow_down_white_24dp.svg');
+    transform: rotate(-90deg);
+    transition: transform .2s ease-in-out;
+}
+
+
+.acc-bt:not(.collapsed):after
+{
+    background-image: url('../images/keyboard_arrow_down_white_24dp.svg');
+    
+    transform: rotate(-180deg);
+    transition: transform .2s ease-in-out;
+}

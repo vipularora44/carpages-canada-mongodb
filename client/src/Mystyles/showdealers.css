@@ -1,0 +1,413 @@
+.shd-dsp
+{
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+}
+.shd-fd
+{
+    flex-direction: column;
+}
+.shd-maincont
+{
+  
+    background-color:lightgray ;
+    flex:1 1 auto;
+    min-height: 72.5vh;
+}
+.shd-subcont
+{
+    width:100%;
+    max-width: 1280px;
+    display: flex;
+    flex: 1 1 auto;
+    margin: 0 auto;
+    flex-direction: row;
+}
+.shd-pad-16
+{
+    padding: 13px;
+}
+.shd-sidemenu
+{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+   }
+.shd-Dealers
+{
+    width: 75%;
+    flex:0 0 auto;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+.shd-sidemenu-lbl
+{
+   font-size: 15px;
+   font-weight: 700;
+   color: gray;
+   letter-spacing: 1px;
+}
+.shd-span-ft
+{
+    font-size: 15px;
+}
+.shd-h-fd
+{
+    font-weight: 200;
+    
+}
+.shd-hr
+{
+    margin:0 -13px 0 -13px;
+}
+.shd-rst-filter
+{
+  text-decoration: none;
+  font-size: 14px ;
+  font-weight: 600;
+}
+.shd-rst-filter:hover
+{
+    text-decoration: none;
+}
+.shd-inp
+{
+    border:2px solid transparent;
+    background-color: #f8f8f9;
+    border-radius: 4px;
+    padding: 5px 8px;
+}
+.shd-inp:focus
+{
+    outline: none;
+    border:2px solid rgb(10, 174, 10);
+}
+.shd-sidemenu-opt
+{
+    padding: 8px 0;
+    
+}
+.shd-bt-loc
+{
+    border: 1px solid lightgray;
+    background-color: white;
+    border-radius: 4px;
+    margin-left: auto;
+    padding: 5px 20px;
+    color: gray;
+    transition: 0.25s;
+}
+.shd-bt-loc:hover
+{
+    box-shadow: 0 2px 12px -2px rgb(0 0 0 / 15%);
+    background-color: lightgray;
+}
+.shd-bt-loc:focus
+{
+    border: 1px solid green;
+}
+
+.ref-srch
+{
+    width:100%;
+    color: white;
+    background-color: rgb(12, 173, 12);
+    border-radius: 4px;
+    padding: 12px 0;
+    margin-top:8px;
+    border: 1px solid transparent;
+    font-weight: 700;
+}
+.shd-sel-km
+{
+    border:none;
+    padding:4px 8px;
+    outline: none;
+    margin: 0 10px;
+    background: #fff;
+    border-radius:2px;
+}
+.shd-mg-bott
+{
+    margin-bottom: 10px;
+}
+.shd-pos-st
+{   background-color: white;
+    
+    position: sticky;
+    top: 0;
+    margin-bottom: 16px;
+    overflow-y: scroll;
+}
+.shd-chl-ico
+{
+    color: rgb(17, 160, 17);
+    font-size: 17px;
+}
+.shd-rad-ico
+{
+    color: lightgray;
+    font-size: 17px;
+}
+.shd-inv-sect
+{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+}
+.shd-bt-inv
+{
+    border:2px solid transparent;
+    border-radius: 4px;
+    margin-right: 3px;
+    background-color: #f8f8f9;
+}
+.shd-bt-inv1
+{
+    border:2px solid green;
+    border-radius: 4px;
+    margin-right: 3px;
+    background-color: #f8f8f9;
+}
+.shd-Dealers-sect
+{
+    flex:0 0 auto ;
+    background: white;
+}
+.shd-Dealers-sect-sub
+{
+    flex-flow: column;
+}
+.shd-Dealers-header
+{
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: column;
+    padding: 16px;
+    position: sticky;
+    background-color: #f8f8f9;
+    top: 0;
+    box-shadow: 0 2px 12px -2px rgb(0 0 0 / 15%);
+}
+.shd-Dealers-header-h
+{
+    font-weight: 700;
+    border-left: 5px solid green;
+    letter-spacing: 1px;
+    overflow: hidden;
+    padding: 0 5px;
+    margin-bottom: 20px;
+}
+.shd-Dealers-header-sect
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.shd-filter-list
+{
+    padding: 3px 8px;
+    outline: none;
+    border: 1px solid lightgray;
+    background-color: #f8f8f9;
+    border-radius: 4px;
+    transition: 0.25s;
+    font-weight: 500;
+    font-size: 14px;
+}
+.shd-filter-list:hover
+{
+box-shadow: 0 2px 12px -2px rgb(0 0 0 / 15%);
+}
+.shd-delaer-list-sect
+{
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: row;
+    padding:16px;
+    border-bottom: 1px solid lightgray;
+
+}
+.shd-delaer-list-sect-2
+{
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: row;
+    padding:16px;
+    
+
+}
+.shd-deal-pic
+{
+    
+    margin-right: 16px;
+}
+
+.shd-deal-nm-hd-lk
+{
+    text-decoration: none;
+    margin-bottom: 0;
+    color: #3b85f4;
+}
+.shd-deal-nm-hd-lk:hover
+{
+    text-decoration: underline;
+    color: #3b85f4;;
+}
+.shd-deal-nm-city-nm
+{
+    margin-top: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color:gray;
+}
+.shd-phone-ico
+{
+    color: white;
+    margin-right: 6px;
+    font-size: 14px;
+    width: auto;
+    height: auto;
+    padding: 3px;
+    vertical-align: middle;
+}
+.shd-bt-cont
+{
+    display: flex;
+    flex: 0 0 auto;
+    font-size: 15px;
+    background-color: #2865c2;
+    border:1px solid transparent;
+    color:white;
+    border-radius: 4px;
+    padding: 3px 9px;
+    align-items: center;
+    justify-content: center;
+}
+.shd-buy-frm-home
+{
+    margin-left: auto;
+   
+
+}
+.shd-vinv-icon
+{
+    color:#3b85f4; ;
+}
+.shd-house
+{
+    color: white;
+    width: 24px;
+    height: 24px;
+    font-weight: 900;
+    font-size: 32px;
+}
+.buy-frm-home-lnk
+{
+    display: flex;
+    flex:0 0 auto;
+    height: 60px;
+    
+    text-decoration: none;
+    color: rgb(19, 202, 19);
+  
+}
+.buy-frm-home-lnk:hover
+{
+    text-decoration: underline;
+    color: rgb(19, 202, 19);
+}
+.shd-buy-frm-home-sect
+{
+    display:flex;
+
+    padding: 0 12px;
+    height: 100%;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(19, 202, 19);
+}
+.shd-buy-hm-lnk
+{
+    font-size: 13px;
+    height: 100%;
+    font-family: Proxima,"Helvetica Neue",sans-serif;
+    border: 1px solid rgb(19, 202, 19);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.shd-buy-hm-lnk-sect
+{
+    height: 50%;
+    padding: 3px 8px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.shd-buy-hm-lnk-sect1
+{
+    height: 50%;
+    width: 100%;
+    display: inline-flex;
+    border-top: 1px solid rgb(19, 202, 19);
+    align-items: center;
+    justify-content:space-between;
+    flex-flow: row;
+    text-align: center;
+}
+.pagebuttons
+{
+    width: 50%;
+    overflow: hidden;
+    list-style: none;
+    height: 40px;
+    display: flex;
+    margin:0 auto;
+    padding:10px 0 0 0;
+    text-align: center;
+    justify-content: center;
+}
+a:not([href]):not([class])
+{
+    color: blue;
+    text-decoration: none;
+}
+a:not([href]):not([class]):hover 
+{
+    color: white;
+    text-decoration: underline;
+}
+
+.pagebuttons a
+{
+    padding:3px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 8px;
+    text-align: center;
+    color:blue;
+    
+}
+.pagebuttons a:hover
+{
+    color: white;
+    background-color:rgb(19, 89, 228) ;
+    
+}
+.pageactive a:not([href]):not([class])
+{
+    color: white;
+    background-color:rgb(19, 89, 228) ;
+}
+.shd-deal-info
+{
+    display: flex;
+    width:50% ;
+    flex-direction: column;
+}

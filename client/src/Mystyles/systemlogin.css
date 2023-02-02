@@ -1,0 +1,63 @@
+.al-main-cont
+{
+    background-color: rgb(250, 244, 244);
+}
+.al-sub-cont
+{
+    width: 100vw;
+    height: 100vh;
+}
+.al-form-sect
+{
+    max-width: 400px;
+    background-color: white;
+    
+    padding: 20px;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    border-radius: 8px;
+    margin: 0 auto 0 auto;
+    box-shadow: 0px 2px 20px -5px rgb(0 0 0 / 2);
+}
+.al-sectinp
+{
+    flex-wrap: wrap;   
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.al-sectinp2
+{
+    margin-bottom: 15px;
+    justify-content: space-around; 
+}
+.al-frm-inp
+{
+    width: 100%;
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 0.4rem 1rem;
+}
+.sd-pd
+{
+    padding-top: 10rem;
+}
+.al-lb-st
+{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.al-log-ban
+{
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+}
+.log-bans-st
+{
+    height:30px;
+    width:150px;
+}

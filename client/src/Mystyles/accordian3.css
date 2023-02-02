@@ -1,0 +1,58 @@
+.container
+{
+    width: 100%;
+    max-width: 80rem;
+    margin:0 auto;
+    padding: 0 1.5rem;
+}
+.accordian-item
+{
+    background-color: aqua;
+    border-radius: .4rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.accordian-link
+{
+    font-size: 1.6rem;
+    color: pink;
+    text-decoration: none;
+    background-color:cadetblue;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.accordian-link::after
+{
+    width: 20px;
+    height: 20px;
+    right: 20px;
+    color: aqua;
+    background-image: url('../images/chevron-down-outline.svg');
+    content:"";
+    transition: transform .2s ease-in-out;
+}
+.accexample
+  {
+    display: block;
+  }
+.answer
+{
+    max-height: 0;
+    
+    overflow: hidden;
+    position: relative;
+    background-color: darkorange;
+}
+
+.accexample:checked ~ .answer
+{
+    max-height: 50rem;
+}
+.accexample:checked ~ .accordian-link::after
+{
+    color: pink;
+    transform: rotate(-90deg);
+}

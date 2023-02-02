@@ -1,0 +1,210 @@
+
+.signup-bg
+{ 
+    background-image: url('../images/lo-si.jpg');
+    background-position: center;
+    background-size: cover;
+   
+}
+.fade-bg
+{
+    background-color: rgb(248 248 249 / 60%);
+}
+.signup-container
+{
+    
+    display:flex;
+    min-height: 82vh;
+    width: 100%;
+    padding-top: 3vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signup-row
+{
+    width: 100%;
+    max-width:600px;
+    margin:0 auto;
+}
+.align-center
+{
+    text-align: center;
+    
+}
+.signup-banner
+{
+    flex: 0 0 auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.col-small
+{
+    padding: 20px;
+}
+.form-signup-cont
+{
+    background-color: white;
+    padding: 20px;
+    
+    display: flex;
+    border-radius: 6px; 
+    flex-direction: column;
+}
+.inpStyle
+{
+  width:100%;
+  border:1px solid lightGray;
+  border-radius:4px;
+  padding: 0.3em 1em;
+  outline:none;
+}
+.signup-in-field
+{
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    }
+.signup-up-image
+{
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    
+}
+.in
+{
+    
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow,transform;
+  transition-property: box-shadow;
+  
+}
+.in:hover
+{
+
+    box-shadow: 0 0 8px lightgray;
+   
+}
+.et-pass
+{
+    
+    justify-content: space-between;
+}
+.signup-form-cont
+{
+   
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.cardd
+{
+    
+    padding: 20px;
+}
+.card-muted
+{
+    padding: 20px;
+    border-radius: 4px;
+}
+.signup-fields
+{
+    margin-bottom: 4px;
+}
+.upload-img
+{
+    display: none;
+}
+.img-upl-lb 
+{
+    color: white;
+    background-color: blueviolet;
+    border-radius: 4px;
+    padding:5px 12px;
+    cursor:pointer;
+}
+.disp-image
+{
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    align-items: center;
+  
+}
+.mg-tp
+{
+    margin-top:30px;
+}
+.mg-lft
+{
+  margin-left: 30px;
+
+}
+.my-modal
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    z-index: 1060;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+}
+.my-modal-dialog
+{
+    
+    max-width:300px;
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - 3.5rem);
+    margin: 1.75rem auto;
+    pointer-events: none;
+}
+.sup-field-2
+{
+   display: flex;
+   flex: 0 0 auto;
+   flex-flow: row;
+   justify-content: space-between;
+   margin-bottom: 12px;
+}
+.img-pic
+{
+    color: white;
+    background-color: blueviolet;
+    border-radius: 4px;
+    padding:5px 10px;
+    cursor:pointer;
+}
+.province-sel
+{
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    cursor:pointer;
+    outline: none;
+    color: lightgray ;
+    border: 1px solid lightGray;
+    width: 100%;
+}
+.province-sel1
+{
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    cursor:pointer;
+    outline: none;
+    border: 1px solid lightGray;
+    width: 100%;
+}
+.inp-fields-lab
+{
+    margin-bottom:3px;
+    font-size:15px;
+    color:lightslategray;
+
+}

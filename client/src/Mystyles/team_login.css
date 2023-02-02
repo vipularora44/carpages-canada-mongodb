@@ -1,0 +1,122 @@
+
+.login-bg
+{ 
+    background-image: url('../images/lo-si.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+.tl-inpStyle
+{
+    width:100%;
+    border:1px solid lightGray;
+    border-radius:4px;
+    padding: 0.3em 1em;
+    outline:none;
+    
+
+}
+.tl-inpStyle:focus
+{
+    outline:2px solid rgb(14, 173, 14);
+    background-color: aliceblue;
+}
+.fade-bg-2
+{
+    background-color: rgb(248 248 249 / 60%);
+}
+.fade-bg
+{
+    background-color: rgb(248 248 249 / 60%);
+}
+.login-container
+{
+    
+    display:flex;
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 15vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tl-login-row
+{
+    width: 100%;
+    max-width:700px;
+    margin:0 auto;
+}
+.align-center
+{
+    text-align: center;
+    
+}
+.tl-login-banner
+{
+    flex: 0 0 auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.col-small
+{
+    padding: 20px;
+}
+.tl-form-login-cont
+{
+    background-color: white;
+    padding: 32px;
+    display: flex;
+    border-radius: 6px; 
+    flex-direction: column;
+}
+.fields
+{
+    flex:1 1 auto;
+    width: calc(100% /2 - 20px);
+}
+.login-in-field
+{
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.et-pass
+{
+    display: flex;
+    flex:1 1 auto;
+    justify-content: space-between;
+}
+.tl-log-form-cont
+{
+    display: flex;
+    flex:0 0 auto;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+.cardd
+{
+    
+    padding: 20px;
+}
+.card-muted
+{
+    padding: 20px;
+    border-radius: 4px;
+}
+.details-alert
+{
+    background-color: #f7d8d8;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    padding: 5px;
+    color: rgb(249, 107, 107);
+}
+.details-alert-p
+{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.75rem;
+}

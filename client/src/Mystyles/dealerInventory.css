@@ -1,0 +1,15 @@
+.deal-sect-pos
+{   top: 0;
+    position: sticky;
+    overflow-y: scroll;
+    max-height: 100vh;
+}
+.refine-results-btn
+{
+  padding: 3px 16px;
+  color: white;
+  font-weight:"600";
+  border: 1px solid transparent;
+  background-color: #00ab00;
+  border-radius: 4px;
+}

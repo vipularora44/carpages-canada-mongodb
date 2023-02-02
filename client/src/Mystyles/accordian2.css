@@ -1,0 +1,54 @@
+.container
+{
+    width: 100%;
+    max-width: 80rem;
+    margin:0 auto;
+    padding: 0 1.5rem;
+}
+.accordian-item
+{
+    background-color: aqua;
+    border-radius: .4rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.accordian-link
+{
+    font-size: 1.6rem;
+    color: pink;
+    text-decoration: none;
+    background-color:cadetblue;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+}
+.i-open 
+{
+    color: purple;
+    padding: .25rem;
+}
+.i-close
+{
+    color: purple;
+    padding: .25rem;
+   
+    display: none;
+}
+.answer
+{
+    max-height: 0;
+    overflow: hidden;
+    position: relative;
+    background-color: darkorange;
+}
+.accordian-item:target .answer {
+    max-height: 20rem ;
+}
+.accordian-item:target .i-open {
+    display: none;
+}
+.accordian-item:target .i-close {
+    display: block;
+}

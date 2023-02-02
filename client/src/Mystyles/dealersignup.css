@@ -1,0 +1,255 @@
+
+.d-signup-bg
+{ 
+    background-image: url('../images/lo-si.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+.d-fade-bg
+{
+    background-color: rgb(248 248 249 / 60%);
+}
+.d-signup-container
+{
+    
+    display:flex;
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 3vh;
+    align-items: center;
+    flex-direction: column;
+}
+.d-disp-fx0
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex:0 0 auto;
+}
+.d-disp-fx1
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex:1 1 auto;
+}
+.d-signup-row
+{
+    width: 100%;
+    max-width:600px;
+    margin:0 auto;
+}
+.d-align-center
+{
+    text-align: center;
+    
+}
+.d-signup-banner
+{
+    flex: 0 0 auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.d-col-small
+{
+    padding: 20px;
+}
+.d-form-signup-cont
+{
+    background-color: white;
+    padding: 20px;
+    
+    display: flex;
+    border-radius: 6px; 
+    flex-direction: column;
+}
+.d-inpStyle
+{
+  width:100%;
+  border:1px solid lightGray;
+  border-radius:4px;
+  padding: 0.3em 1em;
+  outline:none;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: lightgray;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: lightgray;;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: red;;
+  }
+.d-signup-in-field
+{
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    }
+
+.d-in
+{
+    
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow,transform;
+  transition-property: box-shadow;
+  
+}
+.d-in:hover
+{
+
+    box-shadow: 0 0 8px lightgray;
+   
+}
+.d-et-pass
+{
+    
+    justify-content: space-between;
+}
+.d-signup-form-cont
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex:0 0 auto;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.d-cardd
+{
+    
+    padding: 20px;
+}
+.d-card-muted
+{
+    padding: 20px;
+    border-radius: 4px;
+}
+.d-signup-fields
+{
+    width:calc( 100% / 2 - 10px);
+    margin-bottom: 4px;
+}
+.d-signup-prov
+{
+    width:calc( 29.5% - 5px); 
+    margin-bottom: 4px; 
+}
+.d-signup-contact
+{
+    width:calc( 26% - 5px); 
+    margin-bottom: 4px; 
+}
+.d-signup-street
+{
+    width:calc( 48% - 5px); 
+    margin-bottom: 4px;
+}
+.d-signup-addres-fields
+{
+    width:calc( 40% - 5px);
+    margin-bottom: 4px;
+}
+.d-signup-sm-fields
+{
+    width:calc( 19% - 5px);
+    margin-bottom: 4px;
+}
+.d-signup-md-fields
+{
+    width:calc( 21.5% - 5px);
+    margin-bottom: 4px;
+}
+.d-signup-md2-fields
+{
+    width:calc( 29% - 5px);
+    margin-bottom: 4px;
+}
+.d-mg-rt10
+{
+    margin-right: 10px;
+}
+.d-upload-img
+{
+    display: none;
+}
+.d-img-upl-lb 
+{
+    color: white;
+    background-color: blueviolet;
+    border-radius: 4px;
+    padding:5px 10px;
+    cursor:pointer;
+}
+
+.d-mg-tp
+{
+    margin-top:30px;
+}
+.d-mg-lft
+{
+  margin-left: 9px;
+}
+.d-my-modal
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    z-index: 1060;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+}
+.d-my-modal-dialog
+{
+    
+    max-width:300px;
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - 3.5rem);
+    margin: 1.75rem auto;
+    pointer-events: none;
+}
+.d-cat-name-inp
+{
+    display: flex;
+    flex: 0 0 auto;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.d-select-inp
+{
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    cursor:pointer;
+    outline: none;
+    color: lightgray ;
+    border: 1px solid lightGray;
+    width: 100%;
+}
+.d-select-inp2
+{
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    cursor:pointer;
+    outline: none;
+    border: 1px solid lightGray;
+    width: 100%;
+}
+
+
+.preview-logo
+{
+    width:200px;
+    height:120px;
+}

@@ -1,0 +1,266 @@
+.usp-main
+{
+    background-color: lightgray;
+    width: 100%;
+    min-height: 70vh;
+}
+.usp-sub-cnt
+{
+    width: 100%;
+    margin:0 auto 0 auto;
+    max-width: 1280px;
+   
+    padding: 16px 0px;
+}
+.usp-sub-cnt1
+{
+    display: flex;
+    flex: 1 1 auto;
+   
+}
+.usp-side-menu
+{
+    width: 25%;
+    padding:0 8px ;
+}
+.usp-bg-white
+{
+    background-color: white;
+    border: 1px solid rgb(184, 181, 181);
+}
+.usp-pad
+{
+    padding: 16px;
+}
+.usp-clr-bl
+{
+    color: black;
+    margin-right:8px;
+    font-size: 17px;
+}
+.u-watch
+{
+    margin-bottom: 0;
+    font-size: 14px;
+}
+.clr-green
+{
+    color: rgb(11, 194, 11);
+}
+.clr-graay
+{
+    background-color: lightgray;
+    padding: 5px 0;
+}
+.usp-lnk
+{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+}
+.usp-user-sect
+{
+  display: flex;
+  flex-direction: column;
+  width:75%;
+  padding:0 8px ;
+
+}
+.mg-bot-big
+{
+    margin-bottom: 10rem;
+}
+.usp-sidenav-hed
+{
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.usp-ct-sect-h
+{
+  font-weight: 100;
+ 
+}
+.usp-sidenav-lst
+{
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+.alg-txt
+{
+  text-align: center;
+}
+.usp-sidenav-lst-item-lnk
+{
+    text-decoration: none;
+    color: black;
+}
+.usp-sidenav-lst-item
+{
+    border-top: 1px solid lightgray;
+    padding: 8px 16px;
+}
+
+.usp-sidenav-lst-item-1
+{
+    border-left: 5px solid green;
+    border-top: 1px solid lightgray;
+    padding: 8px 11px;
+    background-color: rgb(235, 229, 229);
+}
+.mg-bot
+{
+    margin-bottom: 16px;
+}
+.mg-lft-small
+{
+    margin-right: 5px;
+}
+.usp-sect-like
+{
+    margin:0 16%;
+    border: 1px solid grey;
+   
+}
+.but-like
+{
+    border: 1px solid transparent;
+    opacity: .5;
+    cursor: not-allowed;
+    border-radius: 4px;
+    padding: 8px 10px ;
+    text-decoration: none;
+    font-size: 12px;
+    color: rgb(90, 87, 87);
+    background-color: rgb(238, 236, 236);
+}
+.but-like:hover 
+{
+    color: rgb(90, 87, 87);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.usp-find-veh
+{
+    font-size: 15px;
+    text-decoration: none;
+}
+.usp-find-veh:hover
+{
+    text-decoration: underline;
+}
+.usp-edit-main
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.usp-edit-profile
+{
+    width:49.5%;
+    padding: 0 8px;
+}
+.usp-upd-pass
+{
+    width:49.5%;
+    padding: 0 8px;
+    height: max-content;
+}
+.lab-profile-main
+{
+    font-size: 18px;
+    font-weight: 700;
+
+}
+.usp-prof-fields
+{
+    display: flex;
+    flex-flow: column;
+    margin-top: 16px;
+}
+.usp-inp-fields
+{
+    padding: 4px 8px;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: rgb(247, 247, 247);
+}
+.usp-inp-fields:hover
+{
+    box-shadow: 0 2px 12px -2px rgb(0 0 0 / 15%), 0 1px 4px -1px rgb(0 0 0 / 25%);
+}
+.usp-inp-fields:focus
+{
+    outline: none;
+    border: 1px solid green;
+}
+.user-img-change
+{
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: white;
+    background-color: rgb(87, 62, 196);
+}
+.profile-setting-bt
+{
+    width: 50%;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: white;
+    background-color: rgb(12, 178, 12);
+}
+.rmv-veh-btn
+{
+    padding: 3px 32px;
+    color: white;
+    font-size: 14px;
+    background-color: rgb(228, 76, 76);
+    border-radius: 4px;
+    border: 1px solid transparent;
+    margin-left: auto;
+    margin-right:85px;
+}
+.rmv-veh-btn:hover
+{
+    padding: 3px 32px;
+    color: white;
+    background-color: rgb(235, 26, 26);
+    border-radius: 4px;
+    border: 1px solid transparent;
+    margin-left: auto;
+    margin-right:85px;
+}
+.rmv-veh-sect
+{
+    display:flex;
+    width:100%;
+    padding:0 16px 8px 16px;
+    margin-top: -8px;
+  
+}
+.del-list-btn
+{
+    padding: 2px 16px;
+    color: white;
+    font-size: 14px;
+    background-color: rgb(228, 76, 76);
+    border-radius: 4px;
+    border: 1px solid transparent;
+    margin-left: auto;
+    margin-right:8px;
+}
+.updt-list-btn
+{
+    padding: 2px 16px;
+    color: white;
+    font-size: 14px;
+    background-color: rgb(78, 78, 152);
+    border-radius: 4px;
+    border: 1px solid transparent;
+    margin-left: auto;
+    margin-right:25px; 
+}

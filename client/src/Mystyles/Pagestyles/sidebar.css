@@ -1,0 +1,110 @@
+.accd-cont1
+{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+}
+.accd-cont2
+{
+    flex: 0 0 auto;
+}
+.accd-ul
+{
+    cursor:pointer;
+    list-style:none;
+    padding-left: 0;
+}
+.accd-lst-st
+{
+    display:flex;
+    margin-top:12px;
+    padding-left:20px;
+}
+.accd-ic-st
+{
+    margin-right:30px;
+}
+.accd-linehr
+{
+    border:0.5px solid lightgrey;
+}
+
+.accd-bt-ct
+{
+    display:flex;
+    width:100%;
+    background:white;
+    flex: 0 0 auto;
+    padding:0.8rem 1.05rem;
+}
+.accd-bt-ctdiv
+{
+    margin-right:30px;
+}
+.accd-btself
+{
+    border:none;
+    background:white;
+
+}
+.accordion-button1:not(.collapsed) {
+    color: #fff  !important;
+    
+}
+.useless
+{
+    background-color: grey !important;
+    color:#fff;
+} 
+.useless::after
+{
+   background-image: url('../../images/keyboard_arrow_down_white_24dp.svg');
+} 
+.useless:not(.collapsed)::after
+{
+   background-image: url('../../images/keyboard_arrow_down_white_24dp.svg');
+   transform: rotate(-180deg);
+} 
+.useless:link, .useless:visited ,.useless:hover ,.useless:active,.useless:active
+{
+    color:lightgrey !important;
+    box-shadow: 0px !important;
+    text-decoration: green !important;
+    border: 1em !important;
+    border-color: green !important;
+} 
+
+.useless:not(.collapsed) {
+    color: #fff  !important;
+    
+}
+
+
+  .accordion-button1:link, .accordion-button1:visited, .accordion-button1:hover, .accordion-button1:active  {
+    background-color: #0a2436 !important;
+      color:#00ce7c !important;
+      text-decoration: #00ce7c !important;
+       border: 1em !important;
+        border-color: #00ce7c !important;
+      box-shadow: 0px !important;
+      font-weight: 500;
+  
+        
+  }
+  .accordion-button1 {
+    background-color: #0a2436 !important;
+    border: 1em !important;
+    font-size: 0.5em;
+    color:#fff;
+  }
+  .lst-item-divbg
+  {
+      background: rgb(169, 166, 166);
+      color: white;
+  }
+
+  .main-cont2
+  {
+    display:flex;
+    justify-content:center;
+  }

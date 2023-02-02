@@ -1,0 +1,101 @@
+.footer
+{
+    color: #f2f2f2;
+    background: #222;
+    border-top: 3px solid green;
+    background-color: rgb(34, 34, 34);
+}
+
+
+.footer-Main
+{
+    max-width:1320px; 
+    padding:20px 20px 20px 20px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.footer-container
+{
+   display: flex;
+  
+   
+
+}
+.footer-section
+{
+    flex: 0 0 auto;
+    width: 50%;
+
+}
+.footer-section1
+{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.footer-options
+{
+    flex: 0 0 auto;
+    padding-right: 2rem;
+    width: 33.33333333%;
+}
+.appearance 
+{
+    position: relative;
+    padding-left: 0;
+    list-style:none;
+    text-decoration: none;
+    color: inherit;
+    line-height: 15px;
+}
+.appearance.option
+{
+    
+    font-size: 13px; 
+    color:rgb(248, 248, 238);
+    font-weight: 200;
+}
+
+.appearance.option:hover
+{
+    
+    text-decoration:underline;
+}
+.footer-promote
+{
+    flex: 0 0 auto;
+    width: 50%;
+    font-size: 12px;
+    
+}
+.footer-promote-ul
+{
+    
+    list-style: none;
+    
+    padding-left: 0;
+    text-decoration: none;
+}
+.footer-promote-ul-listitem
+{
+    margin-right: 15px;
+    float: left;
+}
+.footer-promote-icons
+{
+    list-style: none;
+    
+    text-decoration: none;
+    padding-top: 15px;
+    font-size: 25px;
+    padding-left: 0;
+
+}
+.footer-icon-sz
+{
+    background:none;
+    color: inherit;
+    float: left;
+    margin-right: 15px;
+}

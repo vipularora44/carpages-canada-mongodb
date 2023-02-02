@@ -1,0 +1,298 @@
+::-webkit-input-placeholder { /* Chrome, Opera, and Safari */
+    color: red;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: red;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: red;
+  }
+  :-ms-input-placeholder { /* Microsoft Edge */
+    color: red;
+  }
+
+
+.bg
+{
+    background-color: rgb(240, 236, 236);
+    padding: 16px 0;
+}
+.main-cont
+{
+  flex: 1 1 auto;
+}
+.box-f-deal-disp
+{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.box-pad
+{
+    padding: 16px;
+}
+.box
+{
+    background-color: white;
+    text-shadow: none;
+    color: black;
+}
+.ct-find
+{
+    width: 100%;
+    margin-bottom: 16px;
+}
+.ct-find-mg
+{
+    margin: 0;
+}
+.ct-find-sub-cont
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+.ht
+{
+    min-height: 300px;
+}
+.bx-shad
+{
+    box-shadow: 0 2px 12px -2px rgb(0 0 0 / 15%);
+}
+.bdr-rad
+{
+    border-radius: 8px;
+}
+.clr
+{
+    color: white;
+}
+.bx-image
+{
+    background-image: url('../images/road.jpg');
+    background-position: top;
+}
+.find-deal-dm
+{
+    flex:0 0 auto ;
+    width: 33.33%;
+}
+.head-fonts
+{
+    font-size: 2rem;
+}
+.par-fonts
+{
+    font-size: 1rem;
+}
+.in-intro
+{
+    font-size: 16px;
+}
+.disp-fx
+{
+    display: flex;
+    flex: 0 0 auto;
+}
+.inp-st-cont
+{
+    margin-top:5px;
+    justify-content:space-between;
+    position: relative;
+}
+.inp--st-loc
+{
+    width: 100%;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    padding: 4px 7px;
+    background-color: rgb(248, 245, 245);
+}
+.inp--st-loc:focus
+{
+    outline: none;
+    border: 2px solid rgb(2, 163, 2);
+}
+.mg-top
+{
+    margin-top: 15px;
+}
+.mg-rt
+{
+ margin-right: 15px;
+}
+.deal-srch-loc
+{
+    display: flex;
+    flex: 1 1 auto;
+}
+.find-deal-loc-bt
+{
+    border-radius: 4px;
+    border: 1px solid lightgrey;
+    background-color: white;
+    margin-left: .5rem;
+    right: 4px;
+    color: gray;
+    padding: 4px 15px ;
+}
+.deal-loc-icn
+{
+    min-width:1.1em;
+    min-height:1.1em;
+    text-align:center;
+}
+.srch-sb-bt
+{
+  padding: 7px 20px;
+  width: 170px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  margin-top: 10px;
+  background-color:rgb(27, 172, 27) ;
+}
+.srch-sb-bt:hover
+{
+    border: 1px solid transparent;
+    background-color: green;
+}
+.srch-sb-bt:focus
+{   border: 1px solid transparent;
+    background-color: darkgreen;
+}
+.align-just
+{
+    align-items: center;
+    justify-content: center;
+}
+.ullst-st-grid
+{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    
+    padding: 8px;
+    margin:0 -15px 0 -15px;
+}
+.lst-item
+{
+    width: 48px;
+    height: 48px;
+    font-weight: 700;
+    display: flex;
+    color:#4a90e2;
+    font-size: 14px;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.box-pd-lg
+{
+    padding: 50px;
+}
+.mg-bt-lg
+{
+ margin-bottom: 50px;
+}
+.fcd-alpha
+{
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    text-align: center;
+    width: 80%;
+    align-items: center;
+    
+}
+.sect-head
+{
+    font-weight: 700;
+    padding: 0 .5rem;
+    border-left: 5px solid green;
+}
+.sol-for-dealer-sect
+{
+  flex:0 0 auto;
+  width: 50%;
+}
+.sol-for-dealer
+{
+    padding: 50px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px -10px  rgb(0 0 0 / 2);
+}
+.sol-for-dealer-head
+{
+    font-weight: 700;
+    color: gray;
+}
+.sol-for-dealer-span
+{
+    font-weight: 700;
+    color: green;
+}
+.sol-for-dealer-lnk
+{  
+    text-decoration: none;
+    padding: 8px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    background-color: rgb(18, 112, 179);
+}
+.sol-for-dealer-lnk:hover ,.sol-for-dealer-lnk:active
+{
+    text-decoration: none;
+    color: white;
+}
+.arr-ic
+{
+   
+    margin-right:5px;
+    font-size: 12px;
+}
+.fd-filter-suggestion
+{
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left:0%;
+    z-index: 100;
+    display: block;
+}
+
+.fd-filter-suggestions
+{
+    text-align: left;
+    background: #fff;
+    overflow: hidden;
+    overflow-y: auto;
+    box-shadow: rgba(0,0,0,0.35)0px 5px 15px ;
+    border: 1px solid #c8c8c8;
+    border-top: none;
+    color: #4a90e2;
+}
+.fd-filter-suggestions-item
+{
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 8px;
+    width: 100%;
+}
+.fd-filter-suggestions-deal
+{
+    text-align: left;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 4px;
+    overflow-y: auto;
+    box-shadow: rgba(0,0,0,0.35)0px 5px 15px ;
+    border-top: none;
+    color: #4a90e2;
+}
