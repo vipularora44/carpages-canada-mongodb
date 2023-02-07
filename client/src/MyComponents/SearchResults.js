@@ -135,10 +135,10 @@ export default function SearchResults() {
      }
      else if(MyState)
      {
-      console.log("image.png"+MyState);
+      console.log(MyState.showresult+"image.png"+MyState);
           if(MyState.showresult)
           var keywordLocation = JSON.parse(localStorage.getItem('User_Choice_Location'));
-          alert(MyState.showresult+"000"+keywordLocation["SearchBarLocation"]);
+        
           {
            Axios.post("https://carpages-canada-mongodb.onrender.com/listings/search_bar",{keyword:MyState.showresult,location:keywordLocation["SearchBarLocation"]}).then((res)=>{
               console.log(res.data);
