@@ -141,7 +141,7 @@ export default function SearchResults() {
             console.log("User Location"+JSON.parse(localStorage.getItem('User_Choice_Location')));
             var keywordLocation = JSON.parse(localStorage.getItem('User_Choice_Location'));
 
-           Axios.post("https://carpages-canada-mongodb.onrender.com/listings/search_bar",{keyword:MyState.showresult,location:keywordLocation["SearchBarLocation"]}).then((res)=>{
+           Axios.post("https://carpages-canada-mongodb.onrender.com/listings/search_bar",{keyword:MyState.showresult,location:keywordLocation?keywordLocation["SearchBarLocation"]:""}).then((res)=>{
               console.log(res.data);
               setfetchListings(res.data);
               });
