@@ -177,7 +177,7 @@ console.log("USERTYPE"+usertype+"logIn"+logIn+"userName"+userName);
          <div style={{zIndex:"3",padding:"8px"}}>
               <li ><Link to="/signin" className="dropdown-item" style={{display:"flex",padding:"5px 8px",borderRadius:"4px"}}>Watchlist</Link></li>
               <li><Link to="/signin" className="dropdown-item" style={{display:"flex",padding:"5px 8px",borderRadius:"4px"}} >Setting</Link></li>
-              <li><hr className="dropdown-divider"/></li>
+              <li><hr  style={{height:"1px"}}/></li>
               <li><Link to="/signin" className="buyFromHome-findout" style={{display:"flex",textDecoration:"none",justifyContent:"center",padding:"7px 20px",textAlign:"center"}}  role="button" >Sign In</Link></li>            
               </div>
             </ul>}
