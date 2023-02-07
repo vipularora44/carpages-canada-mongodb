@@ -136,7 +136,7 @@ export default function SearchResults() {
      else if(MyState)
      {
       console.log(MyState.showresult+"image.png"+MyState);
-          if(MyState.showresult)
+          if(MyState.showresult.length>0)
           var keywordLocation = JSON.parse(localStorage.getItem('User_Choice_Location'));
         
           {
