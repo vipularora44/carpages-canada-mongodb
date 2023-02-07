@@ -270,7 +270,7 @@ const FetchResult=()=>
                             </div>
                           
                           <div className='select veh-search-size vehsearch-make-model-sel vehsearch-make-model-option-sel '>
-                          <select name="vehicleModel" onChange={(e)=>{showmodels(e.target.value);setgetModel(e.target.value)}} >
+                          <select name="vehicleModel" onChange={(e)=>{setgetModel(e.target.value)}} >
                               <option value selected>All Models</option>
                               {
                                   models.map((val)=>{
