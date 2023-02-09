@@ -28,5 +28,5 @@ userRouter.get("/userDeviceInfo",userDeviceInfo)
 userRouter.post("/InsertuserDeviceInfo",InsertuserDeviceInfo)
 userRouter.post("/GetuserDeviceInfo",GetuserDeviceInfo)
 userRouter.post("/DeleteuserDeviceInfo",DeleteuserDeviceInfo)
-userRouter.get("//confirm_email",confirm_email)
+userRouter.get("/confirm_email",confirm_email)
 module.exports=userRouter;
