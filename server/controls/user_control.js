@@ -204,7 +204,7 @@ const Insert_User = async (req,res)=>
 
            var mailOptions={
             from:'vipularora44@gmail.com',
-            to:useremail,
+            to:email,
             subject:'carpgaes-canada - verify your email',
             html:`<h2> ${username}! Thanks for registering on our site </h2>
                   <h4>Please verify your email to continue ....</h4>
