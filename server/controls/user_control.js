@@ -208,7 +208,7 @@ const Insert_User = async (req,res)=>
             subject:'carpgaes-canada - verify your email',
             html:`<h2> ${username}! Thanks for registering on our site </h2>
                   <h4>Please verify your email to continue ....</h4>
-                  <a href="http://${req.headers.host}/users/confirm_email?email=${useremail}&token=${emailToken}"> verify your email by clicking here </a>
+                  <a href="http://${req.headers.host}/users/confirm_email?email=${email}&token=${emailToken}"> verify your email by clicking here </a>
           
                   `  
            }
