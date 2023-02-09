@@ -236,13 +236,61 @@ const Insert_User = async (req,res)=>
    });
 }
 
+const confirm_email=async(req,res)=>{
+                  
+                  
+   const token=req.query.token;
+   const email=req.query.email;
+   console.log(email+"token........"+token);
+try
+{  
+    create_User_Counter_Model.find({user_email:email},(err,result)=>
+   {
+      if(err)
+      {
+         console.log("ERROR 1"+err);
+      }
+      else{
+         console.log("1  false........");
+         console.log("Result"+JSON.stringify(result));
+         if(result[0].is_verified === "true")
+         {
+            console.log(" 2  false........");
+            res.redirect("http://carpages-canada-sql-frnt.onrender.com/signin");
+         }
+         else if(result[0].email_token === token && result[0].is_verified === "false")
+         {     console.log("3   false........");
+               create_User_Counter_Model.findOneAndUpdate({user_email:email},{$set:{is_verified:"true"}},(err,result)=>
+               {
+                  if(err)
+                  {
+                     console.log("ERROR 2"+err);
+                  }
+                 else if(result)
+                  {
+                     
+                     res.redirect("http://carpages-canada-sql-frnt.onrender.com/signin");
+                  }
+               });
+         }
+        
+      }
+   });
+}
+catch(err)
+{
+   console.log("ERROR "+err);
+}
+
+  }
+
 const Logout =async(req,res)=>
 {
    console.log("Logout Body"+JSON.stringify(req.body));
    console.log("logout Working");
     // req.session.destroy();
    
-      res.clearCookie('vipul',{path:"/",domain:'localhost'});
+      res.clearCookie('vipul',{path:"/",domain:'carpages-canada-sql-frnt.onrender.com'});
  
 
    res.send('user logout successfully');
@@ -865,5 +913,5 @@ const DeleteuserDeviceInfo=async(req,res)=>
 
 
 module.exports={Insert_User,IS_User_Authentiated,GetSign_In,Post_Sign_In,verifyJWT,Logout,getDealerDetails,getAll_Users,forgotCredentials,
-updatePassword,search_bar,sendQueryMessagePhone,otpEmail,userDeviceInfo,InsertuserDeviceInfo,GetuserDeviceInfo,DeleteuserDeviceInfo,
+updatePassword,search_bar,sendQueryMessagePhone,otpEmail,userDeviceInfo,InsertuserDeviceInfo,GetuserDeviceInfo,DeleteuserDeviceInfo,confirm_email,
 Dealerbycity,Dealerbyprovince,getDealerByCity,getDealerByProvince,getDealerByOnlyName,getDealerByAlphabet,updatetBuyFromHome,updatetuser};
