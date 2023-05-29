@@ -422,6 +422,8 @@ const getFilterListings=async(req,res)=>
 {
     console.log("getFilterListings"+JSON.stringify(req.body));
     console.log("working here");
+    try
+    {
                                     const todaysDate = new Date();
                                     const MaxPrice=400000;
                                     const MinPrice=0;
@@ -554,8 +556,7 @@ const getFilterListings=async(req,res)=>
                                    
                                     console.log("Conditions"+JSON.stringify(conditions));
                                     console.log("Conditions"+JSON.stringify(conditions1));
-    try
-    {
+   
         const DATA=await Listings_Model.aggregate([
            
             
