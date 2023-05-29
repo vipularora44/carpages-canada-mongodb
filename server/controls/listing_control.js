@@ -459,15 +459,15 @@ const getFilterListings=async(req,res)=>
                                    
                                     var conditions = {};
                                     var conditions1 = {};
-                                    if(!cityname=="")
+                                    if(cityname !=="")
                                     {
                                        conditions.city_name=cityname;
                                     }
-                                    if(!province=="")
+                                    if(province !=="")
                                     {
                                        conditions.province_name=province;
                                     }
-                                    if(!bodyStyle=="")
+                                    if(bodyStyle !=="")
                                     {
                                        conditions.bodystyle=bodyStyle;
                                     }
