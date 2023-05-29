@@ -471,11 +471,11 @@ const getFilterListings=async(req,res)=>
                                     {
                                        conditions.bodystyle=bodyStyle;
                                     }
-                                    if(modelname.length==[] && makename.length!=[])
+                                    if(modelname ==[] && makename !==[])
                                     {
                                        conditions.make_name={$in:makename};
                                     }
-                                    else if(modelname.length!=[])
+                                    else if(modelname !==[])
                                     {
                                        conditions.model_name={$in:modelname};
                                     }
