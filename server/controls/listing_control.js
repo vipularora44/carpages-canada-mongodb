@@ -477,7 +477,7 @@ const getFilterListings=async(req,res)=>
                                     }
                                     else if(modelname !==[])
                                     {
-                                        console.log("model name")
+                                        console.log("model name working")
                                        conditions.model_name={$in:modelname};
                                     }
                                     if(!isNaN(minyears) && !isNaN(maxyears))
@@ -553,8 +553,8 @@ const getFilterListings=async(req,res)=>
                                        conditions1.buy_from_home="yes";
                                     }
                                    
-                                    console.log("Conditions"+JSON.stringify(conditions));
-                                    console.log("Conditions"+JSON.stringify(conditions1));
+                                    console.log("Conditions 111"+JSON.stringify(conditions));
+                                    console.log("Conditions 222"+JSON.stringify(conditions1));
     try
     {
         const DATA=await Listings_Model.aggregate([
