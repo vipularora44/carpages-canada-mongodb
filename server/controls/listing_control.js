@@ -477,6 +477,7 @@ const getFilterListings=async(req,res)=>
                                     }
                                     else if(modelname !==[])
                                     {
+                                        console.log("model name")
                                        conditions.model_name={$in:modelname};
                                     }
                                     if(!isNaN(minyears) && !isNaN(maxyears))
