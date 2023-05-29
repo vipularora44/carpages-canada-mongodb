@@ -459,25 +459,24 @@ const getFilterListings=async(req,res)=>
                                    
                                     var conditions = {};
                                     var conditions1 = {};
-                                    if(cityname !=="")
+                                    if(!cityname=="")
                                     {
                                        conditions.city_name=cityname;
                                     }
-                                    if(province !=="")
+                                    if(!province=="")
                                     {
                                        conditions.province_name=province;
                                     }
-                                    if(bodyStyle !=="")
+                                    if(!bodyStyle=="")
                                     {
                                        conditions.bodystyle=bodyStyle;
                                     }
-                                    if(modelname ==[] && makename !==[])
+                                    if(modelname.length==[] && makename.length!=[])
                                     {
                                        conditions.make_name={$in:makename};
                                     }
-                                     if(modelname !==[])
+                                    else if(modelname.length!=[])
                                     {
-                                        console.log("model name working")
                                        conditions.model_name={$in:modelname};
                                     }
                                     if(!isNaN(minyears) && !isNaN(maxyears))
@@ -553,8 +552,8 @@ const getFilterListings=async(req,res)=>
                                        conditions1.buy_from_home="yes";
                                     }
                                    
-                                    console.log("Conditions 111"+JSON.stringify(conditions));
-                                    console.log("Conditions 222"+JSON.stringify(conditions1));
+                                    console.log("Conditions"+JSON.stringify(conditions));
+                                    console.log("Conditions"+JSON.stringify(conditions1));
     try
     {
         const DATA=await Listings_Model.aggregate([
