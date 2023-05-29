@@ -475,7 +475,7 @@ const getFilterListings=async(req,res)=>
                                     {
                                        conditions.make_name={$in:makename};
                                     }
-                                    else if(modelname !==[])
+                                     if(modelname !==[])
                                     {
                                         console.log("model name working")
                                        conditions.model_name={$in:modelname};
