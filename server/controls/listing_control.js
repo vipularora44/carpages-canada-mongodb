@@ -4,6 +4,10 @@ const Listings_Pictures=require("../models/listing_pictures");
 const Listings_images_counter_Model=require("../models/listing_images_counter");
 const Listings_images_Model=require("../models/listing_images");
 const path=require("path");
+import { storage } from "../FireBase";
+import { ref, listAll, getDownloadURL } from "firebase/storage"
+
+
 
 const Create_Listings=async(req,res)=>
 {
@@ -584,7 +588,7 @@ const getFilterListings=async(req,res)=>
                  { $match: {"Complete.0": { "$exists": true } } },
                                
         ]);
-        console.log(DATA);
+        console.log("my_Listing_Data"+DATA);
         res.send(DATA); 
 
     }
@@ -593,6 +597,7 @@ const getFilterListings=async(req,res)=>
        console.log("ERROR.."+err);
     }
 }
+
 
 
 const Find_A_Car=async(req,res)=>
