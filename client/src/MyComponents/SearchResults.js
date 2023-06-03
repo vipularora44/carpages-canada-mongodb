@@ -621,6 +621,7 @@ const searchMake=(e)=>
     console.log("filter reset");
     MakesFetch();
    }
+   
 }
 
 
