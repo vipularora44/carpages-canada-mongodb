@@ -4,10 +4,11 @@ const Listings_Pictures=require("../models/listing_pictures");
 const Listings_images_counter_Model=require("../models/listing_images_counter");
 const Listings_images_Model=require("../models/listing_images");
 const path=require("path");
-import { storage } from "../FireBase";
-import { ref, listAll, getDownloadURL } from "firebase/storage"
+//import { storage } from "../FireBase";
+//import { ref, listAll, getDownloadURL } from "firebase/storage"
 
-
+const  { ref, listAll, getDownloadURL } = require('firebase/storage');
+const {storage} = require ('../FireBase')
 
 const Create_Listings=async(req,res)=>
 {
