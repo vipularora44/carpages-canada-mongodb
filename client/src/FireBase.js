@@ -10,13 +10,12 @@ import {getStorage} from 'firebase/storage';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDYXfYB7cdCfZH4q0UWULSmVMKJ2rW7gDg",
-  authDomain: "carpages-canada-mongodb.firebaseapp.com",
-  projectId: "carpages-canada-mongodb",
-  storageBucket: "carpages-canada-mongodb.appspot.com",
-  messagingSenderId: "274916313736",
-  appId: "1:274916313736:web:cfcc8edd7cdcc9a0312d3d",
-  measurementId: "G-579X48FG43"
+  apiKey: "AIzaSyBrRmwYJSpBHlZO0-eRmlIc6UerDpLv8ak",
+  authDomain: "carpages-canada-3b271.firebaseapp.com",
+  projectId: "carpages-canada-3b271",
+  storageBucket: "carpages-canada-3b271.appspot.com",
+  messagingSenderId: "542552587070",
+  appId: "1:542552587070:web:7c32dc902ca18c397aca6f"
 };
 
 // Initialize Firebase
