@@ -20,6 +20,9 @@ import { Link,useLocation,useNavigate, useParams } from 'react-router-dom';
 import {BsSquare} from "react-icons/bs"
 import ReactPaginate from 'react-paginate';
 import Soldoutpic from '../images/soldout.png'
+import { storage } from '../FireBase';
+import { ref, uploadBytes } from 'firebase/storage';
+
 
 
 export default function SearchResults() {
@@ -93,6 +96,9 @@ export default function SearchResults() {
   const [listingDeleteId , setlistingDeleteId]= useState('');
   const [MylistingOptions , setMylistingOptions]= useState(false);
   const [MylistingOptionsIndex , setMylistingOptionsIndex]= useState("");
+  const [imageUploa,setImagUpload] = useState(null);
+
+
   console.log(JSON.stringify(params));
   let ab,bc="";
   var arr1=[];
@@ -100,7 +106,7 @@ export default function SearchResults() {
   const MyLocation=useLocation();
   const MyState=MyLocation.state;
   console.log("MyState"+JSON.stringify(MyState));
-  const ref = useRef();
+  const ref11 = useref();
   var Item;
   const [usertype,setusertype]=useState("");
 
@@ -236,7 +242,7 @@ export default function SearchResults() {
   {    const checkIfClickedOutside = e => {
     // If the menu is open and the clicked target is not within the menu,
     // then close the menu
-       if (MylistingOptions && MylistingOptionsIndex  && ref.current && !ref.current.contains(e.target)) {
+       if (MylistingOptions && MylistingOptionsIndex  && ref11.current && !ref11.current.contains(e.target)) {
           setMylistingOptions(false);
           console.log("menu");
        }
@@ -740,7 +746,7 @@ const Results =fetchListings.length > 0 ? fetchListings.slice(pagevisited, pagev
                         <HiOutlineDotsVertical onClick={()=>{setMylistingOptions(true);setMylistingOptionsIndex(+index+1)}} className='img-opt-menu-dots'/>
                         
                           {MylistingOptions && MylistingOptionsIndex ===+index+1?
-                          <div ref={ref} style={{backgroundColor:"#f8f3f3",boxShadow:"3px 3px white"}}  className='img-opt-menu-ul-sect'>
+                          <div ref={ref11} style={{backgroundColor:"#f8f3f3",boxShadow:"3px 3px white"}}  className='img-opt-menu-ul-sect'>
                             <ul style={{width:"max-content",marginBottom:"0"}} className='img-opt-menu-ul'>
                             <li style={{borderBottom:"1px solid lightgrey"}} className='img-opt-menu-litem' onClick={()=>{setshowModal(true);setlistingDeleteId(val.listing_id)}}>Delete Listing</li>
                             <li  style={{borderBottom:"1px solid lightgrey"}} className='img-opt-menu-litem' onClick={()=>{UpdateListing(val.listing_id)}}>Update Listing</li>
@@ -771,6 +777,7 @@ const Apply=()=>
         Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getFilterListings",{buyfromHome:buyfromHome,cityname:query1,bodyStyle:bodyStyle,allmodels:allModels,allmakes:AllMakes,makename:fetchMakes1,modelname:fetchModels1,minyears:minyears,maxyears:maxyears,minprice:aa,maxprice:bb,minmileage:minmileage,maxmileage:maxmileage,transmission:sel,drivetrain:drivetrain,used_new:sel1}).then((res)=>{
           console.log(res.data);
           setfetchListings(res.data);
+          
          });
       }
       else if(a<0)
@@ -848,6 +855,23 @@ const Apply=()=>
     setCityname([]);
     setProvincename([]);
   };
+
+
+  const imagEupload=()=>
+  {
+
+    if(imageUploa ==null) return;
+      const myFirebaseref = ref(storage,`images/${imageUploa.name}`)
+      uploadBytes(myFirebaseref,imageUploa).then((res)=>{
+
+       alert("Image Uploaded"+JSON.stringify(res));
+
+      });
+    
+ 
+  }
+
+
 
   return (
       <>
@@ -1213,13 +1237,16 @@ const Apply=()=>
                           <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
                           <label class="form-check-label srch-rs-lst" for="flexSwitchCheckDefault">Only show cars with photos</label>
                        </div>
-
+                       <div class="form-check form-switch">
+                        <input type="file" name="" id=""  class="form-check-input" onChange={(e)=>{setImagUpload(e.target.files)}}/>
+                          <label class="form-check-label srch-rs-lst" for="flexSwitchCheckDefault">Upload photos here</label>
+                       </div>
                       </fieldset>
                       <hr />
                       
                       <div className='dsp-wr align-item mg-tp srch-rs-lst mg-btm'>
                                 <div className='srch-rs-row fd-r align-center ' >
-                                <button type="submit" className='apply-btn bg-clr-rst'>Reset</button>
+                                <button type="submit" className='apply-btn bg-clr-rst' onClick={()=>{imagEupload()}} >Reset</button>
                                 <button type="submit" className='apply-btn bg-clr-apply' onClick={()=>Apply()}>APPLY</button>
                                   </div>
                                 </div>
