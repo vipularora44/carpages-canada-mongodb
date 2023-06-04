@@ -861,6 +861,7 @@ const Apply=()=>
   {
 
     if(imageUploa ==null) return;
+       console.log(JSON.stringify(imageUploa)+"Image name"+JSON.stringify(imageUploa.name));
       const myFirebaseref = ref(storage,`images/${imageUploa.name}`)
       uploadBytes(myFirebaseref,imageUploa).then((res)=>{
 
