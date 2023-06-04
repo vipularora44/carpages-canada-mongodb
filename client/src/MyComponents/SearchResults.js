@@ -20,8 +20,8 @@ import { Link,useLocation,useNavigate, useParams } from 'react-router-dom';
 import {BsSquare} from "react-icons/bs"
 import ReactPaginate from 'react-paginate';
 import Soldoutpic from '../images/soldout.png'
-import { storage } from '../FireBase';
-import { ref, uploadBytes } from 'firebase/storage';
+//import { storage } from '../FireBase';
+//import { ref, uploadBytes } from 'firebase/storage';
 
 
 
@@ -860,13 +860,13 @@ const Apply=()=>
   const imagEupload=()=>
   {
 
-    if(imageUploa ==null) return;
+   /* if(imageUploa ==null) return;
       const myFirebaseref = ref(storage,`images/${imageUploa.name}`)
       uploadBytes(myFirebaseref,imageUploa).then((res)=>{
 
        alert("Image Uploaded"+JSON.stringify(res));
 
-      });
+      });*/
     
  
   }
