@@ -1884,12 +1884,33 @@ const insert_New_Images=async(req,res)=>
    }
 }
 
-const firebase_images=async()=>
+
+const storage = require('../FireBase');
+const ref = require('firebase/storage')
+const uploadBytes = require('firebase/storage');
+
+const firebase_images=async(req,res)=>
 {
 
     try {
         
-
+        if(req.files) 
+        {
+            console.log(JSON.stringify(req.files)+"fireBase_Images name");
+         
+            const file = req.files.fireBase_Images;
+            for(let i = 0 ; i < file.length; i++)
+             { 
+                const myFirebaseref = ref(storage,`images/${file[i].name}`)
+                uploadBytes(myFirebaseref,file[i]).then((res)=>{
+                 console.log("Image Uploaded"+JSON.stringify(res));
+              });
+             }
+           
+         
+    
+        }
+       
 
 
     } catch (error) {
