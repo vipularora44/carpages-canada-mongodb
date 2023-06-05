@@ -1885,9 +1885,13 @@ const insert_New_Images=async(req,res)=>
 }
 
 
-const storage = require('../../client/src/FireBase.js');
-const ref = require('firebase/storage')
-const uploadBytes = require('firebase/storage');
+const {Storage} = require('@google-cloud/storage');
+const { bucket } = require("firebase-functions/v1/storage");
+//const serviceAccount = require('../service-account-file.json')
+const storage = new Storage({
+    keyFilename : 'service-account-file.json'
+})
+const Bucket = storage.bucket('gs://carpages-canada-3b271.appspot.com')
 
 const firebase_images=async(req,res)=>
 {
@@ -1901,10 +1905,10 @@ const firebase_images=async(req,res)=>
             const file = req.files.fireBase_Images;
             for(let i = 0 ; i < file.length; i++)
              { 
-                const myFirebaseref = ref(storage,`images/${file[i].name}`)
-                uploadBytes(myFirebaseref,file[i]).then((res)=>{
-                 console.log("Image Uploaded"+JSON.stringify(res));
-              });
+                const myFirebaseref = await Bucket.upload(file[i].path,{destination:`images/${file[i].name}`,
+                resumable:true,
+            })
+               console.log("myFirebaseref"+myFirebaseref);
              }
            
          
