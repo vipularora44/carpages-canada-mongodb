@@ -1891,6 +1891,7 @@ const { bucket } = require("firebase-functions/v1/storage");
 const storage = new Storage({
     keyFilename : 'service-account-file.json'
 })
+const { v4: uuidv4 } = require('uuid');
 const Bucket = storage.bucket('gs://carpages-canada-3b271.appspot.com')
 
 const firebase_images=async(req,res)=>
@@ -1900,6 +1901,7 @@ const firebase_images=async(req,res)=>
         
         if(req.files) 
         {
+            const uuid = uuidv4();
             console.log(JSON.stringify(req.files)+"fireBase_Images name");
          
             const file = req.files.fireBase_Images;
@@ -1907,6 +1909,11 @@ const firebase_images=async(req,res)=>
              { 
                 const myFirebaseref = await Bucket.upload(file[i].tempFilePath,{destination:`images/${file[i].name}`,
                 resumable:true,
+                metadata: {
+                    metadata: {
+                        firebaseStorageDownloadTokens: uuid,
+                    }
+                },
             })
                console.log("myFirebaseref"+myFirebaseref);
              }
