@@ -93,7 +93,7 @@ async function run() {
 app.use(require('express-useragent').express())
 
 app.use(FileUpload({
-    useTempFiles:true,
+    useTempFiles:false,
     tempFileDir:'../src/images/dealer-images'
  }));
  
