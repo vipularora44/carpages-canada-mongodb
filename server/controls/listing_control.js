@@ -1905,7 +1905,7 @@ const firebase_images=async(req,res)=>
             const file = req.files.fireBase_Images;
             for(let i = 0 ; i < file.length; i++)
              { 
-                const myFirebaseref = await Bucket.upload(file[i].path,{destination:`images/${file[i].name}`,
+                const myFirebaseref = await Bucket.upload(file[i].tempFilePath,{destination:`images/${file[i].name}`,
                 resumable:true,
             })
                console.log("myFirebaseref"+myFirebaseref);
