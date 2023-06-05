@@ -1885,7 +1885,7 @@ const insert_New_Images=async(req,res)=>
 }
 
 
-const storage = require('../FireBase');
+const storage = require('../../client/src/FireBase.js');
 const ref = require('firebase/storage')
 const uploadBytes = require('firebase/storage');
 
