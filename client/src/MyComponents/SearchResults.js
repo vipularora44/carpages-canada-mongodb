@@ -865,7 +865,7 @@ const Apply=()=>
      {
         imageData.append("fireBase_Images",imageUploa[i]);
      }
-    Axios.post("https://carpages-canada-mongodb.onrender.com/listings/firebase_New_Images",{imagesData:imageData}).then((res)=>{
+    Axios.post("https://carpages-canada-mongodb.onrender.com/listings/firebase_New_Images",imageData).then((res)=>{
     console.log(res);
     })
     
