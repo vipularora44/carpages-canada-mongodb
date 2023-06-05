@@ -860,14 +860,15 @@ const Apply=()=>
   const imagEupload=()=>
   {
 
-    if(imageUploa ==null) return;
-       console.log(JSON.stringify(imageUploa)+"Image name"+JSON.stringify(imageUploa.name));
-      const myFirebaseref = ref(storage,`images/${imageUploa.name}`)
-      uploadBytes(myFirebaseref,imageUploa).then((res)=>{
-
-       alert("Image Uploaded"+JSON.stringify(res));
-
-      });
+     const imageData = new FormData();
+     for(let i=0 ; i < imageUploa.length ; i++)
+     {
+        imageData.append("fireBase_Images",imageUploa[i]);
+     }
+    Axios.post("https://carpages-canada-mongodb.onrender.com/listings/firebase_New_Images",{imagesData:imageData}).then((res)=>{
+    console.log(res);
+    })
+    
     
  
   }
@@ -1239,7 +1240,7 @@ const Apply=()=>
                           <label class="form-check-label srch-rs-lst" for="flexSwitchCheckDefault">Only show cars with photos</label>
                        </div>
                        <div class="form-check form-switch">
-                        <input type="file" name="" id=""  class="form-check-input" onChange={(e)=>{setImagUpload(e.target.files[0])}}/>
+                        <input type="file" multiple name="" id=""  class="form-check-input" onChange={(e)=>{setImagUpload(e.target.files)}}/>
                           <label class="form-check-label srch-rs-lst" for="flexSwitchCheckDefault">Upload photos here</label>
                        </div>
                       </fieldset>
