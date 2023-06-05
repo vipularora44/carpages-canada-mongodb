@@ -1240,7 +1240,7 @@ const Apply=()=>
                           <label class="form-check-label srch-rs-lst" for="flexSwitchCheckDefault">Only show cars with photos</label>
                        </div>
                        <div class="form-check form-switch">
-                        <input type="file" multiple name="" id=""  class="form-check-input" onChange={(e)=>{setImagUpload(e.target.files)}}/>
+                        <input type="file" multiple={true} name="" id=""  class="form-check-input" onChange={(e)=>{setImagUpload(e.target.files)}}/>
                           <label class="form-check-label srch-rs-lst" for="flexSwitchCheckDefault">Upload photos here</label>
                        </div>
                       </fieldset>
