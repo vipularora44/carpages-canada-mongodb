@@ -168,8 +168,28 @@ export default function SearchResults() {
               setfetchLocations(res1.data);
             });
             MakesFetch();
-
+            getImageUrl(fetchListings.length);
   },[]);
+
+
+
+  async function getImageUrl(length)
+    {
+         
+        
+          for(let i=0; i<length; i++)
+          {
+            
+          let  url = await  storage().ref("/images/listing_images/"+fetchListings[i].All_Listings[0].image_name.toString()).getDownloadURL();
+          console.log("Async func 2..."+url);
+          setfetchImages(fetchImages=>[...fetchImages,url])
+            
+        }
+          
+    }
+
+
+
   useEffect(()=>{
     console.log("useeffect");
     if(type)
@@ -693,7 +713,7 @@ const Results =fetchListings.length > 0 ? fetchListings.slice(pagevisited, pagev
     
  <Link to={{pathname:"/listing_detail/"+encodeURIComponent(En_listing_id.toString())+"/"+encodeURIComponent(En_seller_id.toString())}}    className='shd-deal-pic' >
       <div style={{position:"relative"}} >
-        <img src={require('../images/listing_images/'+val.All_Listings[0].image_name+'')}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"relative",top:"0",left:"0"}} alt="" />
+        <img src={fetchImages[index]}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"relative",top:"0",left:"0"}} alt="" />
 { sale_status==="sold" ?<img src={Soldoutpic} style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"absolute",top:"0",left:"0"}} alt=""/>:""} 
      </div>
  </Link>

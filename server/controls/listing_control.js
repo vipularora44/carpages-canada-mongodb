@@ -138,7 +138,7 @@ const Create_Listings=async(req,res)=>
                         for(let i = 0 ; i < file.length; i++)
                          { 
                             let filename= Date.now()+"-"+file[i].name;
-                             Bucket.upload(file[i].tempFilePath,{destination:`images/${Date.now()+"-"+filename}`,
+                             Bucket.upload(file[i].tempFilePath,{destination:`images/listing_images${Date.now()+"-"+filename}`,
                             resumable:true,
                             metadata: {
                                 metadata: {
