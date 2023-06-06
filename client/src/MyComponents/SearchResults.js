@@ -20,8 +20,9 @@ import { Link,useLocation,useNavigate, useParams } from 'react-router-dom';
 import {BsSquare} from "react-icons/bs"
 import ReactPaginate from 'react-paginate';
 import Soldoutpic from '../images/soldout.png'
-import { storage } from '../FireBase';
-import { ref, uploadBytes } from 'firebase/storage';
+
+import { ref, uploadBytes ,getStorage } from 'firebase/storage';
+
 
 
 
@@ -346,12 +347,14 @@ useEffect(()=>{
 console.log("fetchImages"+JSON.stringify(fetchImages));
 const getImageUrl=async(neWImages)=>
           {
+            const storage = getStorage();
+            const starsRef = ref(storage, 'images/listing_images');
             console.log(neWImages.length+"neWImages inside"+JSON.stringify(neWImages));
             console.log(Myimages.length+"Myimages inside"+JSON.stringify(Myimages));
                 for(let i=0; i<neWImages.length; i++)
                 {
                   console.log("neWImages.length"+neWImages.length);
-                let  url = await storage().ref("/images/listing_images/1672232762181-1659941340705-8853656 (2).jpg").getDownloadURL();
+                let  url = await getDownloadURL(ref(storage, `images/listing_images${neWImages.All_Listings[0].image_name.toString()}`));
                 console.log("Async func 2..."+url);
                 setfetchImages(fetchImages=>[...fetchImages,url])
                   
