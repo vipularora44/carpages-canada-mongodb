@@ -168,16 +168,17 @@ export default function SearchResults() {
               setfetchLocations(res1.data);
             });
             MakesFetch();
-            getImageUrl(fetchListings);
-  },[]);
+            getImageUrl(neWImages);
+  },[neWImages]);
 
 
+  let neWImages = fetchListings;
 
-  async function getImageUrl(length)
+  async function getImageUrl(neWImages)
     {
          
         
-          for(let i=0; i<fetchListings.length; i++)
+          for(let i=0; i<neWImages.length; i++)
           {
             
           let  url = await  storage().ref("/images/listing_images/"+fetchListings[i].All_Listings[0].image_name.toString()).getDownloadURL();
