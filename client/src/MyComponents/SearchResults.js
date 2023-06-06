@@ -187,7 +187,7 @@ export default function SearchResults() {
         }
           
     }
-
+console.log("fetchImages"+JSON.stringify(fetchImages));
 
 
   useEffect(()=>{
