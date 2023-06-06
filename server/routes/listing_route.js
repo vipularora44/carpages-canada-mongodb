@@ -27,5 +27,5 @@ ListingRouter.post("/getUserListings",getUserListings)
 ListingRouter.post("/updatePrimaryListingImage",updatePrimaryListingImage)
 ListingRouter.post("/deleteListingImages",deleteListingImages)
 ListingRouter.post("/insert_New_Images",insert_New_Images)
-//ListingRouter.post("/firebase_New_Images",firebase_images)
+ListingRouter.post("/firebase_New_Images",firebase_images)
 module.exports=ListingRouter;
