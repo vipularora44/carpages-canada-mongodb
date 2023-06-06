@@ -333,7 +333,18 @@ useEffect(()=>{
         
           CityData();
 
-          async function getImageUrl(neWImages)
+          
+          getImageUrl(neWImages);
+
+
+},[listStyle,listVal,listStyle1,listVal1,Happy,Myimages,neWImages]);
+
+
+
+
+
+console.log("fetchImages"+JSON.stringify(fetchImages));
+const getImageUrl=async(neWImages)=>
           {
             console.log(neWImages.length+"neWImages inside"+JSON.stringify(neWImages));
             console.log(Myimages.length+"Myimages inside"+JSON.stringify(Myimages));
@@ -348,17 +359,6 @@ useEffect(()=>{
                 
           }
           console.log("neWImages"+JSON.stringify(neWImages));
-          getImageUrl(neWImages);
-
-
-},[listStyle,listVal,listStyle1,listVal1,Happy,Myimages,neWImages]);
-
-
-
-
-
-console.log("fetchImages"+JSON.stringify(fetchImages));
-
 
 const PushArr=(e)=>
 {
