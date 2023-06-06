@@ -332,20 +332,20 @@ useEffect(()=>{
          displayListings();
         
           CityData();
-          getImageUrl(neWImages);
+          getImageUrl();
 },[listStyle,listVal,listStyle1,listVal1,Happy,Myimages,neWImages]);
 
 
 
 
-async function getImageUrl(neWImages)
+ function getImageUrl(neWImages)
     {
       console.log(neWImages.length+"neWImages inside"+JSON.stringify(neWImages));
       console.log(Myimages.length+"Myimages inside"+JSON.stringify(Myimages));
           for(let i=0; i<neWImages.length; i++)
           {
             console.log("neWImages.length"+neWImages.length);
-          let  url = await  storage().ref("/images/listing_images/"+fetchListings[i].All_Listings[0].image_name.toString()).getDownloadURL();
+          let  url =   storage().ref("/images/listing_images/"+fetchListings[i].All_Listings[0].image_name.toString()).getDownloadURL();
           console.log("Async func 2..."+url);
           setfetchImages(fetchImages=>[...fetchImages,url])
             
