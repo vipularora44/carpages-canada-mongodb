@@ -189,7 +189,7 @@ export default function SearchResults() {
           
     }
 console.log("fetchImages"+JSON.stringify(fetchImages));
-
+console.log("neWImages"+JSON.stringify(neWImages));
 
   useEffect(()=>{
     console.log("useeffect");
