@@ -1901,7 +1901,7 @@ const insert_New_Images=async(req,res)=>
 
 
 
-/*const firebase_images=async(req,res)=>
+const firebase_images=async(req,res)=>
 {
 
     try {
@@ -1934,7 +1934,7 @@ const insert_New_Images=async(req,res)=>
     } catch (error) {
         console.log(error);
     }
-}*/
+}
 
 module.exports={Create_Listings,get_allListings,FilterByCityListings,FilterByClassListings,FilterByMakeListings,getFilterListings,updateListing,
     insert_New_Images,deleteListingImages,updatePrimaryListingImage,getUserListings,search_bar,getDealerRefineInventory,getmoreListings,getListingImages,Find_A_Car,getListingDetail,
