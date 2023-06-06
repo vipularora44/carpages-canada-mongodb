@@ -351,9 +351,9 @@ const getImageUrl=async(neWImages)=>
                 for(let i=0; i<neWImages.length; i++)
                 {
                   console.log("neWImages.length"+neWImages.length);
-                // let  url = await storage().ref("/images/listing_images/1672232762181-1659941340705-8853656 (2).jpg").getDownloadURL();
-                // console.log("Async func 2..."+url);
-                // setfetchImages(fetchImages=>[...fetchImages,url])
+                let  url = await storage().ref("/images/listing_images/1672232762181-1659941340705-8853656 (2).jpg").getDownloadURL();
+                console.log("Async func 2..."+url);
+                setfetchImages(fetchImages=>[...fetchImages,url])
                   
               }
                 
