@@ -168,13 +168,13 @@ export default function SearchResults() {
               setfetchLocations(res1.data);
             });
             MakesFetch();
-            getImageUrl(neWImages);
+            getImageUrl();
   },[neWImages]);
 
 
   let neWImages = fetchListings;
 
-  async function getImageUrl(neWImages)
+  async function getImageUrl()
     {
       console.log(neWImages.length+"neWImages inside"+JSON.stringify(neWImages));
         
