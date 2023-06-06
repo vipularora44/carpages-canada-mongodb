@@ -168,7 +168,7 @@ export default function SearchResults() {
               setfetchLocations(res1.data);
             });
             MakesFetch();
-            getImageUrl(fetchListings.length);
+            getImageUrl(fetchListings);
   },[]);
 
 
@@ -177,7 +177,7 @@ export default function SearchResults() {
     {
          
         
-          for(let i=0; i<length; i++)
+          for(let i=0; i<fetchListings.length; i++)
           {
             
           let  url = await  storage().ref("/images/listing_images/"+fetchListings[i].All_Listings[0].image_name.toString()).getDownloadURL();
