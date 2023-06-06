@@ -4,6 +4,14 @@ const Listings_Pictures=require("../models/listing_pictures");
 const Listings_images_counter_Model=require("../models/listing_images_counter");
 const Listings_images_Model=require("../models/listing_images");
 const path=require("path");
+const {Storage} = require('@google-cloud/storage');
+const { bucket } = require("firebase-functions/v1/storage");
+//const serviceAccount = require('../service-account-file.json')
+const storage = new Storage({
+    keyFilename : 'service-account-file.json'
+})
+const { v4: uuidv4 } = require('uuid');
+const Bucket = storage.bucket('gs://carpages-canada-3b271.appspot.com')
 
 
 
@@ -123,21 +131,28 @@ const Create_Listings=async(req,res)=>
                     if(req.files)
                     {
                         let firstimage;
-                        const file = req.files.kidan;
+                        const uuid = uuidv4();
+                        console.log(JSON.stringify(req.files)+"fireBase_Images name");
+                     
+                        const file = req.files.fireBase_Images;
                         for(let i = 0 ; i < file.length; i++)
                          { 
+                            let filename= Date.now()+"-"+file[i].name;
+                             Bucket.upload(file[i].tempFilePath,{destination:`images/${Date.now()+"-"+filename}`,
+                            resumable:true,
+                            metadata: {
+                                metadata: {
+                                    firebaseStorageDownloadTokens: uuid,
+                                }
+                            },
+                        }).then((res)=>{
+                            console.log(res)
+                        })
+                          
+
                            const j=i+1;
-                           let filename= Date.now()+"-"+file[i].name;
-                           
-                  
+                          
                            console.log(firstimage+"filename"+filename);
-                           let newpath=path.join(process.cwd(),'../src/images/listing_images/',filename);
-                           
-                           file[i].mv(newpath, function (err){
-                              if(err){
-                                   res.send(err);
-                              }
-                           });
                             Listings_images_counter_Model.findOneAndUpdate(
                                 {id:"autoval"},{"$inc":{"seq":1}},{new:true},(err,cd)=>{
                                     let ID;
@@ -1885,16 +1900,8 @@ const insert_New_Images=async(req,res)=>
 }
 
 
-const {Storage} = require('@google-cloud/storage');
-const { bucket } = require("firebase-functions/v1/storage");
-//const serviceAccount = require('../service-account-file.json')
-const storage = new Storage({
-    keyFilename : 'service-account-file.json'
-})
-const { v4: uuidv4 } = require('uuid');
-const Bucket = storage.bucket('gs://carpages-canada-3b271.appspot.com')
 
-const firebase_images=async(req,res)=>
+/*const firebase_images=async(req,res)=>
 {
 
     try {
@@ -1927,7 +1934,7 @@ const firebase_images=async(req,res)=>
     } catch (error) {
         console.log(error);
     }
-}
+}*/
 
 module.exports={Create_Listings,get_allListings,FilterByCityListings,FilterByClassListings,FilterByMakeListings,getFilterListings,updateListing,
     insert_New_Images,deleteListingImages,updatePrimaryListingImage,getUserListings,search_bar,getDealerRefineInventory,getmoreListings,getListingImages,Find_A_Car,getListingDetail,

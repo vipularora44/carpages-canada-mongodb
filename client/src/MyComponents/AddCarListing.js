@@ -548,7 +548,7 @@ console.log("Engine"+myState.engine_type+"....Engine_size"+myState.engine_size);
       
     }
     Axios.post("https://carpages-canada-mongodb.onrender.com/listings/insert_listing", fd ).then((res) =>{
-        console.log(res.data );
+         alert(res.data );
     
     });
    }
