@@ -21,7 +21,7 @@ import {BsSquare} from "react-icons/bs"
 import ReactPaginate from 'react-paginate';
 import Soldoutpic from '../images/soldout.png'
 
-import { ref, uploadBytes ,getStorage } from 'firebase/storage';
+import { ref, uploadBytes ,getStorage ,getDownloadURL } from 'firebase/storage';
 
 
 
@@ -348,13 +348,13 @@ console.log("fetchImages"+JSON.stringify(fetchImages));
 const getImageUrl=async(neWImages)=>
           {
             const storage = getStorage();
-            const starsRef = ref(storage, 'images/listing_images');
+           
             console.log(neWImages.length+"neWImages inside"+JSON.stringify(neWImages));
             console.log(Myimages.length+"Myimages inside"+JSON.stringify(Myimages));
                 for(let i=0; i<neWImages.length; i++)
                 {
                   console.log("neWImages.length"+neWImages.length);
-                let  url = await getDownloadURL(ref(storage, `images/listing_images${neWImages.All_Listings[0].image_name.toString()}`));
+                let  url = await storage.ref("images/listing_images").child(`${neWImages.All_Listings[0].image_name.toString()}`).getDownloadURL;
                 console.log("Async func 2..."+url);
                 setfetchImages(fetchImages=>[...fetchImages,url])
                   
