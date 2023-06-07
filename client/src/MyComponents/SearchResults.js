@@ -351,7 +351,7 @@ const getImageUrl=async(neWImages)=>
            
             console.log(neWImages.length+"neWImages inside"+JSON.stringify(neWImages));
             console.log(Myimages.length+"Myimages inside"+JSON.stringify(Myimages));
-                for(let i=0; i<neWImages.length; i++)
+                for(let i=0 ; i < neWImages.length ; i++)
                 {
                   console.log("neWImages.length"+neWImages.length);
                 let  url = await getDownloadURL(ref(storage, `images/listing_images${neWImages.All_Listings[0].image_name.toString()}`));
