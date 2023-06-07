@@ -344,7 +344,7 @@ useEffect(()=>{
 
 
 
-console.log("fetchImages"+JSON.stringify(fetchImages));
+console.log("fetchImages"+JSON.stringify(fetchImages.url));
 const getImageUrl=async(neWImages)=>
           {
             const storage = getStorage();
