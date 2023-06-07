@@ -359,7 +359,7 @@ const getImageUrl=async(neWImages)=>
               }
                 
           }
-          console.log("neWImages"+JSON.stringify(neWImages));
+          console.log("neWImages"+JSON.stringify(neWImages.url));
 
 const PushArr=(e)=>
 {
@@ -725,7 +725,7 @@ const Results =fetchListings.length > 0 ? fetchListings.slice(pagevisited, pagev
     
  <Link to={{pathname:"/listing_detail/"+encodeURIComponent(En_listing_id.toString())+"/"+encodeURIComponent(En_seller_id.toString())}}    className='shd-deal-pic' >
       <div style={{position:"relative"}} >
-        <img src={fetchImages[val.listing_id === fetchImages.listing_id].url}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"relative",top:"0",left:"0"}} alt="" />
+        {/*<img src={}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"relative",top:"0",left:"0"}} alt="" />*/}
 { sale_status==="sold" ?<img src={Soldoutpic} style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"absolute",top:"0",left:"0"}} alt=""/>:""} 
      </div>
  </Link>
