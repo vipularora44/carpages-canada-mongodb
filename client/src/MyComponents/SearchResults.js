@@ -136,7 +136,7 @@ export default function SearchResults() {
     {
       
         Axios.get("https://carpages-canada-mongodb.onrender.com/listings/get_allListings").then((res)=>{
-        console.log(res.data.All_Listings[0]);
+        console.log(res.data.All_Listings);
         setfetchListings(res.data);
         });
      }
@@ -352,7 +352,7 @@ const getImageUrl=async(neWImages)=>
           
                 for(let i=0 ; i < neWImages.length ; i++)
                 {
-                let  url = await getDownloadURL(ref(storage, `images/listing_images/${neWImages[i].All_Listings[0].image_name}`));
+                let  url = await getDownloadURL(ref(storage, "images/listing_images/"+neWImages[i].All_Listings[0].image_name.toString()));
                 console.log("Async func 2..."+url);
                 setfetchImages(fetchImages=>[...fetchImages,url])
                   
