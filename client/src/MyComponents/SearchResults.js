@@ -357,7 +357,7 @@ const getImageUrl=async(neWImages)=>
                 setfetchImages(fetchImages=>[...fetchImages,{url:url,Listing_id:neWImages[i].listing_id}])
                   
               }
-                
+                fetchListings.concat(fetchImages)
           }
        
 
