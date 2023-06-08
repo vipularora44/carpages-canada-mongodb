@@ -136,7 +136,7 @@ export default function SearchResults() {
     {
       
         Axios.get("https://carpages-canada-mongodb.onrender.com/listings/get_allListings").then((res)=>{
-        console.log(res.data.All_Listings);
+        console.log(res.data);
         setfetchListings(res.data);
         });
      }
