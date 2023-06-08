@@ -344,7 +344,7 @@ useEffect(()=>{
 
 
 
-console.log("fetchImages"+JSON.stringify(fetchImages));
+
 const getImageUrl=async(neWImages)=>
           {
             const storage = getStorage();
@@ -359,7 +359,7 @@ const getImageUrl=async(neWImages)=>
               }
                 
           }
-          console.log("neWImages"+JSON.stringify(fetchImages));
+       
 
 const PushArr=(e)=>
 {
@@ -722,7 +722,6 @@ const Results =fetchListings.length > 0 ? fetchListings.slice(pagevisited, pagev
   console.log(val.Complete.length);
 
 
-  console.log("..."+fetchImages[0].url);
  
   return <div className='shd-delaer-list-sect'>
     
@@ -841,7 +840,10 @@ const Apply=()=>
  
  }
  const [sortFilter,setsortFilter]=useState('');
-   useEffect(()=>{},[sortFilter])
+   useEffect(()=>{
+   
+    console.log("fetchImages"+JSON.stringify(fetchImages));
+   },[sortFilter])
    const sortResult=(e)=>
    {
     setsortFilter(e);
