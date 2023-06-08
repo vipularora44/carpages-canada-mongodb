@@ -359,7 +359,7 @@ const getImageUrl=async(neWImages)=>
               }
                 
           }
-          console.log("neWImages"+JSON.stringify(fetchImages[0].url));
+          console.log("neWImages"+JSON.stringify(fetchImages));
 
 const PushArr=(e)=>
 {
