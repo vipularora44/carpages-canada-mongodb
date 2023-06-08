@@ -344,7 +344,7 @@ useEffect(()=>{
 
 
 
-console.log("fetchImages"+JSON.stringify(fetchImages.url));
+console.log("fetchImages"+JSON.stringify(fetchImages));
 const getImageUrl=async(neWImages)=>
           {
             const storage = getStorage();
@@ -352,14 +352,14 @@ const getImageUrl=async(neWImages)=>
           
                 for(let i=0 ; i < neWImages.length ; i++)
                 {
-                let  url = await getDownloadURL(ref(storage, "images/listing_images/"+neWImages[i].All_Listings[0].image_name+""));
+                let  url = await getDownloadURL(ref(storage, "images/listing_images/"+neWImages[i].All_Listings[0].image_name.toString()+""));
                 console.log("Async func 2..."+url);
                 setfetchImages(fetchImages=>[...fetchImages,{url:url,listing_Id:neWImages[i].listing_id}])
                   
               }
                 
           }
-          console.log("neWImages"+JSON.stringify(fetchImages.url));
+          console.log("neWImages"+JSON.stringify(fetchImages[0].url));
 
 const PushArr=(e)=>
 {
