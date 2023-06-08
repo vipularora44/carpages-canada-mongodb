@@ -360,7 +360,7 @@ const getImageUrl=async(neWImages)=>
                 fetchListings.concat(fetchImages)
           }
        
-
+console.log("FetchListings"+JSON.stringify(fetchListings));
 const PushArr=(e)=>
 {
   if(e.length > 0)
