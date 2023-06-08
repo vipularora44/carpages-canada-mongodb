@@ -354,7 +354,7 @@ const getImageUrl=async(neWImages)=>
                 {
                 let  url = await getDownloadURL(ref(storage, `images/listing_images/${neWImages[i].All_Listings[0].image_name.toString()}`));
                 console.log("Async func 2..."+url);
-                setfetchImages(fetchImages=>[...fetchImages,{url:url,listing_Id:neWImages[i].listing_id}])
+                setfetchImages(fetchImages=>[...fetchImages,{url:url,Images_Index:i}])
                   
               }
                 
