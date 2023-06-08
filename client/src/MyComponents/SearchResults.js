@@ -722,7 +722,7 @@ const Results =fetchListings.length > 0 ? fetchListings.slice(pagevisited, pagev
   console.log(val.Complete.length);
 
 
-  console.log("..."+JSON.stringify(fetchImages[0].url));
+  console.log("..."+fetchImages[0].url);
  
   return <div className='shd-delaer-list-sect'>
     
