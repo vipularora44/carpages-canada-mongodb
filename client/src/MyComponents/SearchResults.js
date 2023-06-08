@@ -354,7 +354,7 @@ const getImageUrl=async(neWImages)=>
                 {
                 let  url = await getDownloadURL(ref(storage, `images/listing_images/${neWImages[i].All_Listings[0].image_name.toString()}`));
                 console.log("Async func 2..."+url);
-                setfetchImages(fetchImages=>[...fetchImages,{url:url,Images_Index:i}])
+                setfetchImages(fetchImages=>[...fetchImages,{url:url,Listing_id:neWImages[i].listing_id}])
                   
               }
                 
@@ -717,15 +717,18 @@ const Results =fetchListings.length > 0 ? fetchListings.slice(pagevisited, pagev
   var data ="7" ;
   var En_seller_id = CryptoJS.AES.encrypt(JSON.stringify(val.seller_id), 'my-secret-key@123').toString();
   var En_listing_id = CryptoJS.AES.encrypt(JSON.stringify(val.listing_id), 'my-secret-key@123').toString();
+  
+  
   console.log(val.Complete.length);
- //if(val.Complete[0].buy_from_home==="no"){
+
+console.log(fetchImages[index].url+"..."+fetchImages[index].Images_Index);
 
  
   return <div className='shd-delaer-list-sect'>
     
  <Link to={{pathname:"/listing_detail/"+encodeURIComponent(En_listing_id.toString())+"/"+encodeURIComponent(En_seller_id.toString())}}    className='shd-deal-pic' >
       <div style={{position:"relative"}} >
-        {/*<img src={}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"relative",top:"0",left:"0"}} alt="" />*/}
+        <img src={fetchImages[index]}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"relative",top:"0",left:"0"}} alt="" />
 { sale_status==="sold" ?<img src={Soldoutpic} style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"absolute",top:"0",left:"0"}} alt=""/>:""} 
      </div>
  </Link>
