@@ -721,7 +721,7 @@ const Results =fetchListings.length > 0 ? fetchListings.slice(pagevisited, pagev
   
   console.log(val.Complete.length);
 
-
+  console.log(valimage_name);
  
   return <div className='shd-delaer-list-sect'>
     
