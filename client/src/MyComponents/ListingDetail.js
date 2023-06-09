@@ -660,7 +660,7 @@ console.log("SaleTax value"+saleTaxValue+"MonthlyPaymentValue"+MonthlyPaymentVal
                                             
                                           {vehicleImages.map((val,index)=>{
                                             return <div   >
-                                              {index === imgIndex && (<img src={require('../images/listing_images/'+val.image_name+'')} style={{position:"relative",top:"0",left:"0"}}   className="slider-img-src" alt={index}/>)}
+                                              {index === imgIndex && (<img src={val.image_name} style={{position:"relative",top:"0",left:"0"}}   className="slider-img-src" alt={index}/>)}
                                                
 
 
