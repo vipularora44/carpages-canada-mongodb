@@ -355,9 +355,9 @@ const getImageUrl=async(neWImages)=>
                 let  url = await getDownloadURL(ref(storage, `images/listing_images/${neWImages[i].All_Listings[0].image_name.toString()}`));
                 console.log("Async func 2..."+url);
                 setfetchImages(fetchImages=>[...fetchImages,{url:url,Listing_id:neWImages[i].listing_id}])
-                  
+                fetchListings.concat([...fetchImages])
               }
-                fetchListings.concat(fetchImages)
+                
           }
        
 console.log("FetchListings"+JSON.stringify(fetchListings));
@@ -727,7 +727,7 @@ const Results =fetchListings.length > 0 ? fetchListings.slice(pagevisited, pagev
     
  <Link to={{pathname:"/listing_detail/"+encodeURIComponent(En_listing_id.toString())+"/"+encodeURIComponent(En_seller_id.toString())}}    className='shd-deal-pic' >
       <div style={{position:"relative"}} >
-        <img src={""}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"relative",top:"0",left:"0"}} alt="" />
+        <img src={val.image_name}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"relative",top:"0",left:"0"}} alt="" />
 { sale_status==="sold" ?<img src={Soldoutpic} style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"absolute",top:"0",left:"0"}} alt=""/>:""} 
      </div>
  </Link>

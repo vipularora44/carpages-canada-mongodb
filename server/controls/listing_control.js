@@ -133,7 +133,7 @@ const Create_Listings=async(req,res)=>
                         let firstimage;
                         const uuid = uuidv4();
                         console.log(JSON.stringify(req.files)+"fireBase_Images name");
-                     
+                        let downloadPath='https://firebasestorage.googleapis.com/v0/b/carpages-canada-3b271.appspot.com/o/images%2Flisting_images';
                         const file = req.files.fireBase_Images;
                         for(let i = 0 ; i < file.length; i++)
                          { 
@@ -180,7 +180,7 @@ const Create_Listings=async(req,res)=>
                                         {
                                             id:ID,
                                             listing_id:listing_ID,
-                                            image_name:filename,
+                                            image_name:downloadPath+encodeURIComponent(filename)+"?alt=media&token="+uuid,
                                             image_id:j,
                                             image_type:firstimage,
                                         })
