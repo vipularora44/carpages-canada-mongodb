@@ -721,13 +721,13 @@ const Results =fetchListings.length > 0 ? fetchListings.slice(pagevisited, pagev
   
   console.log(val.Complete.length);
 
-  console.log(val.image_name);
+  console.log("image_name"+val.image_name);
  
   return <div className='shd-delaer-list-sect'>
     
  <Link to={{pathname:"/listing_detail/"+encodeURIComponent(En_listing_id.toString())+"/"+encodeURIComponent(En_seller_id.toString())}}    className='shd-deal-pic' >
       <div style={{position:"relative"}} >
-        <img src={val.image_name}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"relative",top:"0",left:"0"}} alt="" />
+        <img src={""+val.image_name+""}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"relative",top:"0",left:"0"}} alt="" />
 { sale_status==="sold" ?<img src={Soldoutpic} style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"absolute",top:"0",left:"0"}} alt=""/>:""} 
      </div>
  </Link>
