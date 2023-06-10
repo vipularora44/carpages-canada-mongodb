@@ -469,7 +469,7 @@ export default function ShowDealer() {
       console.log(index+"***"+c+"@@@"+arra1);
       return <div className='shd-delaer-list-sect'>
       <Link className='shd-deal-pic'  to={{pathname:"/dealer_inventory/"+encodeURIComponent(ciphertext.toString())}} >
-          <img src={require('../images/dealer-images/'+val.user_image+'')}  style={{width:"200px",height:"120px"}} alt="" />
+          <img src={val.user_image}  style={{width:"200px",height:"120px"}} alt="" />
       </Link>
       <div className='shd-deal-info' style={{width:"66.666666%"}}>
           <div className=''>
