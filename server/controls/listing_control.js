@@ -202,7 +202,7 @@ const Create_Listings=async(req,res)=>
                     else if(!req.files)
                     {
                         joined_images="default.jfif";
-                        for(let i = 0 ; i < joined_images.length; i++)
+                        for(let i = 0 ; i < 2; i++)
                         { 
                               const j=i+1;
                              
