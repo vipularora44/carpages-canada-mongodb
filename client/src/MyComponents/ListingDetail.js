@@ -523,7 +523,7 @@ console.log("SaleTax value"+saleTaxValue+"MonthlyPaymentValue"+MonthlyPaymentVal
               {vehicleImages.map((val)=>{
                 if(val.image_id === "1")
                 {
-                  return <div><img src={require('../images/listing_images/'+val.image_name+'')} style={{width:"45px",height:"45px",margin:"0 16px",objectFit:"cover",borderRadius:"50%"}} alt="" /></div>
+                  return <div><img src={val.image_name} style={{width:"45px",height:"45px",margin:"0 16px",objectFit:"cover",borderRadius:"50%"}} alt="" /></div>
                 }
                 
               })}
@@ -681,7 +681,7 @@ console.log("SaleTax value"+saleTaxValue+"MonthlyPaymentValue"+MonthlyPaymentVal
                                         ImageFirst(val.image_name);  
                                       }
                                       return  <div>
-                                        <img src={require('../images/listing_images/'+val.image_name+'')} title={val.image_name} className="images-veh-list"  onClick={()=>{onImageListClick(index)}} />
+                                        <img src={val.image_name} title={val.image_name} className="images-veh-list"  onClick={()=>{onImageListClick(index)}} />
                                       </div>
                                     })}
                                     </div>
