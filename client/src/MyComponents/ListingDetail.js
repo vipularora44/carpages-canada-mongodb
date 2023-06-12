@@ -956,7 +956,7 @@ console.log("SaleTax value"+saleTaxValue+"MonthlyPaymentValue"+MonthlyPaymentVal
                                  var ciphertext = CryptoJS.AES.encrypt(JSON.stringify(val.user_id), 'my-secret-key@123').toString();      
 
                              return <div style={{display:"flex",flexDirection:"column",flex:"0 0 auto",justifyContent:"center",alignItems:"center"}}>
-                                                           <div><img src={require('../images/dealer-images/'+val.user_image+'')} alt="" style={{width:"200px",height:"120px",objectFit:"contain",borderRadius:"10px"}}/></div>
+                                                           <div><img src={val.user_image} alt="" style={{width:"200px",height:"120px",objectFit:"contain",borderRadius:"10px"}}/></div>
                                                           <div>
                                                             <h4 style={{fontWeight:"800"}}><Link to={{pathname:"/dealer_inventory/"+encodeURIComponent(ciphertext.toString())}} className='veh-detail-lnk' >{val.user_name}</Link></h4>
                                                           </div>
