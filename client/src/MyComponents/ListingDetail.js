@@ -875,7 +875,7 @@ console.log("SaleTax value"+saleTaxValue+"MonthlyPaymentValue"+MonthlyPaymentVal
                                        var En_listing_id = CryptoJS.AES.encrypt(JSON.stringify(val.listing_id), 'my-secret-key@123').toString();
 
                                       return <div style={{display:"flex",flexFlow:"row",justifyContent:"space-between"}}>
-                                            <Link to={{pathname:"/listing_detail/"+encodeURIComponent(En_listing_id.toString())+"/"+encodeURIComponent(En_seller_id.toString())}}  ><img src={require('../images/listing_images/'+val.All_Listings[0].image_name+'')} style={{width:"100px",height:"80px",objectFit:"contain",borderRadius:"10px"}} alt="" /></Link>
+                                            <Link to={{pathname:"/listing_detail/"+encodeURIComponent(En_listing_id.toString())+"/"+encodeURIComponent(En_seller_id.toString())}}  ><img src={val.All_Listings[0].image_name} style={{width:"100px",height:"80px",objectFit:"contain",borderRadius:"10px"}} alt="" /></Link>
                                             <div style={{display:"flex",flexFlow:"column",padding:"8px 16px"}} >
                                              <span><h5 style={{fontSize:"17px",marginBottom:"3px",display:"flex",width:"100%"}}><Link className='veh-detail-lnk' to={{pathname:"/listing_detail/"+encodeURIComponent(En_listing_id.toString())+"/"+encodeURIComponent(En_seller_id.toString())}}  >{val.model_year} {val.make_name} {val.model_name}</Link></h5></span>
                                              <span style={{fontSize:"14px",display:"flex",width:"100%",alignItems:"center"}}>{val.mileage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} KM</span>
