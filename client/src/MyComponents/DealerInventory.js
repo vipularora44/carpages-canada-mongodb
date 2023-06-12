@@ -184,7 +184,7 @@ const Results =fetchListings.length > 0 ? fetchListings.slice(pagevisited, pagev
   return <div className='shd-delaer-list-sect'>
  <Link to={{pathname:"/listing_detail/"+encodeURIComponent(En_listing_id.toString())+"/"+encodeURIComponent(En_seller_id.toString())}}    className='shd-deal-pic' >
       <div >
-        <img src={require('../images/listing_images/'+val.All_Listings[0].image_name+'')}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px"}} alt="" />
+        <img src={val.All_Listings[0].image_name}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px"}} alt="" />
       </div>
  </Link>
  <div style={{width:"100%",display:"flex",flexFlow:"row"}}>
@@ -386,7 +386,7 @@ const Results =fetchListings.length > 0 ? fetchListings.slice(pagevisited, pagev
                                                         {selleredata.map((val)=>{
                                                                 
                                                         return <div style={{display:"flex",flexDirection:"column",flex:"0 0 auto",justifyContent:"center",alignItems:"center"}}>
-                                                           <div><img src={require('../images/dealer-images/'+val.user_image+'')} alt="" style={{width:"200px",height:"120px",objectFit:"contain",borderRadius:"10px"}}/></div>
+                                                           <div><img src={val.user_image} alt="" style={{width:"200px",height:"120px",objectFit:"contain",borderRadius:"10px"}}/></div>
                                                           <div>
                                                             <h4 style={{fontWeight:"800"}}><Link to="#" className='veh-detail-lnk' >{val.user_name}</Link></h4>
                                                           </div>
