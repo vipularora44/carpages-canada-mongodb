@@ -707,7 +707,7 @@ const searchModel=(e)=>
     }
     const goNavigate = useNavigate();
     
-const Results =fetchListings.length > 0 ? fetchListings.slice(pagevisited, pagevisited + resultsPerPage).map((val,index)=>{
+ const Results =fetchListings.length > 0 ? fetchListings.slice(pagevisited, pagevisited + resultsPerPage).map((val,index)=>{
 
   
   const buyFhome=val.Complete[0].buy_from_home;
@@ -825,7 +825,7 @@ const Apply=()=>
   //  if(buyfromHome|| query1 || fetchMakes1 || fetchModels1 || minyears || maxyears || aa || bb || minmileage || maxmileage || sel || sel1 ||drivetrain )
     else  
     {
-     window.history.replaceState(null, "New Page Title", "/search-results")
+      window.history.replaceState(null, "New Page Title", "/search-results")
      console.log("Working Inside");
      Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getFilterListings",{buyfromHome:buyfromHome,cityname:query1,bodyStyle:bodyStyle,allmodels:allModels,allmakes:AllMakes,makename:fetchMakes1,modelname:fetchModels1,minyears:minyears,maxyears:maxyears,minprice:aa,maxprice:bb,minmileage:minmileage,maxmileage:maxmileage,transmission:sel,drivetrain:drivetrain,used_new:sel1}).then((res)=>{
        console.log(res.data);

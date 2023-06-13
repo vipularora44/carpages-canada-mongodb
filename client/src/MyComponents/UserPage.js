@@ -447,7 +447,7 @@ var CryptoJS = require("crypto-js");
 return <div style={{display:"flex",flexDirection:"column",borderBottom:"1px solid lightgray"}}><div className='shd-delaer-list-sect' style={{border:"none"}}>
 <Link to={{pathname:"/listing_detail/"+encodeURIComponent(En_listing_id.toString())+"/"+encodeURIComponent(En_seller_id.toString())}}    className='shd-deal-pic' >
    <div >
-     <img src={require('../images/listing_images/'+val.All_Listings[0].image_name+'')}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px"}} alt="" />
+     <img src={val.All_Listings[0].image_name}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px"}} alt="" />
    </div>
 </Link>
 
@@ -537,7 +537,7 @@ const MyListingsResults =myListings.length > 0 ? myListings.slice(pagevisited1, 
   return <div style={{display:"flex",flexDirection:"column",borderBottom:"1px solid lightgray"}}><div className='shd-delaer-list-sect' style={{border:"none"}}>
   <Link to={{pathname:"/listing_detail/"+encodeURIComponent(En_listing_id.toString())+"/"+encodeURIComponent(En_seller_id.toString())}}    className='shd-deal-pic' >
      <div >
-       <img src={require('../images/listing_images/'+val.All_Listings[0].image_name+'')}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px"}} alt="" />
+       <img src={val.All_Listings[0].image_name}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px"}} alt="" />
      </div>
   </Link>
   <div style={{width:"100%",display:"flex",flexFlow:"row"}}>
@@ -811,7 +811,7 @@ const MyListingsResults =myListings.length > 0 ? myListings.slice(pagevisited1, 
                                 </div>
                                   <div className='usp-prof-fields'>
                                     
-                                    <img src= {image?URL.createObjectURL(image):require('../images/dealer-images/'+val.user_image+'')} alt=""  style={{width:"110px",height:"80px",marginRight:"25px"}}/>
+                                    <img src= {image?URL.createObjectURL(image):val.user_image} alt=""  style={{width:"110px",height:"80px",marginRight:"25px"}}/>
                                   </div>
                                   
                               </div>
