@@ -562,16 +562,14 @@ const ShowBatteryRangeTrue=()=>
 const [transmission,settransmission]=useState("");
 const onTransmission=(e)=>
 { 
-  
   if(e ==="Automatic" || e ==="Continuously Variable Transmission" || e==="Dual-Clutch Transmission" || e==="Direct Shift Gearbox")
   {
     settransmission("Automatic");
-    
   }
   else if(e==="Manual Transmission" || e ==="Intelligent Manual Transmission")
   {
     settransmission("Manual");
-    ;
+    
   }
 }
 
