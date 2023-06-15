@@ -21,6 +21,7 @@ export default function Update_User (props)  {
   console.log(useContext(SignupContext));
   const [UpdateUserData, setUpdateUserData] = useState([]);
   const [username, setusername] = useState("");
+  const [userId, setuserId] = useState("");
   const [password, setpassword] = useState("");
   const [email, setemail] = useState("");
   const [province, setprovince] = useState("");
@@ -59,7 +60,7 @@ export default function Update_User (props)  {
   useEffect(()=>{
     if(UserId)
     {
-      Axios.post("http://localhost:3001/users/getUsers",{userId:User_ID}).then((response) =>{
+      Axios.post("https://carpages-canada-mongodb.onrender.com/users/getUsers",{userId:User_ID}).then((response) =>{
         console.log(response.data);
         setusername(response.data[0].user_name); 
         setpassword(response.data[0].user_password); 
@@ -109,6 +110,7 @@ export default function Update_User (props)  {
     const formData =new FormData();
    if(Image)
    { 
+    formData.append('userId',userId);
     formData.append('username',username);
     formData.append('email',email);
     formData.append('password',password);
@@ -120,21 +122,20 @@ export default function Update_User (props)  {
     formData.append('contact',contactno);
     formData.append('altcontact',altcontactno);
     formData.append('image', Image);
-    formData.append('usertype',"user");
-    formData.append('buyFromHome',"no");
-    formData.append('isVerified',"false");
-     Axios.post("http://localhost:3001/users/insertuser", formData ).then ((response1) =>{
+  
+     Axios.post("https://carpages-canada-mongodb.onrender.com/users/updatetuser", formData ).then ((response1) =>{
         console.log(response1);
         if(response1.data.insertId)
         {
-             navigate("/confirm_account",{state:{email:email}});
+             alert("Account Updated")
         }
      });
 
    }
     else if(!Image)
     {
-      formData.append('username',username);
+    formData.append('userId',userId);
+    formData.append('username',username);
     formData.append('email',email);
     formData.append('password',password);
     formData.append('lotno',lotno);
@@ -144,14 +145,13 @@ export default function Update_User (props)  {
     formData.append('postalcode',postalcode);
     formData.append('contact',contactno);
     formData.append('altcontact',altcontactno);
-    formData.append('usertype',"user");
-    formData.append('buyFromHome',"no");
-    formData.append('isVerified',"false");
-       Axios.post("http://localhost:3001/users/insertuser", formData ).then ((response1) =>{
+   
+       Axios.post("https://carpages-canada-mongodb.onrender.com/users/updatetuser", formData ).then ((response1) =>{
           console.log(response1);
           if(response1.data.insertId)
           {
-            navigate("/confirm_account",{state:{User_email:email}});
+            alert("Account Updated")
+
           }
        });
     }
@@ -322,7 +322,7 @@ export default function Update_User (props)  {
               
               <div className='align-center'>
               <button style={{padding:" 0.5em 1em",fontWeight:"500",backgroundColor:"#5cb35d",
-              color:"white",borderRadius:"3px",border:"none"}} onClick={()=>alert("Coding in progress 😀😀😀😀😀")}>
+              color:"white",borderRadius:"3px",border:"none"}} onClick={()=>submitDetails()}>
                Update Account</button>
                </div>
               

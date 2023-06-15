@@ -1830,26 +1830,26 @@ const insert_New_Images=async(req,res)=>
    // console.log("ImageId "+ImageId+"listingId "+listingId);
     if(req.files)
     {
+        const uuid = uuidv4();
+        console.log(JSON.stringify(req.files)+"fireBase_Images name");
+        let downloadPath='https://firebasestorage.googleapis.com/v0/b/carpages-canada-3b271.appspot.com/o/images%2Flisting_images%2F';
+        const file = req.files.fireBase_Images;
         console.log("ImageId "+ImageId+"listingId "+listingId);
-        const file = req.files.images;
+
         for(let i = 0 ; i < file.length; i++)
          {  
-            
-            
-            
-            
           let filename= Date.now()+"-"+file[i].name;
-           
-  
-        
-           let newpath=path.join(process.cwd(),'../src/images/listing_images/',filename);
-           
-           file[i].mv(newpath, function (err){
-              if(err){
-                   res.send(err);
-                   console.log("Image ph save"+err);
+          Bucket.upload(file[i].tempFilePath,{destination:`images/listing_images/${filename}`,
+          resumable:true,
+          metadata: {
+              metadata: {
+                  firebaseStorageDownloadTokens: uuid,
               }
-           });
+                },
+            }).then((res)=>{
+                console.log(res)
+            })
+        
             Listings_images_counter_Model.findOneAndUpdate(
                 {id:"autoval"},{"$inc":{"seq":1}},{new:true},(err,cd)=>{
                     let ID;
@@ -1871,7 +1871,7 @@ const insert_New_Images=async(req,res)=>
                         {
                             id:ID,
                             listing_id:listingId,
-                            image_name:filename,
+                            image_name:downloadPath+encodeURIComponent(filename)+"?alt=media&token="+uuid,
                             image_id:j,
                             image_type:firstimage,
                         })
@@ -1880,7 +1880,7 @@ const insert_New_Images=async(req,res)=>
                             //console.log("working 11");
                             if(doc)
                             {//  console.log("doc");
-                             // res.send("Images Saved.."+doc);
+                              res.send("Images Saved.."+doc);
 
                             }
                              if(err)

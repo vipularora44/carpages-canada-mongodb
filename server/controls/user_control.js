@@ -14,6 +14,17 @@ const mail=require('nodemailer');
 const { async } = require("@firebase/util");
 
 
+const {Storage} = require('@google-cloud/storage');
+const { bucket } = require("firebase-functions/v1/storage");
+//const serviceAccount = require('../service-account-file.json')
+const storage = new Storage({
+    keyFilename : 'service-account-file.json'
+})
+const { v4: uuidv4 } = require('uuid');
+const Bucket = storage.bucket('gs://carpages-canada-3b271.appspot.com')
+const uuid = uuidv4();
+   let downloadPath='https://firebasestorage.googleapis.com/v0/b/carpages-canada-3b271.appspot.com/o/images%2Fdealer-images%2F';
+
 var transporterMail = mail.createTransport({
    service:'gmail',
    host: 'smtp.gmail.com',
@@ -140,9 +151,19 @@ const Insert_User = async (req,res)=>
   }
   else
   {
+
+   
     fileName=Date.now()+"-"+req.files.image.name;
-    let newpath=path.join(process.cwd(),'../src/images/dealer-images',fileName);
-    req.files.image.mv(newpath);
+    Bucket.upload(file.tempFilePath,{destination:`images/dealer-images/${fileName}`,
+    resumable:true,
+    metadata: {
+        metadata: {
+            firebaseStorageDownloadTokens: uuid,
+        }
+         },
+      }).then((res)=>{
+         console.log(res)
+      })
   }
   const username=req.body.username;
   const email=req.body.email;
@@ -192,7 +213,7 @@ const Insert_User = async (req,res)=>
                 user_postalcode:postalcode,
                 user_contactno:contact,
                 alternate_contact:altcontact,
-                user_image:fileName,
+                user_image:downloadPath+encodeURIComponent(fileName)+"?alt=media&token="+uuid,
                 user_type:usertype,
                 buy_from_home:buyFromHome,
                 is_verified:isVerified,
@@ -477,10 +498,18 @@ const updatetuser=async(req,res)=>
       {
                   console.log("Image Name"+req.files.image.name);
                   fileName=Date.now()+"-"+req.files.image.name;
-                  let newpath=path.join(process.cwd(),'../src/images/dealer-images',fileName);
-                  req.files.image.mv(newpath);
+                  Bucket.upload(file.tempFilePath,{destination:`images/dealer-images/${fileName}`,
+                  resumable:true,
+                  metadata: {
+                      metadata: {
+                          firebaseStorageDownloadTokens: uuid,
+                      }
+                       },
+                    }).then((res)=>{
+                       console.log(res)
+                    })
          const data= await create_User_Model.findByIdAndUpdate({_id:ID},{user_name:username,user_email:user_email,user_province:province,
-            user_cityname:cityname,user_lotno:lotno,user_streetname:streetname,user_postalcode:postalcode,user_contactno:contact,alternate_contact:altcontact,user_image:fileName},function (err, docs)
+            user_cityname:cityname,user_lotno:lotno,user_streetname:streetname,user_postalcode:postalcode,user_contactno:contact,alternate_contact:altcontact,user_image:downloadPath+encodeURIComponent(fileName)+"?alt=media&token="+uuid},function (err, docs)
           {
             if (err){
                 console.log(err)
