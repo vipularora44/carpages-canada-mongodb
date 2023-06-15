@@ -154,7 +154,7 @@ const Insert_User = async (req,res)=>
 
    
     fileName=Date.now()+"-"+req.files.image.name;
-    Bucket.upload(file.tempFilePath,{destination:`images/dealer-images/${fileName}`,
+    Bucket.upload(req.files.image.tempFilePath,{destination:`images/dealer-images/${fileName}`,
     resumable:true,
     metadata: {
         metadata: {
@@ -498,7 +498,7 @@ const updatetuser=async(req,res)=>
       {
                   console.log("Image Name"+req.files.image.name);
                   fileName=Date.now()+"-"+req.files.image.name;
-                  Bucket.upload(file.tempFilePath,{destination:`images/dealer-images/${fileName}`,
+                  Bucket.upload(req.files.image.tempFilePath,{destination:`images/dealer-images/${fileName}`,
                   resumable:true,
                   metadata: {
                       metadata: {
