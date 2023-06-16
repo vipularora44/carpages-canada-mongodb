@@ -822,7 +822,7 @@ const Apply=()=>
          });
       }
     }
-  //  if(buyfromHome|| query1 || fetchMakes1 || fetchModels1 || minyears || maxyears || aa || bb || minmileage || maxmileage || sel || sel1 ||drivetrain )
+
     else  
     {
       window.history.replaceState(null, "New Page Title", "/search-results")
@@ -1276,16 +1276,13 @@ const Apply=()=>
                           <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
                           <label class="form-check-label srch-rs-lst" for="flexSwitchCheckDefault">Only show cars with photos</label>
                        </div>
-                       <div class="form-check form-switch">
-                        <input type="file" multiple name="" id=""  class="form-check-input" onChange={(e)=>{setImagUpload(e.target.files)}}/>
-                          <label class="form-check-label srch-rs-lst" for="flexSwitchCheckDefault">Upload photos here</label>
-                       </div>
+                      
                       </fieldset>
                       <hr />
                       
                       <div className='dsp-wr align-item mg-tp srch-rs-lst mg-btm'>
                                 <div className='srch-rs-row fd-r align-center ' >
-                                <button type="submit" className='apply-btn bg-clr-rst' onClick={()=>{imagEupload()}} >Reset</button>
+                                <button type="submit" className='apply-btn bg-clr-rst'  >Reset</button>
                                 <button type="submit" className='apply-btn bg-clr-apply' onClick={()=>Apply()}>APPLY</button>
                                   </div>
                                 </div>
