@@ -49,7 +49,7 @@ const listings = new mongoose.Schema({
       },
       price:{
         type: Number,
-        required:true,
+        required:false,
       },
       vin_no:{
         type: String,
