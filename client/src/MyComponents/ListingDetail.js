@@ -561,7 +561,7 @@ console.log("SaleTax value"+saleTaxValue+"MonthlyPaymentValue"+MonthlyPaymentVal
              {vehicledata.map((val)=>{
                 
                 return  <div style={{width:"33..33333%",display:"flex",margin:"0 12px",color:"white",flexFlow:"column",alignItems:"center",height:"100%",justifyContent:"center"}}>
-                      <div style={{fontSize:"20px",marginBottom:"-3px",fontWeight:"600"}}>${new Intl.NumberFormat('en-US').format(val.price)}</div>
+                      <div style={{fontSize:"20px",marginBottom:"-3px",fontWeight:"600"}}>${val.price !==null ? new Intl.NumberFormat('en-US').format(val.price):"No Price"}</div>
                               <div style={{fontSize:"12px",marginTop:"-3px"}}>+ tax & licensing
                   </div>
               </div>
@@ -690,7 +690,7 @@ console.log("SaleTax value"+saleTaxValue+"MonthlyPaymentValue"+MonthlyPaymentVal
                                        <div className='veh-details-km-price-head'>
                                             <div>
                                               <div>
-                                              <h2 style={{fontWeight:"600"}}>${new Intl.NumberFormat('en-US').format(val.price)}</h2>
+                                              <h2 style={{fontWeight:"600"}}>${val.price !==null ?new Intl.NumberFormat('en-US').format(val.price):"No Price"}</h2>
                                               <p style={{fontSize:"13px",margin:"0"}}>+ taxes & licensing</p>
                                               </div>
                                               <div style={{fontSize:"16px"}}>
@@ -879,7 +879,7 @@ console.log("SaleTax value"+saleTaxValue+"MonthlyPaymentValue"+MonthlyPaymentVal
                                             <div style={{display:"flex",flexFlow:"column",padding:"8px 16px"}} >
                                              <span><h5 style={{fontSize:"17px",marginBottom:"3px",display:"flex",width:"100%"}}><Link className='veh-detail-lnk' to={{pathname:"/listing_detail/"+encodeURIComponent(En_listing_id.toString())+"/"+encodeURIComponent(En_seller_id.toString())}}  >{val.model_year} {val.make_name} {val.model_name}</Link></h5></span>
                                              <span style={{fontSize:"14px",display:"flex",width:"100%",alignItems:"center"}}>{val.mileage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} KM</span>
-                                             <span style={{display:"flex",flexFlow:"row",fontSize:"15px"}}><strong>${val.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</strong> <p style={{fontSize:"13px"}}>+ tax & lic</p></span>
+                                             <span style={{display:"flex",flexFlow:"row",fontSize:"15px"}}><strong>${val.price !==null?val.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","):"No Price"}</strong> <p style={{fontSize:"13px"}}>+ tax & lic</p></span>
                                              
                                             </div>
                                             </div>
