@@ -467,6 +467,8 @@ const getFilterListings=async(req,res)=>
                                     const transmission=req.body.transmission;
                                     const drivetrain=req.body.drivetrain;
                                     const used_new=req.body.used_new;
+                                    const withPictures=req.body.withPictures;
+                                    const withPrices=req.body.withPrices;
                                     //const vehicleClass=req.body.vehicleClass;
                                     
                                     console.log(JSON.stringify(req.body));
@@ -476,7 +478,8 @@ const getFilterListings=async(req,res)=>
                                     console.log("maxprice"+maxprice);
                                     console.log("minmileage"+minmileage);
                                     console.log("maxmileage"+maxmileage);
-                                   
+                                    console.log("withPictures"+withPictures);
+                                    console.log("withPrices"+withPrices);
                                     var conditions = {};
                                     var conditions1 = {};
                                     if(!cityname=="")

@@ -98,7 +98,8 @@ export default function SearchResults() {
   const [MylistingOptions , setMylistingOptions]= useState(false);
   const [MylistingOptionsIndex , setMylistingOptionsIndex]= useState("");
   const [imageUploa,setImagUpload] = useState(null);
-
+  const [withPrices,setwithPrices] = useState(false);
+  const [withPictures,setwithPictures] = useState(false);
 
   console.log(JSON.stringify(params));
   let ab,bc="";
@@ -808,7 +809,8 @@ const Apply=()=>
      
       if(a>0)
       {
-        Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getFilterListings",{buyfromHome:buyfromHome,cityname:query1,bodyStyle:bodyStyle,allmodels:allModels,allmakes:AllMakes,makename:fetchMakes1,modelname:fetchModels1,minyears:minyears,maxyears:maxyears,minprice:aa,maxprice:bb,minmileage:minmileage,maxmileage:maxmileage,transmission:sel,drivetrain:drivetrain,used_new:sel1}).then((res)=>{
+        Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getFilterListings",{buyfromHome:buyfromHome,cityname:query1,bodyStyle:bodyStyle,allmodels:allModels,allmakes:AllMakes,makename:fetchMakes1,modelname:fetchModels1,minyears:minyears,maxyears:maxyears,minprice:aa,maxprice:bb,minmileage:minmileage,
+        maxmileage:maxmileage,transmission:sel,drivetrain:drivetrain,used_new:sel1,withPrices:withPrices,withPictures:withPictures}).then((res)=>{
           console.log(res.data);
           setfetchListings(res.data);
           
@@ -816,7 +818,8 @@ const Apply=()=>
       }
       else if(a<0)
       {
-        Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getFilterListings",{buyfromHome:buyfromHome,province:query1,bodyStyle:bodyStyle,allmodels:allModels,allmakes:AllMakes,makename:fetchMakes1,modelname:fetchModels1,minyears:minyears,maxyears:maxyears,minprice:aa,maxprice:bb,minmileage:minmileage,maxmileage:maxmileage,transmission:sel,drivetrain:drivetrain,used_new:sel1}).then((res)=>{
+        Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getFilterListings",{buyfromHome:buyfromHome,province:query1,bodyStyle:bodyStyle,allmodels:allModels,allmakes:AllMakes,makename:fetchMakes1,modelname:fetchModels1,minyears:minyears,maxyears:maxyears,minprice:aa,maxprice:bb,minmileage:minmileage,maxmileage:maxmileage,
+        transmission:sel,drivetrain:drivetrain,used_new:sel1,withPrices:withPrices,withPictures:withPictures}).then((res)=>{
           console.log(res.data);
           setfetchListings(res.data);
          });
@@ -827,7 +830,8 @@ const Apply=()=>
     {
       window.history.replaceState(null, "New Page Title", "/search-results")
      console.log("Working Inside");
-     Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getFilterListings",{buyfromHome:buyfromHome,cityname:query1,bodyStyle:bodyStyle,allmodels:allModels,allmakes:AllMakes,makename:fetchMakes1,modelname:fetchModels1,minyears:minyears,maxyears:maxyears,minprice:aa,maxprice:bb,minmileage:minmileage,maxmileage:maxmileage,transmission:sel,drivetrain:drivetrain,used_new:sel1}).then((res)=>{
+     Axios.post("https://carpages-canada-mongodb.onrender.com/listings/getFilterListings",{buyfromHome:buyfromHome,cityname:query1,bodyStyle:bodyStyle,allmodels:allModels,allmakes:AllMakes,makename:fetchMakes1,modelname:fetchModels1,minyears:minyears,maxyears:maxyears,minprice:aa,maxprice:bb,minmileage:minmileage,maxmileage:maxmileage,transmission:sel,
+     drivetrain:drivetrain,used_new:sel1,withPrices:withPrices,withPictures:withPictures}).then((res)=>{
        console.log(res.data);
        setfetchListings(res.data);
       });
@@ -1269,11 +1273,11 @@ const Apply=()=>
                       <hr />
                       <fieldset>
                        <div class="form-check form-switch">
-                          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+                          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={(e)=>{setwithPrices(e.target.checked)}}/>
                           <label class="form-check-label srch-rs-lst" for="flexSwitchCheckDefault">Only show vehicles with prices</label>
                        </div>
                        <div class="form-check form-switch">
-                          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+                          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"  onChange={(e)=>{setwithPrices(e.target.checked)}} />
                           <label class="form-check-label srch-rs-lst" for="flexSwitchCheckDefault">Only show cars with photos</label>
                        </div>
                       
