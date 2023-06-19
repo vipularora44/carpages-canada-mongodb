@@ -469,7 +469,7 @@ const getFilterListings=async(req,res)=>
                                     const used_new=req.body.used_new;
                                     const withPictures=req.body.withPictures;
                                     const withPrices=req.body.withPrices;
-                                    //const vehicleClass=req.body.vehicleClass;
+                                    const imageName='https://firebasestorage.googleapis.com/v0/b/carpages-canada-3b271.appspot.com/o/images%2Flisting_images%2Fdefault.jfif?alt=media&token=3dbb4bb1-5ae3-4348-9d14-585943c0bff7';
                                     
                                     console.log(JSON.stringify(req.body));
                                     console.log("minyears"+minyears);
@@ -482,6 +482,7 @@ const getFilterListings=async(req,res)=>
                                     console.log("withPrices"+withPrices);
                                     var conditions = {};
                                     var conditions1 = {};
+                                    var conditions2 = {"image_type":"primary"};
                                     if(!cityname=="")
                                     {
                                        conditions.city_name=cityname;
@@ -578,9 +579,13 @@ const getFilterListings=async(req,res)=>
                                     {
                                        conditions.price ={$exists: true,$ne:null};
                                     }
+                                    if(withPictures)
+                                    {
+                                       conditions2.image_name ={$exists: true,$ne:imageName};
+                                    }
                                     console.log("Conditions"+JSON.stringify(conditions));
                                     console.log("Conditions"+JSON.stringify(conditions1));
-   
+                                    console.log("conditions2"+JSON.stringify(conditions2));
         const DATA=await Listings_Model.aggregate([
            
             
@@ -591,7 +596,7 @@ const getFilterListings=async(req,res)=>
                         from:"listings__images",
                         localField:"listing_id",
                         foreignField:"listing_id",
-                        pipeline:[ {$match:{"image_type":"primary"}}],
+                        pipeline:[ {$match:conditions2}],
                         as:"All_Listings"
                     }
                 },
