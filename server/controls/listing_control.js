@@ -576,7 +576,7 @@ const getFilterListings=async(req,res)=>
                                     }
                                     if(withPrices)
                                     {
-                                       conditions1.price !== null;
+                                       conditions1.price ={$ne:null};
                                     }
                                     console.log("Conditions"+JSON.stringify(conditions));
                                     console.log("Conditions"+JSON.stringify(conditions1));
