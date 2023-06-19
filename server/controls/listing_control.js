@@ -579,11 +579,8 @@ const getFilterListings=async(req,res)=>
                                     {
                                        conditions.price ={$exists: true,$ne:null};
                                     }
-                                    if(!withPictures)
-                                    {
-                                       conditions2={"image_type":"primary"};
-                                    }
-                                   else  if(withPictures)
+                                   
+                                   if(withPictures)
                                     {
                                        conditions2={"image_type":"primary","image_name":{$exists: true,$ne:imageName}};
                                     }
@@ -614,6 +611,7 @@ const getFilterListings=async(req,res)=>
                        as:"Complete"
                     }
                  },
+                 
                  { $match: {"Complete.0": { "$exists": true } } },
                                
         ]);
