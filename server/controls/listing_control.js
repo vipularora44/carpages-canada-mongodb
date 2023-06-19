@@ -582,7 +582,7 @@ const getFilterListings=async(req,res)=>
                                    
                                    if(withPictures)
                                     {
-                                       conditions2={"image_type":"primary","image_name":{$exists: true,$ne:imageName}};
+                                       conditions2={,"image_name":{$exists: true,$ne:imageName}};
                                     }
                                     console.log("Conditions"+JSON.stringify(conditions));
                                     console.log("Conditions"+JSON.stringify(conditions1));
@@ -597,7 +597,7 @@ const getFilterListings=async(req,res)=>
                         from:"listings__images",
                         localField:"listing_id",
                         foreignField:"listing_id",
-                        pipeline:[ {$match:conditions2}],
+                        pipeline:[ {$match:!withPictures?{"image_type":"primary"}:{"image_type":"primary","image_name":{$ne:imageName}}}],
                         as:"All_Listings"
                     }
                 },
