@@ -519,7 +519,7 @@ console.log("SaleTax value"+saleTaxValue+"MonthlyPaymentValue"+MonthlyPaymentVal
       {navBar ?<div id="navbar">
           <div style={{width:"100%",display:"flex",flexWrap:"nowrap",padding:"0 32px",flexFlow:"row",height:"100%",margin:"0 auto",alignItems:"center",justifyContent:"space-between"}}>
              <div style={{width:"25%",display:"flex",alignItems:"center",height:"100%",justifyContent:"center"}}>
-              <div><BsArrowLeft style={{strokeWidth:"1",fontSize:"25px",color:"white",margin:"0 8px",cursor:"pointer"}} onClick={()=>window.history.back()}/></div>
+              <div><BsArrowLeft style={{strokeWidth:"1",fontSize:"25px",color:"white",margin:"0 8px",cursor:"pointer",marginRight:"10px"}} onClick={()=>window.history.back()}/></div>
               {vehicleImages.map((val)=>{
                 if(val.image_id === "1")
                 {
