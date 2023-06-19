@@ -588,6 +588,7 @@ const getFilterListings=async(req,res)=>
                                        conditions2={"image_name":imageName,"image_type":"primary"};
                                     }
                                   
+                                    console.log("conditions2...."+JSON.stringify(conditions2));
         const DATA=await Listings_Model.aggregate([
            
             
