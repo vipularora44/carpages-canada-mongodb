@@ -575,10 +575,13 @@ const getFilterListings=async(req,res)=>
                                     {
                                        conditions1.buy_from_home="yes";
                                     }
+                                    if(withPrices)
+                                    {
+                                       conditions.price ={$exists: true,$ne:null};
+                                    }
                                    
-                                    console.log("Conditions"+JSON.stringify(conditions));
-                                    console.log("Conditions"+JSON.stringify(conditions1));
-                                    console.log("conditions2"+JSON.stringify(conditions2));
+                                   
+                                  
         const DATA=await Listings_Model.aggregate([
            
             
@@ -589,7 +592,7 @@ const getFilterListings=async(req,res)=>
                         from:"listings__images",
                         localField:"listing_id",
                         foreignField:"listing_id",
-                        pipeline:[ {$match:{"image_type":"primary"}}],
+                        pipeline:[ withPictures? { $match:{"image_type":"primary"}}: { $match:{"image_name":{$ne:imageName},"image_type":"primary"}}],
                         as:"All_Listings"
                     }
                 },
