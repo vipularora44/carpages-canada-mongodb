@@ -589,7 +589,7 @@ const getFilterListings=async(req,res)=>
                         from:"listings__images",
                         localField:"listing_id",
                         foreignField:"listing_id",
-                        pipeline:[ {$match:!withPictures?{"image_type":"primary"}:{"image_name":{$ne:imageName.toString(),"image_type":"primary"}}}],
+                        pipeline:[ {$match:{"image_type":"primary"}}],
                         as:"All_Listings"
                     }
                 },
