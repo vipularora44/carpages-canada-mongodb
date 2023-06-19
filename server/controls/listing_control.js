@@ -574,7 +574,10 @@ const getFilterListings=async(req,res)=>
                                     {
                                        conditions1.buy_from_home="yes";
                                     }
-                                   
+                                    if(withPrices)
+                                    {
+                                       conditions1.withPrices !==null;
+                                    }
                                     console.log("Conditions"+JSON.stringify(conditions));
                                     console.log("Conditions"+JSON.stringify(conditions1));
    
