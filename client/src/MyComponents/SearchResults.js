@@ -99,7 +99,7 @@ export default function SearchResults() {
   const [MylistingOptionsIndex , setMylistingOptionsIndex]= useState("");
   const [imageUploa,setImagUpload] = useState(null);
   const [withPrices,setwithPrices] = useState(false);
-  const [withPictures,setwithPictures] = useState(false);
+  const [withPictures,setwithPictures] = useState('https://firebasestorage.googleapis.com/v0/b/carpages-canada-3b271.appspot.com/o/images%2Flisting_images%2Fdefault.jfif?alt=media&token=3dbb4bb1-5ae3-4348-9d14-585943c0bff7');
 
   console.log(JSON.stringify(params));
   let ab,bc="";
@@ -712,6 +712,7 @@ const searchModel=(e)=>
 
   
   const buyFhome=val.Complete[0].buy_from_home;
+  const imageName=val.All_Listings[0].image_name;
   const seller_id=val.seller_id;
   const sale_status=val.sale_status;
   var CryptoJS = require("crypto-js");
@@ -726,7 +727,7 @@ const searchModel=(e)=>
  
   return <div className='shd-delaer-list-sect'>
     
- <Link to={{pathname:"/listing_detail/"+encodeURIComponent(En_listing_id.toString())+"/"+encodeURIComponent(En_seller_id.toString())}}    className='shd-deal-pic' >
+  <Link to={{pathname:"/listing_detail/"+encodeURIComponent(En_listing_id.toString())+"/"+encodeURIComponent(En_seller_id.toString())}}    className='shd-deal-pic' >
       <div style={{position:"relative"}} >
         <img src={val.All_Listings[0].image_name}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"relative",top:"0",left:"0"}} alt="" />
 { sale_status==="sold" ?<img src={Soldoutpic} style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"absolute",top:"0",left:"0"}} alt=""/>:""} 

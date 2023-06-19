@@ -583,7 +583,7 @@ const getFilterListings=async(req,res)=>
                                     {
                                        conditions2={"image_type":"primary"};
                                     }
-                                    if(withPictures)
+                                   else if(withPictures)
                                     {
                                        conditions2={"image_name":imageName,"image_type":"primary"};
                                     }
