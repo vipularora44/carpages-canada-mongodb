@@ -576,7 +576,7 @@ const getFilterListings=async(req,res)=>
                                     }
                                     if(withPrices)
                                     {
-                                       conditions1.price ={$ne:null};
+                                       conditions1.price ={ $exists: true,$ne:null};
                                     }
                                     console.log("Conditions"+JSON.stringify(conditions));
                                     console.log("Conditions"+JSON.stringify(conditions1));
