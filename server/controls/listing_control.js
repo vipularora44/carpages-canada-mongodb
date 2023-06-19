@@ -575,15 +575,7 @@ const getFilterListings=async(req,res)=>
                                     {
                                        conditions1.buy_from_home="yes";
                                     }
-                                    if(withPrices)
-                                    {
-                                       conditions.price ={$exists: true,$ne:null};
-                                    }
                                    
-                                   if(withPictures)
-                                    {
-                                       conditions2={,"image_name":{$exists: true,$ne:imageName}};
-                                    }
                                     console.log("Conditions"+JSON.stringify(conditions));
                                     console.log("Conditions"+JSON.stringify(conditions1));
                                     console.log("conditions2"+JSON.stringify(conditions2));
