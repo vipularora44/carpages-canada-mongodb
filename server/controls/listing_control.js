@@ -482,7 +482,7 @@ const getFilterListings=async(req,res)=>
                                     console.log("withPrices"+withPrices);
                                     var conditions = {};
                                     var conditions1 = {};
-                                    var conditions2 = {"image_type":"primary"};
+                                    var conditions2 = {};
                                     if(!cityname=="")
                                     {
                                        conditions.city_name=cityname;
@@ -579,9 +579,13 @@ const getFilterListings=async(req,res)=>
                                     {
                                        conditions.price ={$exists: true,$ne:null};
                                     }
-                                    if(withPictures)
+                                    if(!withPictures)
                                     {
-                                       conditions2.image_name ={$exists: true,$ne:imageName};
+                                       conditions2.image_name ={"image_type":"primary"};
+                                    }
+                                   else  if(withPictures)
+                                    {
+                                       conditions2.image_name ={"image_type":"primary",$exists: true,$ne:imageName};
                                     }
                                     console.log("Conditions"+JSON.stringify(conditions));
                                     console.log("Conditions"+JSON.stringify(conditions1));
