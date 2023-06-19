@@ -725,8 +725,8 @@ const searchModel=(e)=>
 
   console.log("image_name"+val.All_Listings[0].image_name);
  
-  return <div className='shd-delaer-list-sect'>
-   { imageName !==withPictures  ?<div>
+  return <div>
+   { imageName !==withPictures  ?<div className='shd-delaer-list-sect'>
   <Link to={{pathname:"/listing_detail/"+encodeURIComponent(En_listing_id.toString())+"/"+encodeURIComponent(En_seller_id.toString())}}    className='shd-deal-pic' >
       <div style={{position:"relative"}} >
         <img src={val.All_Listings[0].image_name}  style={{width:"150px",height:"105px",objectFit:"contain",borderRadius:"10px",position:"relative",top:"0",left:"0"}} alt="" />
