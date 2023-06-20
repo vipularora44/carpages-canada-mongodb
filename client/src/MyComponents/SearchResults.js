@@ -1275,12 +1275,12 @@ const Apply=()=>
                       <hr />
                       <fieldset>
                        <div class="form-check form-switch">
-                          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={(e)=>{setwithPrices(e.target.checked)}}/>
-                          <label class="form-check-label srch-rs-lst" for="flexSwitchCheckDefault">Only show vehicles with prices</label>
+                          <input name='withPrices' class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={(e)=>{setwithPrices(e.target.checked)}}/>
+                          <label class="form-check-label srch-rs-lst" for="withPrices">Only show vehicles with prices</label>
                        </div>
                        <div class="form-check form-switch">
-                          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"  onChange={(e)=>{setwithPrices(e.target.checked)}} />
-                          <label class="form-check-label srch-rs-lst" for="flexSwitchCheckDefault">Only show cars with photos</label>
+                          <input name='withPictures' class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"  onChange={(e)=>{setwithPrices(e.target.checked)}} />
+                          <label class="form-check-label srch-rs-lst" for="flexSwitchCheckDwithPicturesefault">Only show cars with photos</label>
                        </div>
                       
                       </fieldset>
