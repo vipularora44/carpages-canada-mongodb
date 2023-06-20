@@ -916,6 +916,7 @@ const Apply=()=>
  
   }
 
+  console.log("WithPicture...."+withPictures+"WithPrices...."+withPrices);
 
 
   return (
