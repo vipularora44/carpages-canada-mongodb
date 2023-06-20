@@ -615,7 +615,7 @@ const getFilterListings=async(req,res)=>
                        as:"Complete"
                     }
                  },
-                 
+                 { '$unwind' : '$Results' },
                {
                 $project:{"make_name":1,"model_name":1,"model_year":1,"mileage":1,"price":1,"seller_name":1,"user_name":1,"user_cityname":1}
             }
