@@ -623,7 +623,7 @@ const getFilterListings=async(req,res)=>
         if(withPictures)
         {
             newData = DATA.filter(function(val){
-                return val.All_Listings ;
+                return val.All_Listings.length > 0 ;
             })
             console.log("newData"+JSON.stringify(newData));
             res.send(newData); 
