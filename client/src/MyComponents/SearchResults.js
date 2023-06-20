@@ -712,7 +712,7 @@ const searchModel=(e)=>
 
   
   const buyFhome=val.Complete[0].buy_from_home;
-  const imageName=val.All_Listings[0].image_name;
+ // const imageName=val.All_Listings[0].image_name;
   const seller_id=val.seller_id;
   const sale_status=val.sale_status;
   var CryptoJS = require("crypto-js");
