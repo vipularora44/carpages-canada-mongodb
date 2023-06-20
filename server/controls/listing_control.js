@@ -579,14 +579,16 @@ const getFilterListings=async(req,res)=>
                                     {
                                        conditions.price ={$exists: true,$ne:null};
                                     }
-                                //     if(!withPictures)
-                                //     {
-                                //        conditions2={"image_type":"primary"};
-                                //     }
-                                //    else if(withPictures)
-                                //     {
-                                //        conditions2={"image_name":imageName,"image_type":"primary"};
-                                //     }
+                                    if(!withPictures)
+                                    {
+                                       conditions2={"image_type":"primary"};
+                                       console.log("conditions2....11111"+JSON.stringify(conditions2));
+                                    }
+                                   else if(withPictures)
+                                    {
+                                       conditions2={"image_name":imageName,"image_type":"primary"};
+                                       console.log("conditions2.... 2222"+JSON.stringify(conditions2));
+                                    }
                                   
                                     console.log("conditions2...."+JSON.stringify(conditions2));
         const DATA=await Listings_Model.aggregate([
