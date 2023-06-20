@@ -586,7 +586,7 @@ const getFilterListings=async(req,res)=>
                                     }
                                    else if(withPictures)
                                     {
-                                       conditions2={"image_name":imageName,"image_type":"primary"};
+                                       conditions2={"image_name":{$ne:imageName},"image_type":"primary"};
                                        console.log("conditions2.... 2222"+JSON.stringify(conditions2));
                                     }
                                   
