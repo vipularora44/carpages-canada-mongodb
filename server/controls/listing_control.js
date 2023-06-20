@@ -625,8 +625,13 @@ const getFilterListings=async(req,res)=>
             newData = DATA.filter(function(val){
                 return val.All_Listings !==[];
             })
+            res.send(newData); 
         }
-        res.send(newData); 
+        else if(!withPictures)
+        {
+            res.send(DATA); 
+        }
+        
 
     }
     catch(err)
