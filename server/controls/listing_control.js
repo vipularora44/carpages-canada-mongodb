@@ -503,21 +503,28 @@ const getFilterListings=async(req,res)=>
                                     {
                                        conditions.model_name={$in:modelname};
                                     }
-                                    if(!isNaN(minyears) && !isNaN(maxyears))
+                                    if(!minyears && !maxyears)
                                     {
                                         console.log("Fisrt Working");
-                                       conditions.model_year={ $gte:minyears,$lte:maxyears};
+                                        const  MINYEAR=1950;
+                                       conditions.model_year={ $gte:MINYEAR,$lte:currentYear};
                                     }
-                                    else if(!isNaN(minyears) && isNaN(maxyears))
+                                    else if(minyears && maxyears)
                                     {
                                         console.log("second Working");
                                        conditions.model_year={$gte:minyears,$lte:maxyears};
                                     }
-                                    else if(isNaN(minyears) && !isNaN(maxyears))
+                                    else if(!minyears && maxyears)
                                     {
                                         console.log("third Working");
                                        const  MINYEAR=1950;
                                        conditions.model_year={$gte:MINYEAR,$lte:maxyears};
+                                    }
+                                    else if(minyears && !maxyears)
+                                    {
+                                        console.log("third Working");
+                                       const  MINYEAR=1950;
+                                       conditions.model_year={$gte:minyears,$lte:currentYear};
                                     }
                                     if(!isNaN(minprice) && !isNaN(maxprice) )
                                     {
