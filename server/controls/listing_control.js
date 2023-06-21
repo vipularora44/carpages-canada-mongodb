@@ -201,7 +201,7 @@ const Create_Listings=async(req,res)=>
                     }
                     else if(!req.files)
                     {
-                        joined_images="default.jfif";
+                        joined_images="https://firebasestorage.googleapis.com/v0/b/carpages-canada-3b271.appspot.com/o/images%2Flisting_images%2Fdefault.jfif?alt=media&token=3dbb4bb1-5ae3-4348-9d14-585943c0bff7";
                         for(let i = 0 ; i < 2; i++)
                         { 
                               const j=i+1;
