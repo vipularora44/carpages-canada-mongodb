@@ -483,7 +483,7 @@ const getFilterListings=async(req,res)=>
                                     var conditions = {};
                                     var conditions1 = {};
                                     var conditions2 = {};
-                                    if(!cityname=="")
+                                    if(!cityname =="" && cityname !== 'All of Canada')
                                     {
                                        conditions.city_name=cityname;
                                     }
