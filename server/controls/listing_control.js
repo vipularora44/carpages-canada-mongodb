@@ -559,15 +559,15 @@ const getFilterListings=async(req,res)=>
                                     {
                                        conditions.transmission={$in:["Automatic","Manual"]};
                                     }
-                                    if(!minmileage && used_new ==="new")
+                                    if((!minmileage && used_new ==="new") || ((!maxmileage && used_new ==="new")))
                                     {
                                        conditions.mileage={$gte:parseInt(AnyMileage),$lte:parseInt(NewVehicleMileage)};
                                     }
-                                    if(!minmileage && used_new ==="used")
+                                    if((!minmileage && used_new ==="used") || (!maxmileage && used_new ==="used"))
                                     {
                                         conditions.mileage={$gte:parseInt(NewVehicleMileage),$lte:parseInt(Maxmileage)};
                                     }
-                                    if( !minmileage && used_new ==="any")
+                                    if( !minmileage && !maxmileage && used_new ==="any")
                                     {
                                         conditions.mileage={$gte:AnyMileage};
                                     }
