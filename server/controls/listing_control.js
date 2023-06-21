@@ -536,15 +536,15 @@ const getFilterListings=async(req,res)=>
                                        conditions.price={$gte:MinPrice,$lte:maxprice};
                                     }
                                     if(!isNaN(minmileage) && !isNaN(maxmileage))
-                                    {
+                                    {  console.log("Mileage 1"+minmileage+"...."+maxmileage);
                                         conditions.mileage={$gte:minmileage,$lte:maxmileage};
                                     }
                                     else if(!isNaN(minmileage) && isNaN(maxmileage) )
-                                    {
+                                    {  console.log("Mileage 2"+minmileage+"...."+maxmileage);
                                        conditions.mileage={$gte:minmileage,$lte:Maxmileage};
                                     }
                                     else if(isNaN(minmileage) && !isNaN(maxmileage) )
-                                    {
+                                    {  console.log("Mileage 3"+minmileage+"...."+maxmileage);
                                         conditions.mileage={$gte:AnyMileage,$lte:maxmileage};
                                     }
                                     if(drivetrain!="")
