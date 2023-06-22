@@ -583,7 +583,7 @@ const getFilterListings=async(req,res)=>
                                     {
                                         conditions.mileage={$gte:parseInt(NewVehicleMileage),$lte:parseInt(Maxmileage)};
                                     }
-                                    if( !minmileage && !maxmileage && !maxmileage && used_new ==="any")
+                                    if( !minmileage && !maxmileage  && used_new ==="any")
                                     {
                                         conditions.mileage={$gte:AnyMileage};
                                     }
