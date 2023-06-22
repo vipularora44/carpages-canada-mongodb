@@ -527,7 +527,7 @@ const getFilterListings=async(req,res)=>
                                      
                                        conditions.model_year={$gte:minyears,$lte:currentYear};
                                     }
-                                    if(!minprice && !maxprice )
+                                  /*  if(!minprice && !maxprice )
                                     {
                                         console.log("Price 1.."+minprice+"..."+maxprice);
                                        conditions.price={$gte:MinPrice,$lte:MaxPrice};
@@ -548,7 +548,7 @@ const getFilterListings=async(req,res)=>
                                         console.log("Price 4..."+minprice+"..."+maxprice);
                                        conditions.price={$gte:minprice,$lte:MaxPrice};
                                     }
-                                  /*  if(!minmileage && !maxmileage)
+                                    if(!minmileage && !maxmileage)
                                     {  console.log("Mileage 1.."+minmileage+"...."+maxmileage);
                                         conditions.mileage={$gte:Minmileage,$lte:Maxmileage};
                                     }
