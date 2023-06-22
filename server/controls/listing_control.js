@@ -548,7 +548,7 @@ const getFilterListings=async(req,res)=>
                                         console.log("Price 4..."+minprice+"..."+maxprice);
                                        conditions.price={$gte:minprice,$lte:MaxPrice};
                                     }
-                                    if(!minmileage && !maxmileage)
+                                  /*  if(!minmileage && !maxmileage)
                                     {  console.log("Mileage 1.."+minmileage+"...."+maxmileage);
                                         conditions.mileage={$gte:Minmileage,$lte:Maxmileage};
                                     }
@@ -563,7 +563,7 @@ const getFilterListings=async(req,res)=>
                                     else if(minmileage && maxmileage)
                                     {  console.log("Mileage 4.."+minmileage+"...."+maxmileage);
                                         conditions.mileage={$gte:minmileage,$lte:maxmileage};
-                                    }
+                                    }*/
                                     if(drivetrain!="")
                                     {
                                        conditions.drivetrain=drivetrain;
@@ -583,11 +583,11 @@ const getFilterListings=async(req,res)=>
                                     if((!minmileage && !maxmileage && used_new ==="used") || (!maxmileage && used_new ==="used"))
                                     {
                                         conditions.mileage={$gte:parseInt(NewVehicleMileage),$lte:parseInt(Maxmileage)};
-                                    }*/
+                                    }
                                     if( !minmileage && !maxmileage  && used_new ==="any")
                                     {
                                         conditions.mileage={$gte:AnyMileage};
-                                    }
+                                    }*/
                                     if(buyfromHome)
                                     {
                                        conditions1.buy_from_home="yes";
