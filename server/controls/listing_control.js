@@ -505,54 +505,63 @@ const getFilterListings=async(req,res)=>
                                     }
                                     if(!minyears && !maxyears)
                                     {
-                                        console.log("Fisrt Working");
+                                        console.log("years 1..."+minyears+"..."+maxyears);
                                         const  MINYEAR=1950;
                                        conditions.model_year={ $gte:MINYEAR,$lte:currentYear};
                                     }
                                     else if(minyears && maxyears)
                                     {
-                                        console.log("second Working");
+                                       console.log("years 2..."+minyears+"..."+maxyears);
                                        conditions.model_year={$gte:minyears,$lte:maxyears};
                                     }
                                     else if(!minyears && maxyears)
                                     {
-                                        console.log("third Working");
+                                        console.log("years 3..."+minyears+"..."+maxyears);
                                        const  MINYEAR=1950;
                                        conditions.model_year={$gte:MINYEAR,$lte:maxyears};
                                     }
                                     else if(minyears && !maxyears)
                                     {
-                                        console.log("third Working");
-                                       const  MINYEAR=1950;
+                                       console.log("years 4..."+minyears+"..."+maxyears);
+                                     
                                        conditions.model_year={$gte:minyears,$lte:currentYear};
                                     }
-                                    if(!isNaN(minprice) && !isNaN(maxprice) )
+                                    if(!minprice && !maxprice )
                                     {
-                                        console.log("FIRST 1");
-                                       conditions.price={$gte:minprice,$lte:maxprice};
+                                        console.log("Price 1.."+minprice+"..."+maxprice);
+                                       conditions.price={$gte:MinPrice,$lte:MaxPrice};
                                     
                                     }
-                                    else if(!isNaN(minprice) && isNaN(maxprice) )
+                                    else if(minprice && maxprice )
                                     {
-                                        console.log("2");
-                                        conditions.price={$gte:minprice,$lte:MaxPrice};
+                                        console.log("Price 2..."+minprice+"..."+maxprice);
+                                        conditions.price={$gte:minprice,$lte:maxprice};
                                     }
-                                    else if(isNaN(minprice) && !isNaN(maxprice))
+                                    else if(!minprice && maxprice )
                                     {
-                                        console.log("3");
-                                       conditions.price={$gte:MinPrice,$lte:maxprice};
+                                        console.log("Price 3..."+minprice+"..."+maxprice);
+                                        conditions.price={$gte:MinPrice,$lte:maxprice};
                                     }
-                                    if(!isNaN(minmileage) && !isNaN(maxmileage))
-                                    {  console.log("Mileage 1"+minmileage+"...."+maxmileage);
+                                    else if(minprice && !maxprice)
+                                    {
+                                        console.log("Price 4..."+minprice+"..."+maxprice);
+                                       conditions.price={$gte:minprice,$lte:MaxPrice};
+                                    }
+                                    if(!minmileage && !maxmileage)
+                                    {  console.log("Mileage 1.."+minmileage+"...."+maxmileage);
+                                        conditions.mileage={$gte:Minmileage,$lte:Maxmileage};
+                                    }
+                                    else if(!minmileage && maxmileage )
+                                    {  console.log("Mileage 2.."+minmileage+"...."+maxmileage);
+                                       conditions.mileage={$gte:Minmileage,$lte:maxmileage};
+                                    }
+                                    else if(minmileage && !maxmileage)
+                                    {  console.log("Mileage 3.."+minmileage+"...."+maxmileage);
+                                        conditions.mileage={$gte:minmileage,$lte:Maxmileage};
+                                    }
+                                    else if(minmileage && maxmileage)
+                                    {  console.log("Mileage 4.."+minmileage+"...."+maxmileage);
                                         conditions.mileage={$gte:minmileage,$lte:maxmileage};
-                                    }
-                                    else if(!isNaN(minmileage) && isNaN(maxmileage) )
-                                    {  console.log("Mileage 2"+minmileage+"...."+maxmileage);
-                                       conditions.mileage={$gte:minmileage,$lte:Maxmileage};
-                                    }
-                                    else if(isNaN(minmileage) && !isNaN(maxmileage) )
-                                    {  console.log("Mileage 3"+minmileage+"...."+maxmileage);
-                                        conditions.mileage={$gte:AnyMileage,$lte:maxmileage};
                                     }
                                     if(drivetrain!="")
                                     {
@@ -566,15 +575,15 @@ const getFilterListings=async(req,res)=>
                                     {
                                        conditions.transmission={$in:["Automatic","Manual"]};
                                     }
-                                    if((!minmileage && used_new ==="new") || ((!maxmileage && used_new ==="new")))
+                                    if((!minmileage && !maxmileage && used_new ==="new") || ((!maxmileage && used_new ==="new")))
                                     {
                                        conditions.mileage={$gte:parseInt(AnyMileage),$lte:parseInt(NewVehicleMileage)};
                                     }
-                                    if((!minmileage && used_new ==="used") || (!maxmileage && used_new ==="used"))
+                                    if((!minmileage && !maxmileage && used_new ==="used") || (!maxmileage && used_new ==="used"))
                                     {
                                         conditions.mileage={$gte:parseInt(NewVehicleMileage),$lte:parseInt(Maxmileage)};
                                     }
-                                    if( !minmileage && !maxmileage && used_new ==="any")
+                                    if( !minmileage && !maxmileage && !maxmileage && used_new ==="any")
                                     {
                                         conditions.mileage={$gte:AnyMileage};
                                     }
