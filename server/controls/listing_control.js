@@ -586,7 +586,7 @@ const getFilterListings=async(req,res)=>
                                     if( !minmileage && !maxmileage && !maxmileage && used_new ==="any")
                                     {
                                         conditions.mileage={$gte:AnyMileage};
-                                    }*
+                                    }
                                     if(buyfromHome)
                                     {
                                        conditions1.buy_from_home="yes";
