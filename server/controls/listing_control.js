@@ -480,6 +480,7 @@ const getFilterListings=async(req,res)=>
                                     console.log("maxmileage"+maxmileage);
                                     console.log("withPictures"+withPictures);
                                     console.log("withPrices"+withPrices);
+                                    console.log("currentYear"+isNaN(currentYear));
                                     var conditions = {};
                                     var conditions1 = {};
                                     var conditions2 = {};
@@ -526,7 +527,7 @@ const getFilterListings=async(req,res)=>
                                      
                                        conditions.model_year={$gte:minyears,$lte:currentYear};
                                     }
-                                    if(!minprice && !maxprice )
+                                  /*  if(!minprice && !maxprice )
                                     {
                                         console.log("Price 1.."+minprice+"..."+maxprice);
                                        conditions.price={$gte:MinPrice,$lte:MaxPrice};
@@ -562,7 +563,7 @@ const getFilterListings=async(req,res)=>
                                     else if(minmileage && maxmileage)
                                     {  console.log("Mileage 4.."+minmileage+"...."+maxmileage);
                                         conditions.mileage={$gte:minmileage,$lte:maxmileage};
-                                    }
+                                    }*/
                                     if(drivetrain!="")
                                     {
                                        conditions.drivetrain=drivetrain;
