@@ -504,7 +504,7 @@ const getFilterListings=async(req,res)=>
                                     {
                                        conditions.model_name={$in:modelname};
                                     }
-                                    if(!minyears && !maxyears)
+                                     /* if(!minyears && !maxyears)
                                     {
                                         console.log("years 1..."+minyears+"..."+maxyears);
                                         const  MINYEAR=1950;
@@ -527,7 +527,7 @@ const getFilterListings=async(req,res)=>
                                      
                                        conditions.model_year={$gte:minyears,$lte:currentYear};
                                     }
-                                  /*  if(!minprice && !maxprice )
+                                  if(!minprice && !maxprice )
                                     {
                                         console.log("Price 1.."+minprice+"..."+maxprice);
                                        conditions.price={$gte:MinPrice,$lte:MaxPrice};
