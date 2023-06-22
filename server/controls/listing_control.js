@@ -450,7 +450,7 @@ const getFilterListings=async(req,res)=>
                                     const AnyMileage=1;
                                     const NewVehicleMileage=999;
                                     
-                                    const currentYear = todaysDate.getFullYear();
+                                    const currentYear = parseInt(todaysDate.getFullYear());
                                     const cityname=req.body.cityname;
                                     const province=req.body.province;
                                     const allmodels=req.body.allmodels;
@@ -527,7 +527,7 @@ const getFilterListings=async(req,res)=>
                                      
                                        conditions.model_year={$gte:minyears,$lte:currentYear};
                                     }
-                                  /*  if(!minprice && !maxprice )
+                                    if(!minprice && !maxprice )
                                     {
                                         console.log("Price 1.."+minprice+"..."+maxprice);
                                        conditions.price={$gte:MinPrice,$lte:MaxPrice};
@@ -563,7 +563,7 @@ const getFilterListings=async(req,res)=>
                                     else if(minmileage && maxmileage)
                                     {  console.log("Mileage 4.."+minmileage+"...."+maxmileage);
                                         conditions.mileage={$gte:minmileage,$lte:maxmileage};
-                                    }*/
+                                    }
                                     if(drivetrain!="")
                                     {
                                        conditions.drivetrain=drivetrain;
@@ -576,14 +576,14 @@ const getFilterListings=async(req,res)=>
                                     {
                                        conditions.transmission={$in:["Automatic","Manual"]};
                                     }
-                                   if((!minmileage && !maxmileage && used_new ==="new") || ((!maxmileage && used_new ==="new")))
+                                  /* if((!minmileage && !maxmileage && used_new ==="new") || ((!maxmileage && used_new ==="new")))
                                     {
                                        conditions.mileage={$gte:parseInt(AnyMileage),$lte:parseInt(NewVehicleMileage)};
                                     }
                                     if((!minmileage && !maxmileage && used_new ==="used") || (!maxmileage && used_new ==="used"))
                                     {
                                         conditions.mileage={$gte:parseInt(NewVehicleMileage),$lte:parseInt(Maxmileage)};
-                                    }
+                                    }*/
                                     if( !minmileage && !maxmileage  && used_new ==="any")
                                     {
                                         conditions.mileage={$gte:AnyMileage};
