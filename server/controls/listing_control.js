@@ -487,7 +487,7 @@ const getFilterListings=async(req,res)=>
                                     {
                                        conditions.city_name=cityname;
                                     }
-                                    /* if(!province=="")
+                                     if(!province=="")
                                     {
                                        conditions.province_name=province;
                                     }
@@ -586,7 +586,7 @@ const getFilterListings=async(req,res)=>
                                     if( !minmileage && !maxmileage && !maxmileage && used_new ==="any")
                                     {
                                         conditions.mileage={$gte:AnyMileage};
-                                    }*/
+                                    }*
                                     if(buyfromHome)
                                     {
                                        conditions1.buy_from_home="yes";
