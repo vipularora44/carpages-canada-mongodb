@@ -663,6 +663,110 @@ const getFilterListings=async(req,res)=>
 const Native_filterListings=async(req,res)=>
 {
    console.log("request"+JSON.stringify(req.body));
+   try
+   {
+                                   const todaysDate = new Date();
+                                   const MaxPrice=400000;
+                                   const MinPrice=0;
+                                   const Maxmileage=350000;
+                                   const Minmileage=0;
+                                   const AnyMileage=1;
+                                   const NewVehicleMileage=999;
+                                   
+                                   const currentYear = parseInt(todaysDate.getFullYear());
+                                   const cityname=req.body.cityname;
+                                   const province=req.body.province;
+                                   const allmodels=req.body.allmodels;
+                                   const buyfromHome=req.body.buyfromHome;
+                                   const bodyStyle=req.body.bodyStyle;   
+                                   const makename=req.body.makename;
+                                   const modelname=req.body.modelname;
+                                   const minyears=parseInt(req.body.minyears);
+                                   const maxyears=parseInt(req.body.maxyears);
+                                   const minprice=parseInt(req.body.minprice);
+                                   const maxprice=parseInt(req.body.maxprice);
+                                   const minmileage=parseInt(req.body.minmileage);
+                                   const maxmileage=parseInt(req.body.maxmileage);
+                                   const transmission=req.body.transmission;
+                                   const drivetrain=req.body.drivetrain;
+                                   const used_new=req.body.used_new;
+                                   const withPictures=req.body.withPictures;
+                                   const withPrices=req.body.withPrices;
+                                   const imageName='https://firebasestorage.googleapis.com/v0/b/carpages-canada-3b271.appspot.com/o/images%2Flisting_images%2Fdefault.jfif?alt=media&token=3dbb4bb1-5ae3-4348-9d14-585943c0bff7';
+                                   
+                                   console.log(JSON.stringify(req.body));
+                                   console.log("minyears"+minyears);
+                                   console.log("maxyears"+maxyears);
+                                   console.log("minprice"+minprice);
+                                   console.log("maxprice"+maxprice);
+                                   console.log("minmileage"+minmileage);
+                                   console.log("maxmileage"+maxmileage);
+                                   console.log("withPictures"+withPictures);
+                                   console.log("withPrices"+withPrices);
+                                   console.log("currentYear"+isNaN(currentYear));
+                                   var conditions = {};
+                                   var conditions1 = {};
+                                   var conditions2 = {};
+                                   if(cityname !=='' && cityname !== 'All of Canada')
+                                   {
+                                      conditions.city_name=cityname;
+                                   }
+                                    if(!province=="")
+                                   {
+                                      conditions.province_name=province;
+                                   }
+                                   
+                                   console.log("conditions0...."+JSON.stringify(conditions));
+                                   console.log("conditions2...."+JSON.stringify(conditions1));
+                                   console.log("conditions2...."+JSON.stringify(conditions2));
+       const DATA=await Listings_Model.aggregate([
+          
+           
+           { $match:conditions },
+               {
+                   $lookup:{
+
+                       from:"listings__images",
+                       localField:"listing_id",
+                       foreignField:"listing_id",
+                       pipeline:[ { $match:conditions2}],
+                       as:"All_Listings"
+                   }
+               },
+               
+               {
+                   $lookup:{
+                      from:"users",
+                      localField:"seller_id",
+                      foreignField:"user_id",
+                      pipeline:[ {$match:conditions1}],
+                      as:"Complete"
+                   }
+                },
+               
+                              
+       ]);
+       console.log("my_Listing_Data"+DATA);
+       let newData=[];
+       if(withPictures)
+       {
+           newData = DATA.filter(function(val){
+               return val.All_Listings.length > 0 ;
+           })
+           console.log("newData"+JSON.stringify(newData));
+           res.send(newData); 
+       }
+       else if(!withPictures)
+       {
+           res.send(DATA); 
+       }
+       
+
+   }
+   catch(err)
+   {
+      console.log("ERROR.."+err);
+   }
 }
 
 
