@@ -715,7 +715,46 @@ const Native_filterListings=async(req,res)=>
                                    {
                                       conditions.province_name=province;
                                    }
-                                   
+                                   if(!bodyStyle=="")
+                                   {
+                                      conditions.bodystyle=bodyStyle;
+                                   }
+                                   if(modelname.length === 0 && makename.length !==0)
+                                   {
+                                      conditions.make_name={$in:makename};
+                                   }
+                                   else if(makename.length !==0 && modelname.length !==0)
+                                   {
+                                      conditions.model_name={$in:modelname};
+                                   }
+                                 
+                                   if(drivetrain!="")
+                                   {
+                                      conditions.drivetrain=drivetrain;
+                                   }
+                                   if(transmission==="Automatic" || transmission==="Manual")
+                                   {
+                                      conditions.transmission=transmission;
+                                   }
+                                   if(transmission==="Any")
+                                   {
+                                      conditions.transmission={$in:["Automatic","Manual"]};
+                                   }
+                            
+                                   if(withPrices)
+                                   {
+                                      conditions.price ={$exists: true,$ne:null};
+                                   }
+                                   if(!withPictures)
+                                   {
+                                      conditions2={"image_type":"primary"};
+                                      console.log("conditions2....11111"+JSON.stringify(conditions2));
+                                   }
+                                  else if(withPictures)
+                                   {
+                                      conditions2={"image_name":{$ne:imageName},"image_type":"primary"};
+                                      console.log("conditions2.... 2222"+JSON.stringify(conditions2));
+                                   }
                                    console.log("conditions0...."+JSON.stringify(conditions));
                                    console.log("conditions2...."+JSON.stringify(conditions1));
                                    console.log("conditions2...."+JSON.stringify(conditions2));
