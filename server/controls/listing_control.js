@@ -636,7 +636,7 @@ const getFilterListings=async(req,res)=>
                 
                                
         ]);
-        console.log("my_Listing_Data"+DATA);
+        console.log(DATA.length+"my_Listing_Data"+DATA);
         let newData=[];
         if(withPictures)
         {
