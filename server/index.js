@@ -27,7 +27,7 @@ cookie:{
 }));
 
 
-app.use(cors({
+/*app.use(cors({
     origin:["https://carpages-canada-mongofrnt.onrender.com"],
     methods:["POST","GET"],
     credentials:true,
@@ -43,7 +43,7 @@ app.use(cors({
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     next();
    
-  });
+  });*/
 
 const uri="mongodb+srv://vipularora44:vipularora44@carpagesmongodb.hnp3nbj.mongodb.net/carpages_mern?retryWrites=true&w=majority";
 mongoose.set('strictQuery', false);
