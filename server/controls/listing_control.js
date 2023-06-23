@@ -719,14 +719,14 @@ const Native_filterListings=async(req,res)=>
                                    {
                                       conditions.bodystyle=bodyStyle;
                                    }
-                                   if(modelname.length === 0 && makename.length !==0)
+                               /*    if(modelname.length === 0 && makename.length !==0)
                                    {
                                       conditions.make_name={$in:makename};
                                    }
                                    else if(makename.length !==0 && modelname.length !==0)
                                    {
                                       conditions.model_name={$in:modelname};
-                                   }
+                                   }*/
                                  
                                    if(drivetrain!="")
                                    {
