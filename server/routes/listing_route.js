@@ -4,7 +4,7 @@ const ListingRouter =express.Router();
 const {Create_Listings,get_allListings,FilterByCityListings,FilterByClassListings,FilterByMakeListings,getFilterListings,Find_A_Car,
     updateListing,getUserListings, search_bar,getDealervehicleCount,getDealervehicleModelCount,getDealerRefineInventory,getListingImages,
     insert_New_Images,updatePrimaryListingImage,deleteListingImages,getListingDetail,getmoreListings,getDealerListings,
-    firebase_images}=require("../controls/listing_control");
+    firebase_images,Native_filterListings}=require("../controls/listing_control");
 
 
 ListingRouter.post("/insert_listing",Create_Listings)
@@ -28,4 +28,6 @@ ListingRouter.post("/updatePrimaryListingImage",updatePrimaryListingImage)
 ListingRouter.post("/deleteListingImages",deleteListingImages)
 ListingRouter.post("/insert_New_Images",insert_New_Images)
 ListingRouter.post("/firebase_New_Images",firebase_images)
+ListingRouter.post("/Native_filter_Listing",Native_filterListings)
+
 module.exports=ListingRouter;

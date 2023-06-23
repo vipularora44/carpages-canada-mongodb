@@ -660,6 +660,14 @@ const getFilterListings=async(req,res)=>
 }
 
 
+const Native_filterListings=async(req,res)=>
+{
+   console.log("request"+JSON.stringify(req.body));
+}
+
+
+
+
 
 const Find_A_Car=async(req,res)=>
 {
@@ -1985,4 +1993,4 @@ const firebase_images=async(req,res)=>
 
 module.exports={Create_Listings,get_allListings,FilterByCityListings,FilterByClassListings,FilterByMakeListings,getFilterListings,updateListing,
     insert_New_Images,deleteListingImages,updatePrimaryListingImage,getUserListings,search_bar,getDealerRefineInventory,getmoreListings,getListingImages,Find_A_Car,getListingDetail,
-    getDealerListings,getDealervehicleCount,getDealervehicleModelCount,firebase_images};
+    getDealerListings,getDealervehicleCount,getDealervehicleModelCount,Native_filterListings,firebase_images};
